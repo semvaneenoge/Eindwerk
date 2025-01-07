@@ -31,8 +31,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegistratie = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtWW = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -70,23 +70,27 @@
             this.picLogo.TabIndex = 1;
             this.picLogo.TabStop = false;
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(137, 209);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 26);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Email";
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtEmail.Location = new System.Drawing.Point(102, 209);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(272, 26);
+            this.txtEmail.TabIndex = 2;
+            this.txtEmail.Text = "Email";
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
-            // textBox2
+            // txtWW
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(137, 241);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 26);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "Wachtwoord";
+            this.txtWW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWW.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtWW.Location = new System.Drawing.Point(102, 241);
+            this.txtWW.Name = "txtWW";
+            this.txtWW.Size = new System.Drawing.Size(272, 26);
+            this.txtWW.TabIndex = 3;
+            this.txtWW.Text = "Wachtwoord";
+            this.txtWW.TextChanged += new System.EventHandler(this.txtWW_TextChanged);
             // 
             // label1
             // 
@@ -102,10 +106,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 421);
+            this.ClientSize = new System.Drawing.Size(474, 421);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtWW);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnRegistratie);
             this.Controls.Add(this.btnLogin);
@@ -123,8 +127,8 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegistratie;
         private System.Windows.Forms.PictureBox picLogo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtWW;
         private System.Windows.Forms.Label label1;
     }
 }

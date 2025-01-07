@@ -17,14 +17,6 @@ namespace prjEindwerk_LotsOfLili
         public frmRegistratie()
         {
             InitializeComponent();
-
-            txtVoornaam.ForeColor = Color.Gray;
-            txtNaam.ForeColor = Color.Gray;
-            txtAdres.ForeColor = Color.Gray;
-            txtTelefoon.ForeColor = Color.Gray;
-            txtEmail.ForeColor = Color.Gray;
-            txtWW.ForeColor = Color.Gray;
-            txtHerhaalWW.ForeColor = Color.Gray;
         }
 
         private void btnRegistreer_Click(object sender, EventArgs e)
@@ -51,90 +43,85 @@ namespace prjEindwerk_LotsOfLili
             }
         }
 
-        private void txtVoornaam_TextChanged(object sender, EventArgs e)
+        private void txtVoornaam_Enter(object sender, EventArgs e)
         {
-            if (txtVoornaam.Text == "" || txtVoornaam.Text == "Email")
+            txtVoornaam.Clear();
+            txtVoornaam.ForeColor = Color.Black;
+        }
+
+        private void txtNaam_Enter(object sender, EventArgs e)
+        {
+            txtNaam.Clear();
+            txtNaam.ForeColor = Color.Black;
+        }
+
+        private void txtAdres_Enter(object sender, EventArgs e)
+        {
+            txtAdres.Clear();
+            txtAdres.ForeColor = Color.Black;
+        }
+
+        private void txtTelefoon_Enter(object sender, EventArgs e)
+        {
+            txtTelefoon.Clear();
+            txtTelefoon.ForeColor = Color.Black;
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            txtEmail.Clear();
+            txtEmail.ForeColor = Color.Black;
+        }
+
+        private void txtWW_Enter(object sender, EventArgs e)
+        {
+            txtWW.Clear();
+            txtWW.ForeColor = Color.Black;
+        }
+
+        private void txtHerhaalWW_Enter(object sender, EventArgs e)
+        {
+            txtHerhaalWW.Clear();
+            txtHerhaalWW.ForeColor = Color.Black;
+        }
+
+        private void txtVoornaam_Leave(object sender, EventArgs e)
+        {
+            if (txtVoornaam.Text == "")
             {
-                txtVoornaam.ForeColor = Color.Gray;
-            }
-            else
-            {
+                txtVoornaam.Text = "Voornaam";
                 txtVoornaam.ForeColor = Color.Black;
             }
         }
 
-        private void txtNaam_TextChanged(object sender, EventArgs e)
+        private void txtNaam_Leave(object sender, EventArgs e)
         {
-            if (txtNaam.Text == "" || txtNaam.Text == "Email")
-            {
-                txtNaam.ForeColor = Color.Gray;
-            }
-            else
-            {
-                txtNaam.ForeColor = Color.Black;
-            }
+            txtNaam.Text = "Naam";
         }
 
-        private void txtAdres_TextChanged(object sender, EventArgs e)
+        private void txtAdres_Leave(object sender, EventArgs e)
         {
-            if (txtAdres.Text == "" || txtAdres.Text == "Email")
-            {
-                txtAdres.ForeColor = Color.Gray;
-            }
-            else
-            {
-                txtAdres.ForeColor = Color.Black;
-            }
+            txtAdres.Text = "Adres";
         }
 
-        private void txtTelefoon_TextChanged(object sender, EventArgs e)
+        private void txtTelefoon_Leave(object sender, EventArgs e)
         {
-            if (txtTelefoon.Text == "" || txtTelefoon.Text == "Email")
-            {
-                txtTelefoon.ForeColor = Color.Gray;
-            }
-            else
-            {
-                txtTelefoon.ForeColor = Color.Black;
-            }
+            txtTelefoon.Text = "Telefoon";
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
+        private void txtEmail_Leave(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "" || txtEmail.Text == "Email")
-            {
-                txtEmail.ForeColor = Color.Gray;
-            }
-            else
-            {
-                txtEmail.ForeColor = Color.Black;
-            }
+            txtEmail.Text = "Email";
         }
 
-        private void txtWW_TextChanged(object sender, EventArgs e)
+        private void txtWW_Leave(object sender, EventArgs e)
         {
-            if (txtWW.Text == "" || txtWW.Text == "Email")
-            {
-                txtWW.ForeColor = Color.Gray;
-            }
-            else
-            {
-                txtWW.ForeColor = Color.Black;
-                txtWW.PasswordChar = '*';
-            }
+            txtWW.Text = "Wachtwoord";
         }
 
-        private void txtHerhaalWW_TextChanged(object sender, EventArgs e)
+        private void txtHerhaalWW_Leave(object sender, EventArgs e)
         {
-            if (txtHerhaalWW.Text == "" || txtHerhaalWW.Text == "Email")
-            {
-                txtHerhaalWW.ForeColor = Color.Gray;
-            }
-            else
-            {
-                txtHerhaalWW.ForeColor = Color.Black;
-                txtHerhaalWW.PasswordChar = '*';
-            }
+            txtHerhaalWW.Text = "Wachtwoord herhalen";
         }
     }
 }

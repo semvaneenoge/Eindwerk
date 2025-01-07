@@ -52,72 +52,86 @@
             // txtVoornaam
             // 
             this.txtVoornaam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVoornaam.ForeColor = System.Drawing.Color.Gray;
             this.txtVoornaam.Location = new System.Drawing.Point(101, 116);
             this.txtVoornaam.Name = "txtVoornaam";
             this.txtVoornaam.Size = new System.Drawing.Size(272, 26);
             this.txtVoornaam.TabIndex = 1;
             this.txtVoornaam.Text = "Voornaam";
-            this.txtVoornaam.TextChanged += new System.EventHandler(this.txtVoornaam_TextChanged);
+            this.txtVoornaam.Enter += new System.EventHandler(this.txtVoornaam_Enter);
+            this.txtVoornaam.Leave += new System.EventHandler(this.txtVoornaam_Leave);
             // 
             // txtNaam
             // 
             this.txtNaam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNaam.ForeColor = System.Drawing.Color.Gray;
             this.txtNaam.Location = new System.Drawing.Point(101, 148);
             this.txtNaam.Name = "txtNaam";
             this.txtNaam.Size = new System.Drawing.Size(272, 26);
             this.txtNaam.TabIndex = 2;
             this.txtNaam.Text = "Naam";
-            this.txtNaam.TextChanged += new System.EventHandler(this.txtNaam_TextChanged);
+            this.txtNaam.Enter += new System.EventHandler(this.txtNaam_Enter);
+            this.txtNaam.Leave += new System.EventHandler(this.txtNaam_Leave);
             // 
             // txtAdres
             // 
             this.txtAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdres.ForeColor = System.Drawing.Color.Gray;
             this.txtAdres.Location = new System.Drawing.Point(101, 180);
             this.txtAdres.Name = "txtAdres";
             this.txtAdres.Size = new System.Drawing.Size(272, 26);
             this.txtAdres.TabIndex = 3;
             this.txtAdres.Text = "Adres";
-            this.txtAdres.TextChanged += new System.EventHandler(this.txtAdres_TextChanged);
+            this.txtAdres.Enter += new System.EventHandler(this.txtAdres_Enter);
+            this.txtAdres.Leave += new System.EventHandler(this.txtAdres_Leave);
             // 
             // txtTelefoon
             // 
             this.txtTelefoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefoon.ForeColor = System.Drawing.Color.Gray;
             this.txtTelefoon.Location = new System.Drawing.Point(101, 212);
             this.txtTelefoon.Name = "txtTelefoon";
             this.txtTelefoon.Size = new System.Drawing.Size(272, 26);
             this.txtTelefoon.TabIndex = 4;
             this.txtTelefoon.Text = "Telefoon";
-            this.txtTelefoon.TextChanged += new System.EventHandler(this.txtTelefoon_TextChanged);
+            this.txtTelefoon.Enter += new System.EventHandler(this.txtTelefoon_Enter);
+            this.txtTelefoon.Leave += new System.EventHandler(this.txtTelefoon_Leave);
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Gray;
             this.txtEmail.Location = new System.Drawing.Point(101, 244);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(272, 26);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.Text = "Email";
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtWW
             // 
             this.txtWW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWW.ForeColor = System.Drawing.Color.Gray;
             this.txtWW.Location = new System.Drawing.Point(101, 276);
             this.txtWW.Name = "txtWW";
             this.txtWW.Size = new System.Drawing.Size(272, 26);
             this.txtWW.TabIndex = 6;
             this.txtWW.Text = "Wachtwoord";
-            this.txtWW.TextChanged += new System.EventHandler(this.txtWW_TextChanged);
+            this.txtWW.Enter += new System.EventHandler(this.txtWW_Enter);
+            this.txtWW.Leave += new System.EventHandler(this.txtWW_Leave);
             // 
             // txtHerhaalWW
             // 
             this.txtHerhaalWW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHerhaalWW.ForeColor = System.Drawing.Color.Gray;
             this.txtHerhaalWW.Location = new System.Drawing.Point(101, 308);
             this.txtHerhaalWW.Name = "txtHerhaalWW";
             this.txtHerhaalWW.Size = new System.Drawing.Size(272, 26);
             this.txtHerhaalWW.TabIndex = 7;
             this.txtHerhaalWW.Text = "Wachtwoord herhalen";
-            this.txtHerhaalWW.TextChanged += new System.EventHandler(this.txtHerhaalWW_TextChanged);
+            this.txtHerhaalWW.Enter += new System.EventHandler(this.txtHerhaalWW_Enter);
+            this.txtHerhaalWW.Leave += new System.EventHandler(this.txtHerhaalWW_Leave);
             // 
             // frmRegistratie
             // 

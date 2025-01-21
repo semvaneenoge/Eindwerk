@@ -42,7 +42,7 @@ namespace prjEindwerk_LotsOfLili
 
         private void Reset()
         {
-            
+            Text = "";
         }
 
         private void btnRegistratie_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace prjEindwerk_LotsOfLili
 
         private void txtWWInlog_Enter(object sender, EventArgs e)
         {
-            
+            Reset();
         }
 
         private void txtWWInlog_Leave(object sender, EventArgs e)

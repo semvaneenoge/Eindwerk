@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prjEindwerk_LotsOfLili.Model
 {
-    public class Login
+    public class Gebruikers
     {
         public string Adres { get; set; }
 

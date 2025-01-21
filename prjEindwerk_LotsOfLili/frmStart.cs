@@ -17,19 +17,16 @@ namespace prjEindwerk_LotsOfLili
         public frmStart()
         {
             InitializeComponent();
-
-            txtEmail.ForeColor = Color.Gray;
-            txtWW.ForeColor = Color.Gray;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Login L = new Login();
+            Gebruikers G = new Gebruikers();
 
-            L.Email = txtEmail.Text;
-            L.Wachtwoord = txtWW.Text;
+            G.Email = txtEmailInlog.Text;
+            G.Wachtwoord = txtWWInlog.Text;
 
-            bool blnLogin = LoginDA.LoginValidation(L);
+            bool blnLogin = GebruikersDA.LoginValidation(G);
 
             if (blnLogin == true)
             {
@@ -43,36 +40,74 @@ namespace prjEindwerk_LotsOfLili
             }
         }
 
+        private void Reset()
+        {
+            
+        }
+
         private void btnRegistratie_Click(object sender, EventArgs e)
         {
-            frmRegistratie Registreren = new frmRegistratie();
-            this.Hide();
-            Registreren.Show();
+            grbRegistreer.Visible = true;
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
+        private void btnRegistreer_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "" || txtEmail.Text == "Email")
+            Gebruikers G = new Gebruikers();
+
+            if (txtHerhaalWW.Text == txtWWRegistreer.Text)
             {
-                txtEmail.ForeColor = Color.Gray;
+                G.Voornaam = txtVoornaam.Text;
+                G.Naam = txtNaam.Text;
+                G.Adres = txtAdres.Text;
+                G.Telefoon = txtTelefoon.Text;
+                G.Email = txtEmailRegistreer.Text;
+                G.Wachtwoord = txtWWRegistreer.Text;
+
+                GebruikersDA.Registreren(G);
+
+                this.Hide();
+                Home Dashboard = new Home();
+                Dashboard.Show();
             }
             else
             {
-                txtEmail.ForeColor = Color.Black;
+                MessageBox.Show("Foutieve gegevens.");
             }
         }
 
-        private void txtWW_TextChanged(object sender, EventArgs e)
+        private void btnTerug_Click(object sender, EventArgs e)
         {
-            if (txtWW.Text == "" || txtWW.Text == "Wachtwoord")
-            {
-                txtWW.ForeColor = Color.Gray;
-            }
-            else
-            {
-                txtWW.ForeColor = Color.Black;
-                txtWW.PasswordChar = '*';
-            }
+            grbRegistreer.Visible = false;
+        }
+
+        private void txtWWInlog_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtWWInlog_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtWWRegistreer_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtWWRegistreer_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHerhaalWW_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHerhaalWW_Leave(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -11,23 +11,23 @@ using prjEindwerk_LotsOfLili.Model;
 
 namespace prjEindwerk_LotsOfLili.DA
 {
-    public class LoginDA
+    public class GebruikersDA
     {
-        public static bool LoginValidation(Login L)
+        public static bool LoginValidation(Gebruikers G)
         {
             bool blnLogin = false;
 
             // verbinding met databank
             MySqlConnection conn = Database.MakeConnection();
 
-            string quary = "SELECT count(1) from Eindwerk.tblLogin where Email = @Email and Wachtwoord = @Wachtwoord";
+            string quary = "SELECT count(1) from Eindwerk.tblgebruikers where Email = @Email and Wachtwoord = @Wachtwoord";
             // Voert sql statements uit
             MySqlCommand mySqlCmd = new MySqlCommand(quary, conn);
             // Soort commando --> text
             mySqlCmd.CommandType = CommandType.Text;
             // Parameters toevoegen
-            mySqlCmd.Parameters.AddWithValue("@Email", L.Email);
-            mySqlCmd.Parameters.AddWithValue("@Wachtwoord", L.Wachtwoord);
+            mySqlCmd.Parameters.AddWithValue("@Email", G.Email);
+            mySqlCmd.Parameters.AddWithValue("@Wachtwoord", G.Wachtwoord);
 
             int count = Convert.ToInt32(mySqlCmd.ExecuteScalar()); // Een waarde uit de databank opvragen
 
@@ -45,23 +45,23 @@ namespace prjEindwerk_LotsOfLili.DA
             return blnLogin;
         }
 
-        public static void Registreren(Login L)
+        public static void Registreren(Gebruikers G)
         {
             // verbinding met databank
             MySqlConnection conn = Database.MakeConnection();
 
-            string quary = "INSERT INTO Eindwerk.tblLogin(Adres, Email, Naam, Telefoon, Voornaam, Wachtwoord) VALUES (@Adres, @Email, @Naam, @Telefoon, @Voornaam, @Wachtwoord)";
+            string quary = "INSERT INTO Eindwerk.tblgebruikers(Adres, Email, Naam, Telefoon, Voornaam, Wachtwoord) VALUES (@Adres, @Email, @Naam, @Telefoon, @Voornaam, @Wachtwoord)";
             // Voert sql statements uit
             MySqlCommand mySqlCmd = new MySqlCommand(quary, conn);
             // Soort commando --> text
             mySqlCmd.CommandType = CommandType.Text;
             // Parameters toevoegen
-            mySqlCmd.Parameters.AddWithValue("@Adres", L.Adres);
-            mySqlCmd.Parameters.AddWithValue("@Email", L.Email);
-            mySqlCmd.Parameters.AddWithValue("@Naam", L.Naam);
-            mySqlCmd.Parameters.AddWithValue("@Telefoon", L.Telefoon);
-            mySqlCmd.Parameters.AddWithValue("@Voornaam", L.Voornaam);
-            mySqlCmd.Parameters.AddWithValue("@Wachtwoord", L.Wachtwoord);
+            mySqlCmd.Parameters.AddWithValue("@Adres", G.Adres);
+            mySqlCmd.Parameters.AddWithValue("@Email", G.Email);
+            mySqlCmd.Parameters.AddWithValue("@Naam", G.Naam);
+            mySqlCmd.Parameters.AddWithValue("@Telefoon", G.Telefoon);
+            mySqlCmd.Parameters.AddWithValue("@Voornaam", G.Voornaam);
+            mySqlCmd.Parameters.AddWithValue("@Wachtwoord", G.Wachtwoord);
 
             // Uitvoeren van commando
             mySqlCmd.ExecuteScalar();

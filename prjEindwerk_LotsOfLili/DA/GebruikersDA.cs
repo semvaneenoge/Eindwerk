@@ -36,10 +36,6 @@ namespace prjEindwerk_LotsOfLili.DA
                 // Correct inloggen --> boolean = true
                 blnLogin = true;
             }
-            else
-            {
-                MessageBox.Show("Gebruikersnaam of wachtwoord is fout.");
-            }
 
             conn.Close();
             return blnLogin;
@@ -50,7 +46,7 @@ namespace prjEindwerk_LotsOfLili.DA
             // verbinding met databank
             MySqlConnection conn = Database.MakeConnection();
 
-            string quary = "INSERT INTO Eindwerk.tblgebruikers(Adres, Email, Naam, Telefoon, Voornaam, Wachtwoord) VALUES (@Adres, @Email, @Naam, @Telefoon, @Voornaam, @Wachtwoord)";
+            string quary = "INSERT INTO Eindwerk.tblgebruikers(Adres, Email, Naam, Postcode, Telefoon, Voornaam, Wachtwoord) VALUES (@Adres, @Email, @Naam, @Postcode, @Telefoon, @Voornaam, @Wachtwoord)";
             // Voert sql statements uit
             MySqlCommand mySqlCmd = new MySqlCommand(quary, conn);
             // Soort commando --> text
@@ -59,6 +55,7 @@ namespace prjEindwerk_LotsOfLili.DA
             mySqlCmd.Parameters.AddWithValue("@Adres", G.Adres);
             mySqlCmd.Parameters.AddWithValue("@Email", G.Email);
             mySqlCmd.Parameters.AddWithValue("@Naam", G.Naam);
+            mySqlCmd.Parameters.AddWithValue("@Postcode", G.Postcode);
             mySqlCmd.Parameters.AddWithValue("@Telefoon", G.Telefoon);
             mySqlCmd.Parameters.AddWithValue("@Voornaam", G.Voornaam);
             mySqlCmd.Parameters.AddWithValue("@Wachtwoord", G.Wachtwoord);

@@ -8,11 +8,14 @@ namespace prjEindwerk_LotsOfLili.Model
 {
     public class Gebruikers
     {
+        public bool Admin {  get; set; }
         public string Adres { get; set; }
 
         public string Email { get; set; }
 
         public string Naam { get; set; }
+
+        public int Postcode { get; set; }
 
         public string Telefoon { get; set; }
 

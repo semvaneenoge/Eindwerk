@@ -46,6 +46,7 @@
             this.txtNaam = new System.Windows.Forms.TextBox();
             this.txtVoornaam = new System.Windows.Forms.TextBox();
             this.btnRegistreer = new System.Windows.Forms.Button();
+            this.txtPostcode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
             this.grbLogin.SuspendLayout();
             this.grbRegistreer.SuspendLayout();
@@ -78,10 +79,12 @@
             // 
             // picLogo1
             // 
-            this.picLogo1.BackColor = System.Drawing.Color.Red;
-            this.picLogo1.Location = new System.Drawing.Point(47, 19);
+            this.picLogo1.BackColor = System.Drawing.SystemColors.Control;
+            this.picLogo1.Image = global::prjEindwerk_LotsOfLili.Properties.Resources.logo___Lots_of_Lili;
+            this.picLogo1.Location = new System.Drawing.Point(57, 51);
             this.picLogo1.Name = "picLogo1";
-            this.picLogo1.Size = new System.Drawing.Size(381, 148);
+            this.picLogo1.Size = new System.Drawing.Size(360, 95);
+            this.picLogo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picLogo1.TabIndex = 1;
             this.picLogo1.TabStop = false;
             // 
@@ -94,6 +97,8 @@
             this.txtEmailInlog.Size = new System.Drawing.Size(272, 26);
             this.txtEmailInlog.TabIndex = 2;
             this.txtEmailInlog.Text = "Email";
+            this.txtEmailInlog.Enter += new System.EventHandler(this.txtEmailInlog_Enter);
+            this.txtEmailInlog.Leave += new System.EventHandler(this.txtEmailInlog_Leave);
             // 
             // txtWWInlog
             // 
@@ -119,7 +124,7 @@
             // 
             // grbLogin
             // 
-            this.grbLogin.BackColor = System.Drawing.SystemColors.Control;
+            this.grbLogin.BackColor = System.Drawing.Color.White;
             this.grbLogin.Controls.Add(this.grbRegistreer);
             this.grbLogin.Controls.Add(this.label1);
             this.grbLogin.Controls.Add(this.picLogo1);
@@ -130,12 +135,14 @@
             this.grbLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.grbLogin.Location = new System.Drawing.Point(0, -6);
             this.grbLogin.Name = "grbLogin";
-            this.grbLogin.Size = new System.Drawing.Size(475, 434);
+            this.grbLogin.Size = new System.Drawing.Size(475, 465);
             this.grbLogin.TabIndex = 5;
             this.grbLogin.TabStop = false;
             // 
             // grbRegistreer
             // 
+            this.grbRegistreer.BackColor = System.Drawing.Color.White;
+            this.grbRegistreer.Controls.Add(this.txtPostcode);
             this.grbRegistreer.Controls.Add(this.btnTerug);
             this.grbRegistreer.Controls.Add(this.picLogo2);
             this.grbRegistreer.Controls.Add(this.txtHerhaalWW);
@@ -148,14 +155,14 @@
             this.grbRegistreer.Controls.Add(this.btnRegistreer);
             this.grbRegistreer.Location = new System.Drawing.Point(0, 0);
             this.grbRegistreer.Name = "grbRegistreer";
-            this.grbRegistreer.Size = new System.Drawing.Size(475, 441);
+            this.grbRegistreer.Size = new System.Drawing.Size(475, 463);
             this.grbRegistreer.TabIndex = 5;
             this.grbRegistreer.TabStop = false;
             this.grbRegistreer.Visible = false;
             // 
             // btnTerug
             // 
-            this.btnTerug.Location = new System.Drawing.Point(170, 397);
+            this.btnTerug.Location = new System.Drawing.Point(170, 426);
             this.btnTerug.Name = "btnTerug";
             this.btnTerug.Size = new System.Drawing.Size(134, 23);
             this.btnTerug.TabIndex = 21;
@@ -165,9 +172,11 @@
             // 
             // picLogo2
             // 
-            this.picLogo2.Location = new System.Drawing.Point(102, 18);
+            this.picLogo2.Image = global::prjEindwerk_LotsOfLili.Properties.Resources.logo___Lots_of_Lili;
+            this.picLogo2.Location = new System.Drawing.Point(57, 18);
             this.picLogo2.Name = "picLogo2";
-            this.picLogo2.Size = new System.Drawing.Size(270, 98);
+            this.picLogo2.Size = new System.Drawing.Size(360, 95);
+            this.picLogo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo2.TabIndex = 20;
             this.picLogo2.TabStop = false;
             // 
@@ -175,7 +184,7 @@
             // 
             this.txtHerhaalWW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHerhaalWW.ForeColor = System.Drawing.Color.Gray;
-            this.txtHerhaalWW.Location = new System.Drawing.Point(102, 314);
+            this.txtHerhaalWW.Location = new System.Drawing.Point(102, 346);
             this.txtHerhaalWW.Name = "txtHerhaalWW";
             this.txtHerhaalWW.Size = new System.Drawing.Size(270, 26);
             this.txtHerhaalWW.TabIndex = 18;
@@ -187,7 +196,7 @@
             // 
             this.txtWWRegistreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWWRegistreer.ForeColor = System.Drawing.Color.Gray;
-            this.txtWWRegistreer.Location = new System.Drawing.Point(102, 282);
+            this.txtWWRegistreer.Location = new System.Drawing.Point(102, 314);
             this.txtWWRegistreer.Name = "txtWWRegistreer";
             this.txtWWRegistreer.Size = new System.Drawing.Size(270, 26);
             this.txtWWRegistreer.TabIndex = 17;
@@ -199,7 +208,7 @@
             // 
             this.txtEmailRegistreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailRegistreer.ForeColor = System.Drawing.Color.Gray;
-            this.txtEmailRegistreer.Location = new System.Drawing.Point(102, 250);
+            this.txtEmailRegistreer.Location = new System.Drawing.Point(102, 282);
             this.txtEmailRegistreer.Name = "txtEmailRegistreer";
             this.txtEmailRegistreer.Size = new System.Drawing.Size(270, 26);
             this.txtEmailRegistreer.TabIndex = 16;
@@ -209,7 +218,7 @@
             // 
             this.txtTelefoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefoon.ForeColor = System.Drawing.Color.Gray;
-            this.txtTelefoon.Location = new System.Drawing.Point(102, 218);
+            this.txtTelefoon.Location = new System.Drawing.Point(102, 250);
             this.txtTelefoon.Name = "txtTelefoon";
             this.txtTelefoon.Size = new System.Drawing.Size(270, 26);
             this.txtTelefoon.TabIndex = 15;
@@ -223,7 +232,7 @@
             this.txtAdres.Name = "txtAdres";
             this.txtAdres.Size = new System.Drawing.Size(270, 26);
             this.txtAdres.TabIndex = 14;
-            this.txtAdres.Text = "Adres";
+            this.txtAdres.Text = "Straat + nr";
             // 
             // txtNaam
             // 
@@ -248,7 +257,7 @@
             // btnRegistreer
             // 
             this.btnRegistreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistreer.Location = new System.Drawing.Point(170, 349);
+            this.btnRegistreer.Location = new System.Drawing.Point(170, 378);
             this.btnRegistreer.Name = "btnRegistreer";
             this.btnRegistreer.Size = new System.Drawing.Size(134, 42);
             this.btnRegistreer.TabIndex = 19;
@@ -256,12 +265,23 @@
             this.btnRegistreer.UseVisualStyleBackColor = true;
             this.btnRegistreer.Click += new System.EventHandler(this.btnRegistreer_Click);
             // 
+            // txtPostcode
+            // 
+            this.txtPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPostcode.ForeColor = System.Drawing.Color.Gray;
+            this.txtPostcode.Location = new System.Drawing.Point(102, 218);
+            this.txtPostcode.Name = "txtPostcode";
+            this.txtPostcode.Size = new System.Drawing.Size(270, 26);
+            this.txtPostcode.TabIndex = 22;
+            this.txtPostcode.Text = "Postcode";
+            // 
             // frmStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 421);
             this.Controls.Add(this.grbLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start";
@@ -295,6 +315,7 @@
         private System.Windows.Forms.TextBox txtVoornaam;
         private System.Windows.Forms.Button btnRegistreer;
         private System.Windows.Forms.Button btnTerug;
+        private System.Windows.Forms.TextBox txtPostcode;
     }
 }
 

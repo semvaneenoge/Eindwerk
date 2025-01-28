@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.grbLogin = new System.Windows.Forms.GroupBox();
             this.grbRegistreer = new System.Windows.Forms.GroupBox();
+            this.txtPostcode = new System.Windows.Forms.TextBox();
             this.btnTerug = new System.Windows.Forms.Button();
             this.picLogo2 = new System.Windows.Forms.PictureBox();
             this.txtHerhaalWW = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.txtNaam = new System.Windows.Forms.TextBox();
             this.txtVoornaam = new System.Windows.Forms.TextBox();
             this.btnRegistreer = new System.Windows.Forms.Button();
-            this.txtPostcode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
             this.grbLogin.SuspendLayout();
             this.grbRegistreer.SuspendLayout();
@@ -160,6 +160,16 @@
             this.grbRegistreer.TabStop = false;
             this.grbRegistreer.Visible = false;
             // 
+            // txtPostcode
+            // 
+            this.txtPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPostcode.ForeColor = System.Drawing.Color.Gray;
+            this.txtPostcode.Location = new System.Drawing.Point(102, 218);
+            this.txtPostcode.Name = "txtPostcode";
+            this.txtPostcode.Size = new System.Drawing.Size(270, 26);
+            this.txtPostcode.TabIndex = 22;
+            this.txtPostcode.Text = "Postcode";
+            // 
             // btnTerug
             // 
             this.btnTerug.Location = new System.Drawing.Point(170, 426);
@@ -264,16 +274,6 @@
             this.btnRegistreer.Text = "Registreer";
             this.btnRegistreer.UseVisualStyleBackColor = true;
             this.btnRegistreer.Click += new System.EventHandler(this.btnRegistreer_Click);
-            // 
-            // txtPostcode
-            // 
-            this.txtPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPostcode.ForeColor = System.Drawing.Color.Gray;
-            this.txtPostcode.Location = new System.Drawing.Point(102, 218);
-            this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(270, 26);
-            this.txtPostcode.TabIndex = 22;
-            this.txtPostcode.Text = "Postcode";
             // 
             // frmStart
             // 

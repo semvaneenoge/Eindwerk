@@ -19,15 +19,24 @@ namespace prjEindwerk_LotsOfLili
         {
             InitializeComponent();
 
+            txtEmailInlog.Tag = txtEmailInlog.Text;
+            txtWWInlog.Tag = txtWWInlog.Text;
+
+            txtWWRegistreer.Tag = txtWWRegistreer.Text;
+            txtHerhaalWW.Tag = txtHerhaalWW.Text;
+
             // ---Notes---
-            // 
+            //
+            // Login --> controle op admin
+            //
             // Registreren controle enkel WW en herhalen, moet meer controle --> error bij enkel WW en herhalen
-            // 
-            // Reset() --> verder uitwerken
+            //
+            // Reset() --> verder uitwerken + PasswordChar
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // Login
             Gebruikers G = new Gebruikers();
 
             G.Email = txtEmailInlog.Text;
@@ -38,23 +47,26 @@ namespace prjEindwerk_LotsOfLili
             if (blnLogin == true)
             {
                 this.Hide();
-                Home Dashboard = new Home();
+                frmHome Dashboard = new frmHome();
                 Dashboard.Show();
             }
             else
             {
+                // Foutmelding
                 MessageBox.Show("Gebruikersnaam of wachtwoord is fout.");
             }
         }
 
         private void btnRegistratie_Click(object sender, EventArgs e)
         {
+            // Registratie tonen
             grbRegistreer.Visible = true;
             this.Height = 485;
         }
 
         private void btnRegistreer_Click(object sender, EventArgs e)
         {
+            // Registratie
             Gebruikers G = new Gebruikers();
 
             if (txtHerhaalWW.Text == txtWWRegistreer.Text)
@@ -69,21 +81,26 @@ namespace prjEindwerk_LotsOfLili
                 GebruikersDA.Registreren(G);
 
                 this.Hide();
-                Home Dashboard = new Home();
+                frmHome Dashboard = new frmHome();
                 Dashboard.Show();
             }
             else
             {
+                // Foutmelding
                 MessageBox.Show("Foutieve gegevens.");
             }
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
         {
+            // Login tonen
             grbRegistreer.Visible = false;
             this.Height = 460;
         }
 
+
+        // Textboxen leegmaken + terug vullen
+        
         private void Reset(object sender, EventArgs e)
         {
             TextBox txt = sender as TextBox;
@@ -106,45 +123,47 @@ namespace prjEindwerk_LotsOfLili
 
         private void txtEmailInlog_Enter(object sender, EventArgs e)
         {
-            
+            Reset(sender, e );
         }
 
         private void txtEmailInlog_Leave(object sender, EventArgs e)
         {
-
+            Reset(sender, e);
         }
 
         private void txtWWInlog_Enter(object sender, EventArgs e)
         {
-            txtWWInlog.Clear();
+            Reset(sender, e);
+            txtWWInlog.PasswordChar = '*';
         }
 
         private void txtWWInlog_Leave(object sender, EventArgs e)
         {
-            if (txtWWInlog.Text == "")
+            Reset(sender, e);
+            if (txtWWInlog.Text == "" || txtWWInlog.Text == txtWWInlog.Tag.ToString())
             {
-                txtWWInlog.Text = "Wachtwoord";
+                txtWWInlog.PasswordChar = '\0';
             }
         }
 
         private void txtWWRegistreer_Enter(object sender, EventArgs e)
         {
-
+            Reset(sender, e);
         }
 
         private void txtWWRegistreer_Leave(object sender, EventArgs e)
         {
-
+            Reset(sender, e);
         }
 
         private void txtHerhaalWW_Enter(object sender, EventArgs e)
         {
-
+            Reset(sender, e);
         }
 
         private void txtHerhaalWW_Leave(object sender, EventArgs e)
         {
-
+            Reset(sender, e);
         }
     }
 }

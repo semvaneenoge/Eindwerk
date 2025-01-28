@@ -63,6 +63,26 @@ namespace prjEindwerk_LotsOfLili.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Horloge_Boho_Chic_Mesh_Gold {
+            get {
+                object obj = ResourceManager.GetObject("Horloge Boho Chic Mesh Gold", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Horloge_Boho_Chic_Mesh_Gold1 {
+            get {
+                object obj = ResourceManager.GetObject("Horloge Boho Chic Mesh Gold1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo___Lots_of_Lili {
             get {
                 object obj = ResourceManager.GetObject("logo - Lots of Lili", resourceCulture);

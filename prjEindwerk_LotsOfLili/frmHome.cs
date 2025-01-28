@@ -29,6 +29,8 @@ namespace prjEindwerk_LotsOfLili
             // ControlPaint.DrawBorder(e.Graphics, lblBeschrijving1.DisplayRectangle, Color.Black, ButtonBorderStyle.Solid);
             //
             // Linksboven: Gebruiker + instellingen (WW wijzigen) + winkelmandje
+            //
+            // Image fixen (error and resource)
         }
 
         private void lblBorder(object sender, PaintEventArgs e)
@@ -36,6 +38,16 @@ namespace prjEindwerk_LotsOfLili
             Label lbl = sender as Label;
 
             ControlPaint.DrawBorder(e.Graphics, lblProduct1.DisplayRectangle, Color.Black, ButtonBorderStyle.Solid);
+        }
+
+        private void btnVolgende_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVorige_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

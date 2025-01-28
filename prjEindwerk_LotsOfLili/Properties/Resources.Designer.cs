@@ -69,5 +69,15 @@ namespace prjEindwerk_LotsOfLili.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Minuit_Nylon_black {
+            get {
+                object obj = ResourceManager.GetObject("Minuit Nylon black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,12 +17,25 @@ namespace prjEindwerk_LotsOfLili
         {
             InitializeComponent();
 
+            lblProduct1.Paint += lblBorder;
+            lblProduct2.Paint += lblBorder;
+            lblProduct3.Paint += lblBorder;
+            lblProduct4.Paint += lblBorder;
+            lblProduct5.Paint += lblBorder;
+            lblProduct6.Paint += lblBorder;
+
             // ---Notes---
             //
-            // multiple buttons to same eventhandler --> https://stackoverflow.com/questions/3814234/how-can-i-subscribe-multiple-buttons-to-the-same-event-handler-and-act-according
+            // ControlPaint.DrawBorder(e.Graphics, lblBeschrijving1.DisplayRectangle, Color.Black, ButtonBorderStyle.Solid);
             //
-            // ControlPaint.DrawBorder(e.Graphics, lblBeschrijving1.DisplayRectangle, Color.Black, ButtonBorderStyle.Solid); 
-            // 
+            // Linksboven: Gebruiker + instellingen (WW wijzigen) + winkelmandje
+        }
+
+        private void lblBorder(object sender, PaintEventArgs e)
+        {
+            Label lbl = sender as Label;
+
+            ControlPaint.DrawBorder(e.Graphics, lblProduct1.DisplayRectangle, Color.Black, ButtonBorderStyle.Solid);
         }
     }
 }

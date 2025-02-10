@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace prjEindwerk_LotsOfLili
             //
             // Linksboven: Gebruiker + instellingen (WW wijzigen) + winkelmandje
             //
-            // Image fixen (error and resource)
+            // Image in databank en er uit halen --> ProductDA (chatgpt)
         }
 
         private void lblBorder(object sender, PaintEventArgs e)

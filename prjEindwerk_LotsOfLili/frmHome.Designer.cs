@@ -48,19 +48,19 @@
             this.lblProduct2 = new System.Windows.Forms.Label();
             this.btnMandje3 = new System.Windows.Forms.Button();
             this.btnMandje5 = new System.Windows.Forms.Button();
-            this.picProduct1 = new System.Windows.Forms.PictureBox();
             this.lblProduct4 = new System.Windows.Forms.Label();
             this.btnMandje2 = new System.Windows.Forms.Button();
             this.btnMandje4 = new System.Windows.Forms.Button();
+            this.lblGebruiker = new System.Windows.Forms.Label();
+            this.btnMandje = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.picProduct1 = new System.Windows.Forms.PictureBox();
             this.picProduct6 = new System.Windows.Forms.PictureBox();
             this.picProduct3 = new System.Windows.Forms.PictureBox();
             this.picProduct5 = new System.Windows.Forms.PictureBox();
             this.picProduct2 = new System.Windows.Forms.PictureBox();
             this.picProduct4 = new System.Windows.Forms.PictureBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.lblGebruiker = new System.Windows.Forms.Label();
-            this.btnMandje = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.pnlHorloge1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct6)).BeginInit();
@@ -125,6 +125,7 @@
             // 
             // btnVorige
             // 
+            this.btnVorige.Enabled = false;
             this.btnVorige.Location = new System.Drawing.Point(621, 120);
             this.btnVorige.Name = "btnVorige";
             this.btnVorige.Size = new System.Drawing.Size(36, 23);
@@ -150,7 +151,7 @@
             this.lblPagina.Name = "lblPagina";
             this.lblPagina.Size = new System.Drawing.Size(65, 13);
             this.lblPagina.TabIndex = 3;
-            this.lblPagina.Text = "pagina 1 / 3";
+            this.lblPagina.Text = "pagina 1 / 2";
             // 
             // lblTitel
             // 
@@ -281,17 +282,6 @@
             this.btnMandje5.Text = "Winkelmandje";
             this.btnMandje5.UseVisualStyleBackColor = false;
             // 
-            // picProduct1
-            // 
-            this.picProduct1.BackColor = System.Drawing.Color.White;
-            this.picProduct1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picProduct1.Location = new System.Drawing.Point(19, 14);
-            this.picProduct1.Name = "picProduct1";
-            this.picProduct1.Size = new System.Drawing.Size(165, 120);
-            this.picProduct1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProduct1.TabIndex = 5;
-            this.picProduct1.TabStop = false;
-            // 
             // lblProduct4
             // 
             this.lblProduct4.ForeColor = System.Drawing.Color.Black;
@@ -324,6 +314,47 @@
             this.btnMandje4.Text = "Winkelmandje";
             this.btnMandje4.UseVisualStyleBackColor = false;
             // 
+            // lblGebruiker
+            // 
+            this.lblGebruiker.AutoSize = true;
+            this.lblGebruiker.Location = new System.Drawing.Point(24, 12);
+            this.lblGebruiker.Name = "lblGebruiker";
+            this.lblGebruiker.Size = new System.Drawing.Size(53, 13);
+            this.lblGebruiker.TabIndex = 9;
+            this.lblGebruiker.Text = "Gebruiker";
+            // 
+            // btnMandje
+            // 
+            this.btnMandje.Location = new System.Drawing.Point(27, 68);
+            this.btnMandje.Name = "btnMandje";
+            this.btnMandje.Size = new System.Drawing.Size(75, 23);
+            this.btnMandje.TabIndex = 10;
+            this.btnMandje.Text = "Winkelmandje";
+            this.btnMandje.UseVisualStyleBackColor = true;
+            this.btnMandje.Click += new System.EventHandler(this.btnMandje_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(130, 7);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdmin.TabIndex = 10;
+            this.btnAdmin.Text = "Admin menu";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Visible = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // picProduct1
+            // 
+            this.picProduct1.BackColor = System.Drawing.Color.White;
+            this.picProduct1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picProduct1.Location = new System.Drawing.Point(19, 14);
+            this.picProduct1.Name = "picProduct1";
+            this.picProduct1.Size = new System.Drawing.Size(165, 120);
+            this.picProduct1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProduct1.TabIndex = 5;
+            this.picProduct1.TabStop = false;
+            // 
             // picProduct6
             // 
             this.picProduct6.BackColor = System.Drawing.Color.White;
@@ -331,6 +362,7 @@
             this.picProduct6.Location = new System.Drawing.Point(530, 227);
             this.picProduct6.Name = "picProduct6";
             this.picProduct6.Size = new System.Drawing.Size(165, 120);
+            this.picProduct6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProduct6.TabIndex = 5;
             this.picProduct6.TabStop = false;
             // 
@@ -341,6 +373,7 @@
             this.picProduct3.Location = new System.Drawing.Point(530, 14);
             this.picProduct3.Name = "picProduct3";
             this.picProduct3.Size = new System.Drawing.Size(165, 120);
+            this.picProduct3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProduct3.TabIndex = 5;
             this.picProduct3.TabStop = false;
             // 
@@ -351,6 +384,7 @@
             this.picProduct5.Location = new System.Drawing.Point(276, 227);
             this.picProduct5.Name = "picProduct5";
             this.picProduct5.Size = new System.Drawing.Size(165, 120);
+            this.picProduct5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProduct5.TabIndex = 5;
             this.picProduct5.TabStop = false;
             // 
@@ -372,6 +406,7 @@
             this.picProduct4.Location = new System.Drawing.Point(19, 227);
             this.picProduct4.Name = "picProduct4";
             this.picProduct4.Size = new System.Drawing.Size(165, 120);
+            this.picProduct4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProduct4.TabIndex = 5;
             this.picProduct4.TabStop = false;
             // 
@@ -384,34 +419,6 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
-            // 
-            // lblGebruiker
-            // 
-            this.lblGebruiker.AutoSize = true;
-            this.lblGebruiker.Location = new System.Drawing.Point(24, 12);
-            this.lblGebruiker.Name = "lblGebruiker";
-            this.lblGebruiker.Size = new System.Drawing.Size(53, 13);
-            this.lblGebruiker.TabIndex = 9;
-            this.lblGebruiker.Text = "Gebruiker";
-            // 
-            // btnMandje
-            // 
-            this.btnMandje.Location = new System.Drawing.Point(27, 68);
-            this.btnMandje.Name = "btnMandje";
-            this.btnMandje.Size = new System.Drawing.Size(75, 23);
-            this.btnMandje.TabIndex = 10;
-            this.btnMandje.Text = "Winkelmandje";
-            this.btnMandje.UseVisualStyleBackColor = true;
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Location = new System.Drawing.Point(130, 7);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
-            this.btnAdmin.TabIndex = 10;
-            this.btnAdmin.Text = "Admin menu";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Visible = false;
             // 
             // frmHome
             // 

@@ -27,8 +27,6 @@ namespace prjEindwerk_LotsOfLili
 
             // ---Notes---
             //
-            // Login --> controle op admin
-            //
             // Registreren controle enkel WW en herhalen, moet meer controle --> error bij enkel WW en herhalen
             //
             // Reset() --> verder uitwerken + PasswordChar

@@ -62,6 +62,8 @@ namespace prjEindwerk_LotsOfLili
             // Linksboven: Gebruiker + instellingen (WW wijzigen) + winkelmandje
             //
             // Image in databank en er uit halen --> ProductDA (chatgpt)
+            //
+            // 1 panel proberen gebruiken voor meerder pagina's
         }
 
         private void frmHome_Load(object sender, EventArgs e)
@@ -89,6 +91,19 @@ namespace prjEindwerk_LotsOfLili
         private void btnVorige_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnMandje_Click(object sender, EventArgs e)
+        {
+            frmMandje Mandje = new frmMandje();
+            Mandje.Show();
+            this.Hide();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            frmAdmin Admin = new frmAdmin();
+            Admin.Show();
         }
     }
 }

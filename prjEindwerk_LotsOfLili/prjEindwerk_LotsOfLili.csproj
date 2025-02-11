@@ -51,6 +51,18 @@
   <ItemGroup>
     <Compile Include="DA\GebruikersDA.cs" />
     <Compile Include="DA\ProductDA.cs" />
+    <Compile Include="frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMandje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMandje.Designer.cs">
+      <DependentUpon>frmMandje.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +80,12 @@
     <Compile Include="Model\Producten.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMandje.resx">
+      <DependentUpon>frmMandje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStart.resx">
       <DependentUpon>frmStart.cs</DependentUpon>
     </EmbeddedResource>

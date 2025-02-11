@@ -16,7 +16,7 @@ namespace prjEindwerk_LotsOfLili
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmHome());
+            Application.Run(new frmStart());
         }
     }
 }

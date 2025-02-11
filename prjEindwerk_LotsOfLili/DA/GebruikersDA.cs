@@ -13,28 +13,36 @@ namespace prjEindwerk_LotsOfLili.DA
 {
     public class GebruikersDA
     {
-        public static bool LoginValidation(Gebruikers G)
+        public static bool LoginValidation(Gebruikers G, out bool isAdmin, out string Naam)
         {
             bool blnLogin = false;
+            isAdmin = false;
+            Naam = "";
 
             // verbinding met databank
             MySqlConnection conn = Database.MakeConnection();
 
-            string quary = "SELECT count(1) from Eindwerk.tblgebruikers where Email = @Email and Wachtwoord = @Wachtwoord";
+            string query = "SELECT count(1), Admin, Voornaam, Naam from Eindwerk.tblgebruikers where Email = @Email and Wachtwoord = @Wachtwoord";
             // Voert sql statements uit
-            MySqlCommand mySqlCmd = new MySqlCommand(quary, conn);
+            MySqlCommand mySqlCmd = new MySqlCommand(query, conn);
             // Soort commando --> text
             mySqlCmd.CommandType = CommandType.Text;
             // Parameters toevoegen
             mySqlCmd.Parameters.AddWithValue("@Email", G.Email);
             mySqlCmd.Parameters.AddWithValue("@Wachtwoord", G.Wachtwoord);
 
-            int count = Convert.ToInt32(mySqlCmd.ExecuteScalar()); // Een waarde uit de databank opvragen
+            MySqlDataReader reader = mySqlCmd.ExecuteReader();
 
-            if (count == 1)
+            if (reader.Read())
             {
-                // Correct inloggen --> boolean = true
-                blnLogin = true;
+                int count = reader.GetInt32(0);
+
+                if (count == 1)
+                {
+                    isAdmin = reader.GetInt32(1) == 1;
+                    Naam = reader.GetString(2) + " " + reader.GetString(3);
+                    blnLogin = true;
+                }
             }
 
             conn.Close();

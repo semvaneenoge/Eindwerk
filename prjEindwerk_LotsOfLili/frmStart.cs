@@ -39,15 +39,20 @@ namespace prjEindwerk_LotsOfLili
             // Login
             Gebruikers G = new Gebruikers();
 
+            bool isAdmin;
+            string Naam;
+
             G.Email = txtEmailInlog.Text;
             G.Wachtwoord = txtWWInlog.Text;
 
-            bool blnLogin = GebruikersDA.LoginValidation(G);
+            bool blnLogin = GebruikersDA.LoginValidation(G, out isAdmin, out Naam);
 
             if (blnLogin == true)
             {
                 this.Hide();
                 frmHome Dashboard = new frmHome();
+                Dashboard.isAdmin = isAdmin;
+                Dashboard.Naam = Naam;
                 Dashboard.Show();
             }
             else

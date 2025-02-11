@@ -2,10 +2,12 @@
 using prjEindwerk_LotsOfLili.Helper;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace prjEindwerk_LotsOfLili.DA
 {
@@ -15,13 +17,23 @@ namespace prjEindwerk_LotsOfLili.DA
         {
             MySqlConnection conn = Database.MakeConnection();
 
-            string query = "select Foto from tblProducten where ProductID = @ProductID";
+            PictureBox pictureBox = new PictureBox();
 
-            using (MySqlConnection connection = new MySqlConnection(conn))
+            string query = "select foto from eindwerk.tblProducten where ProductID = @ProductID";
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@ProductID", 1);
+            byte[] fotoBytes = cmd.ExecuteScalar() as byte[];
+
+            if ( fotoBytes != null )
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MemoryStream ms = new MemoryStream(fotoBytes);
 
-                cmd.Parameters.AddWithValue("@ProductID", 1);
+                pictureBox.Image = Image.FromStream(ms);
+            }
+            else
+            {
+                MessageBox.Show("Foto is niet gevonden in de database.");
             }
         }
     }

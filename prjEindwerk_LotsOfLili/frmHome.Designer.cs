@@ -59,6 +59,8 @@
             this.picProduct4 = new System.Windows.Forms.PictureBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblGebruiker = new System.Windows.Forms.Label();
+            this.btnMandje = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.pnlHorloge1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct6)).BeginInit();
@@ -178,7 +180,7 @@
             this.lblProduct1.Name = "lblProduct1";
             this.lblProduct1.Size = new System.Drawing.Size(111, 45);
             this.lblProduct1.TabIndex = 7;
-            this.lblProduct1.Text = "Minuit Nylon black";
+            this.lblProduct1.Text = "Beschrijving";
             this.lblProduct1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlHorloge1
@@ -283,7 +285,6 @@
             // 
             this.picProduct1.BackColor = System.Drawing.Color.White;
             this.picProduct1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picProduct1.Image = global::prjEindwerk_LotsOfLili.Properties.Resources.Minuit_Nylon_black;
             this.picProduct1.Location = new System.Drawing.Point(19, 14);
             this.picProduct1.Name = "picProduct1";
             this.picProduct1.Size = new System.Drawing.Size(165, 120);
@@ -360,6 +361,7 @@
             this.picProduct2.Location = new System.Drawing.Point(276, 14);
             this.picProduct2.Name = "picProduct2";
             this.picProduct2.Size = new System.Drawing.Size(165, 120);
+            this.picProduct2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProduct2.TabIndex = 5;
             this.picProduct2.TabStop = false;
             // 
@@ -392,12 +394,33 @@
             this.lblGebruiker.TabIndex = 9;
             this.lblGebruiker.Text = "Gebruiker";
             // 
+            // btnMandje
+            // 
+            this.btnMandje.Location = new System.Drawing.Point(27, 68);
+            this.btnMandje.Name = "btnMandje";
+            this.btnMandje.Size = new System.Drawing.Size(75, 23);
+            this.btnMandje.TabIndex = 10;
+            this.btnMandje.Text = "Winkelmandje";
+            this.btnMandje.UseVisualStyleBackColor = true;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(130, 7);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdmin.TabIndex = 10;
+            this.btnAdmin.Text = "Admin menu";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Visible = false;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(739, 626);
+            this.Controls.Add(this.btnAdmin);
+            this.Controls.Add(this.btnMandje);
             this.Controls.Add(this.lblGebruiker);
             this.Controls.Add(this.pnlHorloge1);
             this.Controls.Add(this.lblTitel);
@@ -415,6 +438,7 @@
             this.Name = "frmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.frmHome_Load);
             this.pnlHorloge1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProduct1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct6)).EndInit();
@@ -461,5 +485,7 @@
         private System.Windows.Forms.Button btnMandje2;
         private System.Windows.Forms.Button btnMandje4;
         private System.Windows.Forms.Label lblGebruiker;
+        private System.Windows.Forms.Button btnMandje;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }

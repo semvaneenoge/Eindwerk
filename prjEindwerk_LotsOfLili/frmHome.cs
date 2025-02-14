@@ -64,6 +64,8 @@ namespace prjEindwerk_LotsOfLili
             // Image in databank en er uit halen --> ProductDA (chatgpt)
             //
             // 1 panel proberen gebruiken voor meerder pagina's
+            //
+            // Test
         }
 
         private void frmHome_Load(object sender, EventArgs e)

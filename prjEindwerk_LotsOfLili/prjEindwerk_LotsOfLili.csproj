@@ -121,8 +121,5 @@
   <ItemGroup>
     <None Include="Resources\Minuit Nylon black.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Horloge Boho Chic Mesh Gold.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgendas = new System.Windows.Forms.Button();
             this.btnHorloges = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnPortemonnee = new System.Windows.Forms.Button();
+            this.btnPins = new System.Windows.Forms.Button();
             this.btnVorige = new System.Windows.Forms.Button();
             this.btnVolgende = new System.Windows.Forms.Button();
             this.lblPagina = new System.Windows.Forms.Label();
@@ -48,18 +48,18 @@
             this.lblProduct2 = new System.Windows.Forms.Label();
             this.btnMandje3 = new System.Windows.Forms.Button();
             this.btnMandje5 = new System.Windows.Forms.Button();
+            this.picProduct1 = new System.Windows.Forms.PictureBox();
             this.lblProduct4 = new System.Windows.Forms.Label();
             this.btnMandje2 = new System.Windows.Forms.Button();
             this.btnMandje4 = new System.Windows.Forms.Button();
-            this.lblGebruiker = new System.Windows.Forms.Label();
-            this.btnMandje = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.picProduct1 = new System.Windows.Forms.PictureBox();
             this.picProduct6 = new System.Windows.Forms.PictureBox();
             this.picProduct3 = new System.Windows.Forms.PictureBox();
             this.picProduct5 = new System.Windows.Forms.PictureBox();
             this.picProduct2 = new System.Windows.Forms.PictureBox();
             this.picProduct4 = new System.Windows.Forms.PictureBox();
+            this.lblGebruiker = new System.Windows.Forms.Label();
+            this.btnMandje = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnlHorloge1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct1)).BeginInit();
@@ -89,44 +89,44 @@
             // 
             // btnAgendas
             // 
-            this.btnAgendas.Location = new System.Drawing.Point(35, 109);
+            this.btnAgendas.Location = new System.Drawing.Point(25, 108);
             this.btnAgendas.Name = "btnAgendas";
-            this.btnAgendas.Size = new System.Drawing.Size(75, 23);
+            this.btnAgendas.Size = new System.Drawing.Size(85, 25);
             this.btnAgendas.TabIndex = 2;
             this.btnAgendas.Text = "Agendas";
             this.btnAgendas.UseVisualStyleBackColor = true;
             // 
             // btnHorloges
             // 
-            this.btnHorloges.Location = new System.Drawing.Point(194, 109);
+            this.btnHorloges.Location = new System.Drawing.Point(184, 108);
             this.btnHorloges.Name = "btnHorloges";
-            this.btnHorloges.Size = new System.Drawing.Size(75, 23);
+            this.btnHorloges.Size = new System.Drawing.Size(85, 25);
             this.btnHorloges.TabIndex = 2;
             this.btnHorloges.Text = "Horloges";
             this.btnHorloges.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnPortemonnee
             // 
-            this.button3.Location = new System.Drawing.Point(341, 109);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button1";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPortemonnee.Location = new System.Drawing.Point(331, 108);
+            this.btnPortemonnee.Name = "btnPortemonnee";
+            this.btnPortemonnee.Size = new System.Drawing.Size(85, 25);
+            this.btnPortemonnee.TabIndex = 2;
+            this.btnPortemonnee.Text = "Portemonnees";
+            this.btnPortemonnee.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnPins
             // 
-            this.button4.Location = new System.Drawing.Point(490, 109);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnPins.Location = new System.Drawing.Point(480, 108);
+            this.btnPins.Name = "btnPins";
+            this.btnPins.Size = new System.Drawing.Size(85, 25);
+            this.btnPins.TabIndex = 2;
+            this.btnPins.Text = "Pins";
+            this.btnPins.UseVisualStyleBackColor = true;
             // 
             // btnVorige
             // 
             this.btnVorige.Enabled = false;
-            this.btnVorige.Location = new System.Drawing.Point(621, 120);
+            this.btnVorige.Location = new System.Drawing.Point(631, 118);
             this.btnVorige.Name = "btnVorige";
             this.btnVorige.Size = new System.Drawing.Size(36, 23);
             this.btnVorige.TabIndex = 2;
@@ -136,7 +136,7 @@
             // 
             // btnVolgende
             // 
-            this.btnVolgende.Location = new System.Drawing.Point(663, 120);
+            this.btnVolgende.Location = new System.Drawing.Point(673, 118);
             this.btnVolgende.Name = "btnVolgende";
             this.btnVolgende.Size = new System.Drawing.Size(36, 23);
             this.btnVolgende.TabIndex = 2;
@@ -147,7 +147,7 @@
             // lblPagina
             // 
             this.lblPagina.AutoSize = true;
-            this.lblPagina.Location = new System.Drawing.Point(626, 104);
+            this.lblPagina.Location = new System.Drawing.Point(636, 102);
             this.lblPagina.Name = "lblPagina";
             this.lblPagina.Size = new System.Drawing.Size(65, 13);
             this.lblPagina.TabIndex = 3;
@@ -282,6 +282,17 @@
             this.btnMandje5.Text = "Winkelmandje";
             this.btnMandje5.UseVisualStyleBackColor = false;
             // 
+            // picProduct1
+            // 
+            this.picProduct1.BackColor = System.Drawing.Color.White;
+            this.picProduct1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picProduct1.Location = new System.Drawing.Point(19, 14);
+            this.picProduct1.Name = "picProduct1";
+            this.picProduct1.Size = new System.Drawing.Size(165, 120);
+            this.picProduct1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProduct1.TabIndex = 5;
+            this.picProduct1.TabStop = false;
+            // 
             // lblProduct4
             // 
             this.lblProduct4.ForeColor = System.Drawing.Color.Black;
@@ -313,47 +324,6 @@
             this.btnMandje4.TabIndex = 6;
             this.btnMandje4.Text = "Winkelmandje";
             this.btnMandje4.UseVisualStyleBackColor = false;
-            // 
-            // lblGebruiker
-            // 
-            this.lblGebruiker.AutoSize = true;
-            this.lblGebruiker.Location = new System.Drawing.Point(24, 12);
-            this.lblGebruiker.Name = "lblGebruiker";
-            this.lblGebruiker.Size = new System.Drawing.Size(53, 13);
-            this.lblGebruiker.TabIndex = 9;
-            this.lblGebruiker.Text = "Gebruiker";
-            // 
-            // btnMandje
-            // 
-            this.btnMandje.Location = new System.Drawing.Point(27, 68);
-            this.btnMandje.Name = "btnMandje";
-            this.btnMandje.Size = new System.Drawing.Size(75, 23);
-            this.btnMandje.TabIndex = 10;
-            this.btnMandje.Text = "Winkelmandje";
-            this.btnMandje.UseVisualStyleBackColor = true;
-            this.btnMandje.Click += new System.EventHandler(this.btnMandje_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Location = new System.Drawing.Point(130, 7);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
-            this.btnAdmin.TabIndex = 10;
-            this.btnAdmin.Text = "Admin menu";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Visible = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
-            // picProduct1
-            // 
-            this.picProduct1.BackColor = System.Drawing.Color.White;
-            this.picProduct1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picProduct1.Location = new System.Drawing.Point(19, 14);
-            this.picProduct1.Name = "picProduct1";
-            this.picProduct1.Size = new System.Drawing.Size(165, 120);
-            this.picProduct1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProduct1.TabIndex = 5;
-            this.picProduct1.TabStop = false;
             // 
             // picProduct6
             // 
@@ -410,6 +380,36 @@
             this.picProduct4.TabIndex = 5;
             this.picProduct4.TabStop = false;
             // 
+            // lblGebruiker
+            // 
+            this.lblGebruiker.AutoSize = true;
+            this.lblGebruiker.Location = new System.Drawing.Point(24, 12);
+            this.lblGebruiker.Name = "lblGebruiker";
+            this.lblGebruiker.Size = new System.Drawing.Size(53, 13);
+            this.lblGebruiker.TabIndex = 9;
+            this.lblGebruiker.Text = "Gebruiker";
+            // 
+            // btnMandje
+            // 
+            this.btnMandje.Location = new System.Drawing.Point(25, 65);
+            this.btnMandje.Name = "btnMandje";
+            this.btnMandje.Size = new System.Drawing.Size(75, 25);
+            this.btnMandje.TabIndex = 10;
+            this.btnMandje.Text = "Winkelmandje";
+            this.btnMandje.UseVisualStyleBackColor = true;
+            this.btnMandje.Click += new System.EventHandler(this.btnMandje_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(130, 7);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(75, 25);
+            this.btnAdmin.TabIndex = 10;
+            this.btnAdmin.Text = "Admin menu";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Visible = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // picLogo
             // 
             this.picLogo.Image = global::prjEindwerk_LotsOfLili.Properties.Resources.logo___Lots_of_Lili;
@@ -434,8 +434,8 @@
             this.Controls.Add(this.lblPagina);
             this.Controls.Add(this.btnVolgende);
             this.Controls.Add(this.btnVorige);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnPins);
+            this.Controls.Add(this.btnPortemonnee);
             this.Controls.Add(this.btnHorloges);
             this.Controls.Add(this.btnAgendas);
             this.Controls.Add(this.label2);
@@ -466,8 +466,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAgendas;
         private System.Windows.Forms.Button btnHorloges;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnPortemonnee;
+        private System.Windows.Forms.Button btnPins;
         private System.Windows.Forms.Button btnVorige;
         private System.Windows.Forms.Button btnVolgende;
         private System.Windows.Forms.Label lblPagina;

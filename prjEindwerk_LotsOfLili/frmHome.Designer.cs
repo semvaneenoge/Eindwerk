@@ -40,7 +40,7 @@
             this.lblTitel = new System.Windows.Forms.Label();
             this.btnMandje1 = new System.Windows.Forms.Button();
             this.lblProduct1 = new System.Windows.Forms.Label();
-            this.pnlHorloge1 = new System.Windows.Forms.Panel();
+            this.pnlProducten = new System.Windows.Forms.Panel();
             this.lblProduct6 = new System.Windows.Forms.Label();
             this.lblProduct3 = new System.Windows.Forms.Label();
             this.lblProduct5 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.btnMandje = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.pnlHorloge1.SuspendLayout();
+            this.pnlProducten.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct3)).BeginInit();
@@ -98,6 +98,7 @@
             // 
             // btnHorloges
             // 
+            this.btnHorloges.Enabled = false;
             this.btnHorloges.Location = new System.Drawing.Point(184, 108);
             this.btnHorloges.Name = "btnHorloges";
             this.btnHorloges.Size = new System.Drawing.Size(85, 25);
@@ -184,30 +185,30 @@
             this.lblProduct1.Text = "Beschrijving";
             this.lblProduct1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlHorloge1
+            // pnlProducten
             // 
-            this.pnlHorloge1.Controls.Add(this.btnMandje1);
-            this.pnlHorloge1.Controls.Add(this.lblProduct1);
-            this.pnlHorloge1.Controls.Add(this.lblProduct6);
-            this.pnlHorloge1.Controls.Add(this.lblProduct3);
-            this.pnlHorloge1.Controls.Add(this.lblProduct5);
-            this.pnlHorloge1.Controls.Add(this.btnMandje6);
-            this.pnlHorloge1.Controls.Add(this.lblProduct2);
-            this.pnlHorloge1.Controls.Add(this.btnMandje3);
-            this.pnlHorloge1.Controls.Add(this.btnMandje5);
-            this.pnlHorloge1.Controls.Add(this.picProduct1);
-            this.pnlHorloge1.Controls.Add(this.lblProduct4);
-            this.pnlHorloge1.Controls.Add(this.btnMandje2);
-            this.pnlHorloge1.Controls.Add(this.btnMandje4);
-            this.pnlHorloge1.Controls.Add(this.picProduct6);
-            this.pnlHorloge1.Controls.Add(this.picProduct3);
-            this.pnlHorloge1.Controls.Add(this.picProduct5);
-            this.pnlHorloge1.Controls.Add(this.picProduct2);
-            this.pnlHorloge1.Controls.Add(this.picProduct4);
-            this.pnlHorloge1.Location = new System.Drawing.Point(12, 202);
-            this.pnlHorloge1.Name = "pnlHorloge1";
-            this.pnlHorloge1.Size = new System.Drawing.Size(714, 412);
-            this.pnlHorloge1.TabIndex = 8;
+            this.pnlProducten.Controls.Add(this.btnMandje1);
+            this.pnlProducten.Controls.Add(this.lblProduct1);
+            this.pnlProducten.Controls.Add(this.lblProduct6);
+            this.pnlProducten.Controls.Add(this.lblProduct3);
+            this.pnlProducten.Controls.Add(this.lblProduct5);
+            this.pnlProducten.Controls.Add(this.btnMandje6);
+            this.pnlProducten.Controls.Add(this.lblProduct2);
+            this.pnlProducten.Controls.Add(this.btnMandje3);
+            this.pnlProducten.Controls.Add(this.btnMandje5);
+            this.pnlProducten.Controls.Add(this.picProduct1);
+            this.pnlProducten.Controls.Add(this.lblProduct4);
+            this.pnlProducten.Controls.Add(this.btnMandje2);
+            this.pnlProducten.Controls.Add(this.btnMandje4);
+            this.pnlProducten.Controls.Add(this.picProduct6);
+            this.pnlProducten.Controls.Add(this.picProduct3);
+            this.pnlProducten.Controls.Add(this.picProduct5);
+            this.pnlProducten.Controls.Add(this.picProduct2);
+            this.pnlProducten.Controls.Add(this.picProduct4);
+            this.pnlProducten.Location = new System.Drawing.Point(12, 202);
+            this.pnlProducten.Name = "pnlProducten";
+            this.pnlProducten.Size = new System.Drawing.Size(714, 412);
+            this.pnlProducten.TabIndex = 8;
             // 
             // lblProduct6
             // 
@@ -383,7 +384,7 @@
             // lblGebruiker
             // 
             this.lblGebruiker.AutoSize = true;
-            this.lblGebruiker.Location = new System.Drawing.Point(24, 12);
+            this.lblGebruiker.Location = new System.Drawing.Point(31, 9);
             this.lblGebruiker.Name = "lblGebruiker";
             this.lblGebruiker.Size = new System.Drawing.Size(53, 13);
             this.lblGebruiker.TabIndex = 9;
@@ -393,7 +394,7 @@
             // 
             this.btnMandje.Location = new System.Drawing.Point(25, 65);
             this.btnMandje.Name = "btnMandje";
-            this.btnMandje.Size = new System.Drawing.Size(75, 25);
+            this.btnMandje.Size = new System.Drawing.Size(85, 25);
             this.btnMandje.TabIndex = 10;
             this.btnMandje.Text = "Winkelmandje";
             this.btnMandje.UseVisualStyleBackColor = true;
@@ -401,9 +402,9 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(130, 7);
+            this.btnAdmin.Location = new System.Drawing.Point(25, 38);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(75, 25);
+            this.btnAdmin.Size = new System.Drawing.Size(85, 25);
             this.btnAdmin.TabIndex = 10;
             this.btnAdmin.Text = "Admin menu";
             this.btnAdmin.UseVisualStyleBackColor = true;
@@ -429,7 +430,7 @@
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnMandje);
             this.Controls.Add(this.lblGebruiker);
-            this.Controls.Add(this.pnlHorloge1);
+            this.Controls.Add(this.pnlProducten);
             this.Controls.Add(this.lblTitel);
             this.Controls.Add(this.lblPagina);
             this.Controls.Add(this.btnVolgende);
@@ -446,7 +447,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.frmHome_Load);
-            this.pnlHorloge1.ResumeLayout(false);
+            this.pnlProducten.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProduct1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct3)).EndInit();
@@ -475,7 +476,7 @@
         private System.Windows.Forms.PictureBox picProduct1;
         private System.Windows.Forms.Button btnMandje1;
         private System.Windows.Forms.Label lblProduct1;
-        private System.Windows.Forms.Panel pnlHorloge1;
+        private System.Windows.Forms.Panel pnlProducten;
         private System.Windows.Forms.PictureBox picProduct6;
         private System.Windows.Forms.Label lblProduct6;
         private System.Windows.Forms.PictureBox picProduct3;

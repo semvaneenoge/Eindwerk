@@ -1,5 +1,6 @@
 ﻿using MySql.Data;
 using MySql.Data.MySqlClient;
+using prjEindwerk_LotsOfLili.DA;
 using prjEindwerk_LotsOfLili.Helper;
 using System;
 using System.Collections.Generic;
@@ -30,32 +31,46 @@ namespace prjEindwerk_LotsOfLili
             lblProduct5.Paint += lblBorder;
             lblProduct6.Paint += lblBorder;
 
-            MySqlConnection conn = Database.MakeConnection();
+            ProductDA product = new ProductDA();
 
-            string query = "select Foto, Naam from eindwerk.tblProducten where ProductID = @ProductID";
-
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@ProductID", 1);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
+            for (int i = 1; i <= 6; i++)
             {
-                byte[] fotoBytes = reader["Foto"] as byte[];
-                string productNaam = reader["Naam"].ToString();
+                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + i];
+                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + i];
 
-                if (fotoBytes != null)
+                if (!product.HorlogesInvoegen(i, picTest, lblTest))
                 {
-                    MemoryStream ms = new MemoryStream(fotoBytes);
-
-                    picProduct1.Image = Image.FromStream(ms);
-                    lblProduct1.Text = productNaam;
-                }
-                else
-                {
-                    MessageBox.Show("Foto is niet gevonden in de database.");
+                    picTest.Image = null;
+                    lblTest.Text = "Geen product gevonden";
                 }
             }
+
+            //MySqlConnection conn = Database.MakeConnection();
+
+            //string query = "select Foto, Naam from eindwerk.tblHorloge where ID = @ID";
+
+            //MySqlCommand cmd = new MySqlCommand(query, conn);
+            //cmd.Parameters.AddWithValue("@ID", 1);
+
+            //MySqlDataReader reader = cmd.ExecuteReader();
+
+            //if (reader.Read())
+            //{
+            //    byte[] fotoBytes = reader["Foto"] as byte[];
+            //    string productNaam = reader["Naam"].ToString();
+
+            //    if (fotoBytes != null)
+            //    {
+            //        MemoryStream ms = new MemoryStream(fotoBytes);
+
+            //        picProduct1.Image = Image.FromStream(ms);
+            //        lblProduct1.Text = productNaam;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Foto is niet gevonden in de database.");
+            //    }
+            //}
 
             // ---Notes---
             //

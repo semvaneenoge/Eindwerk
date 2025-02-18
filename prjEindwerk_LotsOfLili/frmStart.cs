@@ -30,6 +30,8 @@ namespace prjEindwerk_LotsOfLili
             // Registreren controle enkel WW en herhalen, moet meer controle --> error bij enkel WW en herhalen
             //
             // Reset() --> verder uitwerken + PasswordChar
+            // 
+            // Assign login/registreer to enter
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

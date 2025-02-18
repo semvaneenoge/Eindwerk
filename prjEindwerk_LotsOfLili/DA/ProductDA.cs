@@ -13,27 +13,45 @@ namespace prjEindwerk_LotsOfLili.DA
 {
     public class ProductDA
     {
-        public static void Invoegen()
+        public bool HorlogesInvoegen(int ID, PictureBox pictureBoxTest, Label labelTest)
         {
             MySqlConnection conn = Database.MakeConnection();
 
-            PictureBox pictureBox = new PictureBox();
-
-            string query = "select foto from eindwerk.tblProducten where ProductID = @ProductID";
+            string query = "select Foto, Naam from eindwerk.tblHorloge where ID = @ID";
 
             MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@ProductID", 1);
-            byte[] fotoBytes = cmd.ExecuteScalar() as byte[];
+            cmd.Parameters.AddWithValue("@ID", ID);
 
-            if ( fotoBytes != null )
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
             {
-                MemoryStream ms = new MemoryStream(fotoBytes);
+                byte[] fotoBytes = reader["Foto"] as byte[];
+                string productNaam = reader["Naam"].ToString();
 
-                pictureBox.Image = Image.FromStream(ms);
+                if (fotoBytes != null)
+                {
+                    MemoryStream ms = new MemoryStream(fotoBytes);
+
+                    pictureBoxTest.Image = Image.FromStream(ms);
+                }
+                else
+                {
+                    pictureBoxTest.Image = null;
+                    MessageBox.Show("Foto is niet gevonden in de database.");
+                }
+
+                labelTest.Text = productNaam;
+
+                conn.Close();
+                return true;
             }
             else
             {
-                MessageBox.Show("Foto is niet gevonden in de database.");
+                labelTest.Text = "Geen product gevonden";
+                pictureBoxTest = null;
+                conn.Close();
+                return false;
             }
         }
     }

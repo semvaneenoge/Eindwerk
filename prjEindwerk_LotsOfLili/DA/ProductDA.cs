@@ -13,44 +13,63 @@ namespace prjEindwerk_LotsOfLili.DA
 {
     public class ProductDA
     {
+
+        // ---Notes---
+        //
+        // Dictionary usage --> foreach = get all images... (chatgpt, ask for usage)
+
         public bool HorlogesInvoegen(int ID, PictureBox pictureBoxTest, Label labelTest)
         {
-            MySqlConnection conn = Database.MakeConnection();
+            Dictionary<int, Image> imagesByID = new Dictionary<int, Image>();
 
-            string query = "select Foto, Naam from eindwerk.tblHorloge where ID = @ID";
-
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@ID", ID);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
+            try
             {
-                byte[] fotoBytes = reader["Foto"] as byte[];
-                string productNaam = reader["Naam"].ToString();
-
-                if (fotoBytes != null)
+                using (MySqlConnection conn = Database.MakeConnection())
                 {
-                    MemoryStream ms = new MemoryStream(fotoBytes);
+                    string query = "select Foto, Naam from eindwerk.tblHorloge where ID = @ID";
 
-                    pictureBoxTest.Image = Image.FromStream(ms);
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ID", ID);
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                byte[] fotoBytes = reader["Foto"] as byte[];
+                                string productNaam = reader["Naam"].ToString();
+
+                                if (fotoBytes != null)
+                                {
+                                    using (MemoryStream ms = new MemoryStream(fotoBytes))
+                                    {
+                                        Image img = Image.FromStream(ms);
+                                        pictureBoxTest.Image = img;
+                                        imagesByID.Add(ID, img);
+                                    }
+                                }
+                                else
+                                {
+                                    pictureBoxTest.Image = null;
+                                    MessageBox.Show("Foto is niet gevonden in de database.");
+                                }
+
+                                labelTest.Text = productNaam;
+                                return true;
+                            }
+                            else
+                            {
+                                labelTest.Text = "Geen product gevonden";
+                                pictureBoxTest.Image = null;
+                                return false;
+                            }
+                        }
+                    }
                 }
-                else
-                {
-                    pictureBoxTest.Image = null;
-                    MessageBox.Show("Foto is niet gevonden in de database.");
-                }
-
-                labelTest.Text = productNaam;
-
-                conn.Close();
-                return true;
             }
-            else
+            catch (Exception ex)
             {
-                labelTest.Text = "Geen product gevonden";
-                pictureBoxTest = null;
-                conn.Close();
+                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
                 return false;
             }
         }

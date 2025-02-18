@@ -37,7 +37,7 @@
             this.btnVorige = new System.Windows.Forms.Button();
             this.btnVolgende = new System.Windows.Forms.Button();
             this.lblPagina = new System.Windows.Forms.Label();
-            this.lblTitel = new System.Windows.Forms.Label();
+            this.lblTitelProduct = new System.Windows.Forms.Label();
             this.btnMandje1 = new System.Windows.Forms.Button();
             this.lblProduct1 = new System.Windows.Forms.Label();
             this.pnlProducten = new System.Windows.Forms.Panel();
@@ -154,15 +154,15 @@
             this.lblPagina.TabIndex = 3;
             this.lblPagina.Text = "pagina 1 / 2";
             // 
-            // lblTitel
+            // lblTitelProduct
             // 
-            this.lblTitel.AutoSize = true;
-            this.lblTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitel.Location = new System.Drawing.Point(20, 161);
-            this.lblTitel.Name = "lblTitel";
-            this.lblTitel.Size = new System.Drawing.Size(136, 37);
-            this.lblTitel.TabIndex = 4;
-            this.lblTitel.Text = "Horloge";
+            this.lblTitelProduct.AutoSize = true;
+            this.lblTitelProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitelProduct.Location = new System.Drawing.Point(20, 161);
+            this.lblTitelProduct.Name = "lblTitelProduct";
+            this.lblTitelProduct.Size = new System.Drawing.Size(136, 37);
+            this.lblTitelProduct.TabIndex = 4;
+            this.lblTitelProduct.Text = "Horloge";
             // 
             // btnMandje1
             // 
@@ -182,7 +182,7 @@
             this.lblProduct1.Name = "lblProduct1";
             this.lblProduct1.Size = new System.Drawing.Size(111, 45);
             this.lblProduct1.TabIndex = 7;
-            this.lblProduct1.Text = "Beschrijving";
+            this.lblProduct1.Text = "Naam + prijs";
             this.lblProduct1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlProducten
@@ -217,7 +217,7 @@
             this.lblProduct6.Name = "lblProduct6";
             this.lblProduct6.Size = new System.Drawing.Size(111, 45);
             this.lblProduct6.TabIndex = 7;
-            this.lblProduct6.Text = "Beschrijving";
+            this.lblProduct6.Text = "Naam + prijs";
             this.lblProduct6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProduct3
@@ -227,7 +227,7 @@
             this.lblProduct3.Name = "lblProduct3";
             this.lblProduct3.Size = new System.Drawing.Size(111, 45);
             this.lblProduct3.TabIndex = 7;
-            this.lblProduct3.Text = "Beschrijving";
+            this.lblProduct3.Text = "Naam + prijs";
             this.lblProduct3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProduct5
@@ -237,7 +237,7 @@
             this.lblProduct5.Name = "lblProduct5";
             this.lblProduct5.Size = new System.Drawing.Size(111, 45);
             this.lblProduct5.TabIndex = 7;
-            this.lblProduct5.Text = "Beschrijving";
+            this.lblProduct5.Text = "Naam + prijs";
             this.lblProduct5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMandje6
@@ -258,7 +258,7 @@
             this.lblProduct2.Name = "lblProduct2";
             this.lblProduct2.Size = new System.Drawing.Size(111, 45);
             this.lblProduct2.TabIndex = 7;
-            this.lblProduct2.Text = "Beschrijving";
+            this.lblProduct2.Text = "Naam + prijs";
             this.lblProduct2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMandje3
@@ -301,7 +301,7 @@
             this.lblProduct4.Name = "lblProduct4";
             this.lblProduct4.Size = new System.Drawing.Size(111, 45);
             this.lblProduct4.TabIndex = 7;
-            this.lblProduct4.Text = "Beschrijving";
+            this.lblProduct4.Text = "Naam + prijs";
             this.lblProduct4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMandje2
@@ -431,7 +431,7 @@
             this.Controls.Add(this.btnMandje);
             this.Controls.Add(this.lblGebruiker);
             this.Controls.Add(this.pnlProducten);
-            this.Controls.Add(this.lblTitel);
+            this.Controls.Add(this.lblTitelProduct);
             this.Controls.Add(this.lblPagina);
             this.Controls.Add(this.btnVolgende);
             this.Controls.Add(this.btnVorige);
@@ -472,7 +472,7 @@
         private System.Windows.Forms.Button btnVorige;
         private System.Windows.Forms.Button btnVolgende;
         private System.Windows.Forms.Label lblPagina;
-        private System.Windows.Forms.Label lblTitel;
+        private System.Windows.Forms.Label lblTitelProduct;
         private System.Windows.Forms.PictureBox picProduct1;
         private System.Windows.Forms.Button btnMandje1;
         private System.Windows.Forms.Label lblProduct1;

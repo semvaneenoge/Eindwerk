@@ -24,6 +24,14 @@ namespace prjEindwerk_LotsOfLili
         {
             InitializeComponent();
 
+            // ---Notes---
+            //
+            // Linksboven: Gebruiker + instellingen (WW wijzigen) + winkelmandje
+            //
+            // Image in databank en er uit halen --> ProductDA (chatgpt)
+            //
+            // 1 panel proberen gebruiken voor meerder pagina's
+
             lblProduct1.Paint += lblBorder;
             lblProduct2.Paint += lblBorder;
             lblProduct3.Paint += lblBorder;
@@ -44,14 +52,6 @@ namespace prjEindwerk_LotsOfLili
                     lblTest.Text = "Geen product gevonden";
                 }
             }
-
-            // ---Notes---
-            //
-            // Linksboven: Gebruiker + instellingen (WW wijzigen) + winkelmandje
-            //
-            // Image in databank en er uit halen --> ProductDA (chatgpt)
-            //
-            // 1 panel proberen gebruiken voor meerder pagina's
         }
 
         private void frmHome_Load(object sender, EventArgs e)

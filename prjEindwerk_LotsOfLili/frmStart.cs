@@ -19,12 +19,6 @@ namespace prjEindwerk_LotsOfLili
         {
             InitializeComponent();
 
-            txtEmailInlog.Tag = txtEmailInlog.Text;
-            txtWWInlog.Tag = txtWWInlog.Text;
-
-            txtWWRegistreer.Tag = txtWWRegistreer.Text;
-            txtHerhaalWW.Tag = txtHerhaalWW.Text;
-
             // ---Notes---
             //
             // Registreren controle enkel WW en herhalen, moet meer controle --> error bij enkel WW en herhalen
@@ -32,6 +26,12 @@ namespace prjEindwerk_LotsOfLili
             // Reset() --> verder uitwerken + PasswordChar
             // 
             // Assign login/registreer to enter
+
+            txtEmailInlog.Tag = txtEmailInlog.Text;
+            txtWWInlog.Tag = txtWWInlog.Text;
+
+            txtWWRegistreer.Tag = txtWWRegistreer.Text;
+            txtHerhaalWW.Tag = txtHerhaalWW.Text;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

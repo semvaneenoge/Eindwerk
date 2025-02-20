@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace prjEindwerk_LotsOfLili.DA
 {
@@ -18,10 +19,10 @@ namespace prjEindwerk_LotsOfLili.DA
         //
         // Dictionary usage --> foreach = get all images... (chatgpt, ask for usage)
 
+        Dictionary<int, Image> imagesByID = new Dictionary<int, Image>();
+
         public bool HorlogesInvoegen(int ID, PictureBox pictureBoxTest, Label labelTest)
         {
-            Dictionary<int, Image> imagesByID = new Dictionary<int, Image>();
-
             try
             {
                 using (MySqlConnection conn = Database.MakeConnection())

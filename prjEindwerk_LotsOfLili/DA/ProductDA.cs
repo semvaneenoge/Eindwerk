@@ -17,52 +17,44 @@ namespace prjEindwerk_LotsOfLili.DA
 
         // ---Notes---
         //
-        // Dictionary usage --> foreach = get all images... (chatgpt, ask for usage)
+        // Meer producten
 
-        Dictionary<int, Image> imagesByID = new Dictionary<int, Image>();
+        public List<(int ID, string Naam, Image Foto)> Horloges = new List<(int ID, string Name, Image Foto)>();
+        public List<(int ID, string Naam, Image Foto)> Agendas = new List<(int ID, string Name, Image Foto)>();
+        public List<(int ID, string Naam, Image Foto)> Portemonnees = new List<(int ID, string Name, Image Foto)>();
+        public List<(int ID, string Naam, Image Foto)> Pins = new List<(int ID, string Name, Image Foto)>();
 
-        public bool HorlogesInvoegen(int ID, PictureBox pictureBoxTest, Label labelTest)
+        public void HorlogesInvoegen()
         {
             try
             {
                 using (MySqlConnection conn = Database.MakeConnection())
                 {
-                    string query = "select Foto, Naam from eindwerk.tblHorloge where ID = @ID";
+                    string query = "select ID, Foto, Naam from eindwerk.tblHorloge";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@ID", ID);
-
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            if (reader.Read())
+                            while (reader.Read())
                             {
-                                byte[] fotoBytes = reader["Foto"] as byte[];
+                                int ID = Convert.ToInt32(reader["ID"]);
                                 string productNaam = reader["Naam"].ToString();
+                                Image img = null;
+                                byte[] fotoBytes = reader["Foto"] as byte[];
 
                                 if (fotoBytes != null)
                                 {
                                     using (MemoryStream ms = new MemoryStream(fotoBytes))
                                     {
-                                        Image img = Image.FromStream(ms);
-                                        pictureBoxTest.Image = img;
-                                        imagesByID.Add(ID, img);
+                                        img = Image.FromStream(ms);
+
+                                        if (!Horloges.Any(p => p.ID == ID))
+                                        {
+                                            Horloges.Add((ID, productNaam, img));
+                                        }
                                     }
                                 }
-                                else
-                                {
-                                    pictureBoxTest.Image = null;
-                                    MessageBox.Show("Foto is niet gevonden in de database.");
-                                }
-
-                                labelTest.Text = productNaam;
-                                return true;
-                            }
-                            else
-                            {
-                                labelTest.Text = "Geen product gevonden";
-                                pictureBoxTest.Image = null;
-                                return false;
                             }
                         }
                     }
@@ -71,7 +63,6 @@ namespace prjEindwerk_LotsOfLili.DA
             catch (Exception ex)
             {
                 MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
-                return false;
             }
         }
     }

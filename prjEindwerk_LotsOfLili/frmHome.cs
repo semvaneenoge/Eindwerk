@@ -30,7 +30,7 @@ namespace prjEindwerk_LotsOfLili
             //
             // Image in databank en er uit halen --> ProductDA (chatgpt)
             //
-            // 1 panel proberen gebruiken voor meerder pagina's
+            // !!!1 panel proberen gebruiken voor meerder pagina's !!!
 
             lblProduct1.Paint += lblBorder;
             lblProduct2.Paint += lblBorder;
@@ -39,17 +39,37 @@ namespace prjEindwerk_LotsOfLili
             lblProduct5.Paint += lblBorder;
             lblProduct6.Paint += lblBorder;
 
-            ProductDA product = new ProductDA();
+            ProductDA p = new ProductDA();
+            p.HorlogesInvoegen();
 
-            for (int i = 1; i <= 6; i++)
+            for (int i = 0; i < 6; i++)
             {
-                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + i];
-                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + i];
+                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
 
-                if (!product.HorlogesInvoegen(i, picTest, lblTest))
+                if (i < p.Horloges.Count)
                 {
-                    picTest.Image = null;
-                    lblTest.Text = "Geen product gevonden";
+                    var product = p.Horloges[i];
+
+                    if (picTest != null)
+                    {
+                        picTest.Image = product.Foto;
+                    }
+                    if (lblTest != null)
+                    {
+                        lblTest.Text = product.Naam;
+                    }
+                }
+                else
+                {
+                    if (picTest != null)
+                    {
+                        picTest.Image = null;
+                    }
+                    if (lblTest != null)
+                    {
+                        lblTest.Text = "Geen product gevonden";
+                    }
                 }
             }
         }

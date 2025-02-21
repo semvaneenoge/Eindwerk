@@ -19,10 +19,10 @@ namespace prjEindwerk_LotsOfLili.DA
         //
         // Meer producten
 
-        public List<(int ID, string Naam, Image Foto)> Horloges = new List<(int ID, string Name, Image Foto)>();
-        public List<(int ID, string Naam, Image Foto)> Agendas = new List<(int ID, string Name, Image Foto)>();
-        public List<(int ID, string Naam, Image Foto)> Portemonnees = new List<(int ID, string Name, Image Foto)>();
-        public List<(int ID, string Naam, Image Foto)> Pins = new List<(int ID, string Name, Image Foto)>();
+        public List<(int ID, string Naam, Double Prijs, Image Foto)> Horloges = new List<(int ID, string Naam, Double Prijs, Image Foto)>();
+        public List<(int ID, string Naam, Double Prijs, Image Foto)> Agendas = new List<(int ID, string Naam, Double Prijs, Image Foto)>();
+        public List<(int ID, string Naam, Double Prijs, Image Foto)> Portemonnees = new List<(int ID, string Naam, Double Prijs, Image Foto)>();
+        public List<(int ID, string Naam, Double Prijs, Image Foto)> Pins = new List<(int ID, string Naam, Double Prijs, Image Foto)>();
 
         public void HorlogesInvoegen()
         {
@@ -30,7 +30,7 @@ namespace prjEindwerk_LotsOfLili.DA
             {
                 using (MySqlConnection conn = Database.MakeConnection())
                 {
-                    string query = "select ID, Foto, Naam from eindwerk.tblHorloge";
+                    string query = "select ID, Naam, Prijs, Foto from eindwerk.tblHorloge";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -38,20 +38,21 @@ namespace prjEindwerk_LotsOfLili.DA
                         {
                             while (reader.Read())
                             {
-                                int ID = Convert.ToInt32(reader["ID"]);
+                                int productID = Convert.ToInt32(reader["ID"]);
                                 string productNaam = reader["Naam"].ToString();
-                                Image img = null;
+                                double productPrijs = Convert.ToDouble(reader["Prijs"]);
+                                Image productFoto = null;
                                 byte[] fotoBytes = reader["Foto"] as byte[];
 
                                 if (fotoBytes != null)
                                 {
                                     using (MemoryStream ms = new MemoryStream(fotoBytes))
                                     {
-                                        img = Image.FromStream(ms);
+                                        productFoto = Image.FromStream(ms);
 
-                                        if (!Horloges.Any(p => p.ID == ID))
+                                        if (!Horloges.Any(p => p.ID == productID))
                                         {
-                                            Horloges.Add((ID, productNaam, img));
+                                            Horloges.Add((productID, productNaam, productPrijs, productFoto));
                                         }
                                     }
                                 }

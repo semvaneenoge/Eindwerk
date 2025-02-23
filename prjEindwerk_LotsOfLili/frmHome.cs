@@ -34,7 +34,7 @@ namespace prjEindwerk_LotsOfLili
             //
             // !!!1 panel proberen gebruiken voor meerder pagina's !!! --> verder proberen niet gelukt met code van nu !!!
 
-            Pagina = 0;
+            Pagina = 1;
 
             lblProduct1.Paint += lblBorder;
             lblProduct2.Paint += lblBorder;
@@ -43,112 +43,7 @@ namespace prjEindwerk_LotsOfLili
             lblProduct5.Paint += lblBorder;
             lblProduct6.Paint += lblBorder;
 
-            ProductDA p = new ProductDA();
-            p.HorlogesInvoegen();
-
-            for (int i = 0; i < 6; i++)
-            {
-                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
-                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
-
-                if (i < p.Horloges.Count)
-                {
-                    var product = p.Horloges[i];
-
-                    if (picTest != null)
-                    {
-                        picTest.Image = product.Foto;
-                    }
-                    if (lblTest != null)
-                    {
-                        lblTest.Text = $"{product.Naam}\n{product.Prijs}";
-                    }
-                }
-                else
-                {
-                    if (picTest != null)
-                    {
-                        picTest.Image = null;
-                    }
-                    if (lblTest != null)
-                    {
-                        lblTest.Text = "Geen product gevonden";
-                    }
-                }
-            }
-        }
-
-        private void checkPage()
-        {
-            ProductDA p = new ProductDA();
-
-            int startIndex = (Pagina - 1) * 6;
-            int endIndex = startIndex + 6;
-
-            for (int i = 0; i < 6; i++)
-            {
-                PictureBox picTest = (PictureBox)pnlProducten.Controls["PicProduct" + (i + 1)];
-                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
-
-                if (picTest != null)
-                {
-                    picTest.Image = null;
-                }
-                if (lblTest != null)
-                {
-                    lblTest.Text = "Geen product gevonden";
-                }
-
-                int productIndex = startIndex + 1;
-
-                if (productIndex < p.Horloges.Count)
-                {
-                    var product = p.Horloges[productIndex];
-
-                    if (picTest != null)
-                    {
-                        picTest.Image = product.Foto;
-                    }
-                    if (lblTest != null)
-                    {
-                        lblTest.Text = $"{product.Naam}\n{product.Prijs}";
-                    }
-                }
-            }
-
-            for (int i = 0; i < 6; i++)
-            {
-                PictureBox picTest = (PictureBox)pnlProducten.Controls["PicProduct" + (i + 1)];
-                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
-
-                picTest.Image = null;
-                lblTest.Text = null;
-
-                if (i < p.Horloges.Count)
-                {
-                    var product = p.Horloges[i];
-
-                    if (picTest != null)
-                    {
-                        picTest.Image = product.Foto;
-                    }
-                    if (lblTest != null)
-                    {
-                        lblTest.Text = $"{product.Naam}\n{product.Prijs}";
-                    }
-                }
-                else
-                {
-                    if (picTest != null)
-                    {
-                        picTest.Image = null;
-                    }
-                    if (lblTest != null)
-                    {
-                        lblTest.Text = "Geen product gevonden";
-                    }
-                }
-            }
+            checkPage();
         }
 
         private void frmHome_Load(object sender, EventArgs e)
@@ -159,8 +54,81 @@ namespace prjEindwerk_LotsOfLili
             }
 
             lblGebruiker.Text = Naam;
+        }
 
-            Pagina = 1;
+        private void checkPage()
+        {
+            ProductDA p = new ProductDA();
+            p.HorlogesInvoegen();
+
+            switch (Pagina)
+            {
+                case 1:
+                    for (int i = 0; i < 6; i++)
+                    {
+                        PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                        Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
+
+                        if (i < p.Horloges.Count)
+                        {
+                            var product = p.Horloges[i];
+
+                            if (picTest != null)
+                            {
+                                picTest.Image = product.Foto;
+                            }
+                            if (lblTest != null)
+                            {
+                                lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                            }
+                        }
+                        else
+                        {
+                            if (picTest != null)
+                            {
+                                picTest.Image = null;
+                            }
+                            if (lblTest != null)
+                            {
+                                lblTest.Text = "Geen product gevonden";
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < 6; i++)
+                    {
+                        PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                        Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
+
+                        if (i < p.Horloges.Count)
+                        {
+                            var product = p.Horloges[i + 6];
+
+                            if (picTest != null)
+                            {
+                                picTest.Image = product.Foto;
+                            }
+                            if (lblTest != null)
+                            {
+                                lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                            }
+                        }
+                        else
+                        {
+                            if (picTest != null)
+                            {
+                                picTest.Image = null;
+                            }
+                            if (lblTest != null)
+                            {
+                                lblTest.Text = "Geen product gevonden";
+                            }
+                        }
+                    }
+                    break;
+
+            }
         }
 
         private void lblBorder(object sender, PaintEventArgs e)
@@ -175,25 +143,35 @@ namespace prjEindwerk_LotsOfLili
             if (Pagina > 1)
             {
                 Pagina--;
+                lblPagina.Text = $"pagina {Pagina} / 2";
+            }
+            if (Pagina <= 1)
+            {
                 btnVolgende.Enabled = true;
             }
-
-            btnVorige.Enabled = (Pagina > 1);
+            if (Pagina == 1)
+            {
+                btnVorige.Enabled = false;
+            }
 
             checkPage();
         }
 
         private void btnVolgende_Click(object sender, EventArgs e)
         {
-            int totalPages = (int)Math.Ceiling((double)new ProductDA().Horloges.Count / 6);
-
-            if (Pagina < totalPages)
+            if (Pagina <= 1)
             {
                 Pagina++;
+                lblPagina.Text = $"pagina {Pagina} / 2";
+            }
+            if (Pagina > 1)
+            {
                 btnVorige.Enabled = true;
             }
-
-            btnVolgende.Enabled = (Pagina < totalPages);
+            if (Pagina == 1 || Pagina == 2) // veranderen naar max. aantal pagina's
+            {
+                btnVolgende.Enabled = false;
+            }
 
             checkPage();
         }

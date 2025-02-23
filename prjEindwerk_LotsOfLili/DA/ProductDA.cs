@@ -26,6 +26,7 @@ namespace prjEindwerk_LotsOfLili.DA
 
         public void HorlogesInvoegen()
         {
+
             try
             {
                 using (MySqlConnection conn = Database.MakeConnection())
@@ -59,6 +60,14 @@ namespace prjEindwerk_LotsOfLili.DA
                             }
                         }
                     }
+                }
+
+                int groupSize = 6;
+                int placeholdersNeeded = (groupSize - (Horloges.Count % groupSize)) % groupSize;
+
+                for (int i = 0; i < placeholdersNeeded; i++)
+                {
+                    Horloges.Add((0, "Empty slot", 0.0, null));
                 }
             }
             catch (Exception ex)

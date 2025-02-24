@@ -95,16 +95,17 @@
             this.btnAgendas.TabIndex = 2;
             this.btnAgendas.Text = "Agendas";
             this.btnAgendas.UseVisualStyleBackColor = true;
+            this.btnAgendas.Click += new System.EventHandler(this.btnAgendas_Click);
             // 
             // btnHorloges
             // 
-            this.btnHorloges.Enabled = false;
             this.btnHorloges.Location = new System.Drawing.Point(184, 108);
             this.btnHorloges.Name = "btnHorloges";
             this.btnHorloges.Size = new System.Drawing.Size(85, 25);
             this.btnHorloges.TabIndex = 2;
             this.btnHorloges.Text = "Horloges";
             this.btnHorloges.UseVisualStyleBackColor = true;
+            this.btnHorloges.Click += new System.EventHandler(this.btnHorloges_Click);
             // 
             // btnPortemonnee
             // 
@@ -114,6 +115,7 @@
             this.btnPortemonnee.TabIndex = 2;
             this.btnPortemonnee.Text = "Portemonnees";
             this.btnPortemonnee.UseVisualStyleBackColor = true;
+            this.btnPortemonnee.Click += new System.EventHandler(this.btnPortemonnee_Click);
             // 
             // btnPins
             // 
@@ -123,6 +125,7 @@
             this.btnPins.TabIndex = 2;
             this.btnPins.Text = "Pins";
             this.btnPins.UseVisualStyleBackColor = true;
+            this.btnPins.Click += new System.EventHandler(this.btnPins_Click);
             // 
             // btnVorige
             // 

@@ -20,7 +20,7 @@ namespace prjEindwerk_LotsOfLili
         public bool isAdmin {  get; set; }
         public string Naam {  get; set; }
 
-        int Pagina;
+        int Pagina, Tab;
 
         public frmHome()
         {
@@ -30,11 +30,23 @@ namespace prjEindwerk_LotsOfLili
             //
             // Linksboven: Gebruiker + instellingen (WW wijzigen) + winkelmandje
             //
-            // Image in databank en er uit halen --> ProductDA (chatgpt)
+            // Admin: producten toevoegen/verwijderen (database), producten aanpassen (naam, prijs, foto)
             //
-            // !!!1 panel proberen gebruiken voor meerder pagina's !!! --> verder proberen niet gelukt met code van nu !!!
+            // Image in databank --> ProductDA (chatgpt)
+            //
+            // Code beter uitwerken, pas na functionaliteit in orde is (1 panel gebruiken --> checkPage(), repeated code samensteken --> methode)
+            //
+            // Aantal pagina's beter uitwerken --> max aantal berekenen + tonen/aanpassen in lbl
+            // --> switchen van tab op P2 is vreemd --> controle statements proberen plaatsen in checkPage of andere methode
+            //
+            // checkpage() --> switch statement beter uitwerken (redundant/repeated code) + proberen samenwerken met max. aantal pagina's
+            //
+            // Probeer process memory te verminderen
+            //
+            // !!! Commentaar typen bij ALLES !!!
 
             Pagina = 1;
+            Tab = 1;
 
             lblProduct1.Paint += lblBorder;
             lblProduct2.Paint += lblBorder;
@@ -59,75 +71,224 @@ namespace prjEindwerk_LotsOfLili
         private void checkPage()
         {
             ProductDA p = new ProductDA();
-            p.HorlogesInvoegen();
 
-            switch (Pagina)
+            lblPagina.Text = $"pagina {Pagina} / 2";
+
+            switch (Tab)
             {
                 case 1:
-                    for (int i = 0; i < 6; i++)
+                    p.AgendasInvoegen();
+
+                    switch (Pagina)
                     {
-                        PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
-                        Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
+                        case 1:
+                            for (int i = 0; i < 6; i++)
+                            {
+                                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
 
-                        if (i < p.Horloges.Count)
-                        {
-                            var product = p.Horloges[i];
+                                if (i < p.Agendas.Count)
+                                {
+                                    var product = p.Agendas[i];
 
-                            if (picTest != null)
-                            {
-                                picTest.Image = product.Foto;
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = product.Foto;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                                    }
+                                }
+                                else
+                                {
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = null;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = "Geen product gevonden";
+                                    }
+                                }
                             }
-                            if (lblTest != null)
+                            break;
+                        case 2:
+                            for (int i = 0; i < 6; i++)
                             {
-                                lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
+
+                                if (i < p.Agendas.Count)
+                                {
+                                    var product = p.Agendas[i + 6];
+
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = product.Foto;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                                    }
+                                }
+                                else
+                                {
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = null;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = "Geen product gevonden";
+                                    }
+                                }
                             }
-                        }
-                        else
-                        {
-                            if (picTest != null)
-                            {
-                                picTest.Image = null;
-                            }
-                            if (lblTest != null)
-                            {
-                                lblTest.Text = "Geen product gevonden";
-                            }
-                        }
+                            break;
                     }
                     break;
                 case 2:
-                    for (int i = 0; i < 6; i++)
+                    p.HorlogesInvoegen();
+
+                    switch (Pagina)
                     {
-                        PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
-                        Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
+                        case 1:
+                            for (int i = 0; i < 6; i++)
+                            {
+                                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
 
-                        if (i < p.Horloges.Count)
-                        {
-                            var product = p.Horloges[i + 6];
+                                if (i < p.Horloges.Count)
+                                {
+                                    var product = p.Horloges[i];
 
-                            if (picTest != null)
-                            {
-                                picTest.Image = product.Foto;
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = product.Foto;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                                    }
+                                }
+                                else
+                                {
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = null;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = "Geen product gevonden";
+                                    }
+                                }
                             }
-                            if (lblTest != null)
+                            break;
+                        case 2:
+                            for (int i = 0; i < 6; i++)
                             {
-                                lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
+
+                                if (i < p.Horloges.Count)
+                                {
+                                    var product = p.Horloges[i + 6];
+
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = product.Foto;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                                    }
+                                }
+                                else
+                                {
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = null;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = "Geen product gevonden";
+                                    }
+                                }
                             }
-                        }
-                        else
-                        {
-                            if (picTest != null)
-                            {
-                                picTest.Image = null;
-                            }
-                            if (lblTest != null)
-                            {
-                                lblTest.Text = "Geen product gevonden";
-                            }
-                        }
+                            break;
                     }
                     break;
+                case 3:
+                    p.PortemonneesInvoegen();
 
+                    switch (Pagina)
+                    {
+                        case 1:
+                            for (int i = 0; i < 6; i++)
+                            {
+                                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
+
+                                if (i < p.Portemonnees.Count)
+                                {
+                                    var product = p.Portemonnees[i];
+
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = product.Foto;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                                    }
+                                }
+                                else
+                                {
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = null;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = "Geen product gevonden";
+                                    }
+                                }
+                            }
+                            break;
+                        case 2:
+                            for (int i = 0; i < 6; i++)
+                            {
+                                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
+
+                                if (i < p.Portemonnees.Count)
+                                {
+                                    var product = p.Portemonnees[i + 6];
+
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = product.Foto;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = $"{product.Naam}\n{product.Prijs}";
+                                    }
+                                }
+                                else
+                                {
+                                    if (picTest != null)
+                                    {
+                                        picTest.Image = null;
+                                    }
+                                    if (lblTest != null)
+                                    {
+                                        lblTest.Text = "Geen product gevonden";
+                                    }
+                                }
+                            }
+                            break;
+                    }
+                    break;
             }
         }
 
@@ -187,6 +348,50 @@ namespace prjEindwerk_LotsOfLili
         {
             frmAdmin Admin = new frmAdmin();
             Admin.Show();
+        }
+
+        private void btnAgendas_Click(object sender, EventArgs e)
+        {
+            Tab = 1;
+            Pagina = 1;
+            btnAgendas.Enabled = false;
+            btnHorloges.Enabled = true;
+            btnPortemonnee.Enabled = true;
+            btnPins.Enabled = true;
+            checkPage();
+        }
+
+        private void btnHorloges_Click(object sender, EventArgs e)
+        {
+            Tab = 2;
+            Pagina = 1;
+            btnAgendas.Enabled = true;
+            btnHorloges.Enabled = false;
+            btnPortemonnee.Enabled = true;
+            btnPins.Enabled = true;
+            checkPage();
+        }
+
+        private void btnPortemonnee_Click(object sender, EventArgs e)
+        {
+            Tab = 3;
+            Pagina = 1;
+            btnAgendas.Enabled = true;
+            btnHorloges.Enabled = true;
+            btnPortemonnee.Enabled = false;
+            btnPins.Enabled = true;
+            checkPage();
+        }
+
+        private void btnPins_Click(object sender, EventArgs e)
+        {
+            Tab = 4;
+            Pagina = 1;
+            btnAgendas.Enabled = true;
+            btnHorloges.Enabled = true;
+            btnPortemonnee.Enabled = true;
+            btnPins.Enabled = false;
+            checkPage();
         }
     }
 }

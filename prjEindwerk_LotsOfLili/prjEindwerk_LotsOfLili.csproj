@@ -126,7 +126,6 @@
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Gebruikers.cs" />
-    <Compile Include="Model\Producten.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdmin.resx">

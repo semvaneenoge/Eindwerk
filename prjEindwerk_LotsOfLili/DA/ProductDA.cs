@@ -179,5 +179,56 @@ namespace prjEindwerk_LotsOfLili.DA
                 MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
             }
         }
+
+        public void PinsInvoegen()
+        {
+            try
+            {
+                using (MySqlConnection conn = Database.MakeConnection())
+                {
+                    string query = "select * from eindwerk.tblPin";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int productID = Convert.ToInt32(reader["ID"]);
+                                string productNaam = reader["Naam"].ToString();
+                                double productPrijs = Convert.ToDouble(reader["Prijs"]);
+                                Image productFoto = null;
+                                byte[] fotoBytes = reader["Foto"] as byte[];
+
+                                if (fotoBytes != null)
+                                {
+                                    using (MemoryStream ms = new MemoryStream(fotoBytes))
+                                    {
+                                        productFoto = Image.FromStream(ms);
+
+                                        // code proberen veranderen dat ik niet direct begrijp Any
+                                        if (!Pins.Any(p => p.ID == productID))
+                                        {
+                                            Pins.Add((productID, productNaam, productPrijs, productFoto));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                int placeholdersNeeded = (groupSize - (Pins.Count % groupSize)) % groupSize;
+
+                for (int i = 0; i < placeholdersNeeded; i++)
+                {
+                    Pins.Add((0, "Empty slot", 0.0, null));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
+            }
+        }
     }
 }

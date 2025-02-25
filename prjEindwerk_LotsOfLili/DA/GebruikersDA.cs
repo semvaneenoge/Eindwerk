@@ -49,8 +49,10 @@ namespace prjEindwerk_LotsOfLili.DA
             return blnLogin;
         }
 
-        public static void Registreren(Gebruikers G)
+        public static void Registreren(Gebruikers G, out string Naam)
         {
+            Naam = "";
+
             // verbinding met databank
             MySqlConnection conn = Database.MakeConnection();
 
@@ -70,6 +72,8 @@ namespace prjEindwerk_LotsOfLili.DA
 
             // Uitvoeren van commando
             mySqlCmd.ExecuteScalar();
+
+            Naam = G.Voornaam + G.Naam;
 
             MessageBox.Show("U bent geregistreerd");
             conn.Close();

@@ -61,6 +61,7 @@
             this.btnMandje = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.pnlProducten.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct6)).BeginInit();
@@ -89,12 +90,15 @@
             // 
             // btnAgendas
             // 
+            this.btnAgendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
+            this.btnAgendas.Enabled = false;
             this.btnAgendas.Location = new System.Drawing.Point(25, 108);
             this.btnAgendas.Name = "btnAgendas";
             this.btnAgendas.Size = new System.Drawing.Size(85, 25);
             this.btnAgendas.TabIndex = 2;
+            this.btnAgendas.TabStop = false;
             this.btnAgendas.Text = "Agendas";
-            this.btnAgendas.UseVisualStyleBackColor = true;
+            this.btnAgendas.UseVisualStyleBackColor = false;
             this.btnAgendas.Click += new System.EventHandler(this.btnAgendas_Click);
             // 
             // btnHorloges
@@ -103,6 +107,7 @@
             this.btnHorloges.Name = "btnHorloges";
             this.btnHorloges.Size = new System.Drawing.Size(85, 25);
             this.btnHorloges.TabIndex = 2;
+            this.btnHorloges.TabStop = false;
             this.btnHorloges.Text = "Horloges";
             this.btnHorloges.UseVisualStyleBackColor = true;
             this.btnHorloges.Click += new System.EventHandler(this.btnHorloges_Click);
@@ -113,6 +118,7 @@
             this.btnPortemonnee.Name = "btnPortemonnee";
             this.btnPortemonnee.Size = new System.Drawing.Size(85, 25);
             this.btnPortemonnee.TabIndex = 2;
+            this.btnPortemonnee.TabStop = false;
             this.btnPortemonnee.Text = "Portemonnees";
             this.btnPortemonnee.UseVisualStyleBackColor = true;
             this.btnPortemonnee.Click += new System.EventHandler(this.btnPortemonnee_Click);
@@ -123,6 +129,7 @@
             this.btnPins.Name = "btnPins";
             this.btnPins.Size = new System.Drawing.Size(85, 25);
             this.btnPins.TabIndex = 2;
+            this.btnPins.TabStop = false;
             this.btnPins.Text = "Pins";
             this.btnPins.UseVisualStyleBackColor = true;
             this.btnPins.Click += new System.EventHandler(this.btnPins_Click);
@@ -134,6 +141,7 @@
             this.btnVorige.Name = "btnVorige";
             this.btnVorige.Size = new System.Drawing.Size(36, 23);
             this.btnVorige.TabIndex = 2;
+            this.btnVorige.TabStop = false;
             this.btnVorige.Text = "<";
             this.btnVorige.UseVisualStyleBackColor = true;
             this.btnVorige.Click += new System.EventHandler(this.btnVorige_Click);
@@ -144,6 +152,7 @@
             this.btnVolgende.Name = "btnVolgende";
             this.btnVolgende.Size = new System.Drawing.Size(36, 23);
             this.btnVolgende.TabIndex = 2;
+            this.btnVolgende.TabStop = false;
             this.btnVolgende.Text = ">";
             this.btnVolgende.UseVisualStyleBackColor = true;
             this.btnVolgende.Click += new System.EventHandler(this.btnVolgende_Click);
@@ -175,6 +184,7 @@
             this.btnMandje1.Name = "btnMandje1";
             this.btnMandje1.Size = new System.Drawing.Size(55, 45);
             this.btnMandje1.TabIndex = 6;
+            this.btnMandje1.TabStop = false;
             this.btnMandje1.Text = "Winkelmandje";
             this.btnMandje1.UseVisualStyleBackColor = false;
             // 
@@ -251,6 +261,7 @@
             this.btnMandje6.Name = "btnMandje6";
             this.btnMandje6.Size = new System.Drawing.Size(55, 45);
             this.btnMandje6.TabIndex = 6;
+            this.btnMandje6.TabStop = false;
             this.btnMandje6.Text = "Winkelmandje";
             this.btnMandje6.UseVisualStyleBackColor = false;
             // 
@@ -272,6 +283,7 @@
             this.btnMandje3.Name = "btnMandje3";
             this.btnMandje3.Size = new System.Drawing.Size(55, 45);
             this.btnMandje3.TabIndex = 6;
+            this.btnMandje3.TabStop = false;
             this.btnMandje3.Text = "Winkelmandje";
             this.btnMandje3.UseVisualStyleBackColor = false;
             // 
@@ -283,6 +295,7 @@
             this.btnMandje5.Name = "btnMandje5";
             this.btnMandje5.Size = new System.Drawing.Size(55, 45);
             this.btnMandje5.TabIndex = 6;
+            this.btnMandje5.TabStop = false;
             this.btnMandje5.Text = "Winkelmandje";
             this.btnMandje5.UseVisualStyleBackColor = false;
             // 
@@ -315,6 +328,7 @@
             this.btnMandje2.Name = "btnMandje2";
             this.btnMandje2.Size = new System.Drawing.Size(55, 45);
             this.btnMandje2.TabIndex = 6;
+            this.btnMandje2.TabStop = false;
             this.btnMandje2.Text = "Winkelmandje";
             this.btnMandje2.UseVisualStyleBackColor = false;
             // 
@@ -326,6 +340,7 @@
             this.btnMandje4.Name = "btnMandje4";
             this.btnMandje4.Size = new System.Drawing.Size(55, 45);
             this.btnMandje4.TabIndex = 6;
+            this.btnMandje4.TabStop = false;
             this.btnMandje4.Text = "Winkelmandje";
             this.btnMandje4.UseVisualStyleBackColor = false;
             // 
@@ -387,7 +402,7 @@
             // lblGebruiker
             // 
             this.lblGebruiker.AutoSize = true;
-            this.lblGebruiker.Location = new System.Drawing.Point(31, 9);
+            this.lblGebruiker.Location = new System.Drawing.Point(25, 10);
             this.lblGebruiker.Name = "lblGebruiker";
             this.lblGebruiker.Size = new System.Drawing.Size(53, 13);
             this.lblGebruiker.TabIndex = 9;
@@ -399,16 +414,18 @@
             this.btnMandje.Name = "btnMandje";
             this.btnMandje.Size = new System.Drawing.Size(85, 25);
             this.btnMandje.TabIndex = 10;
+            this.btnMandje.TabStop = false;
             this.btnMandje.Text = "Winkelmandje";
             this.btnMandje.UseVisualStyleBackColor = true;
             this.btnMandje.Click += new System.EventHandler(this.btnMandje_Click);
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(25, 38);
+            this.btnAdmin.Location = new System.Drawing.Point(331, 10);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(85, 25);
             this.btnAdmin.TabIndex = 10;
+            this.btnAdmin.TabStop = false;
             this.btnAdmin.Text = "Admin menu";
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Visible = false;
@@ -424,12 +441,23 @@
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             // 
+            // btnSettings
+            // 
+            this.btnSettings.Location = new System.Drawing.Point(25, 38);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(85, 25);
+            this.btnSettings.TabIndex = 11;
+            this.btnSettings.TabStop = false;
+            this.btnSettings.Text = "Instellingen";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(739, 626);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnMandje);
             this.Controls.Add(this.lblGebruiker);
@@ -498,5 +526,6 @@
         private System.Windows.Forms.Label lblGebruiker;
         private System.Windows.Forms.Button btnMandje;
         private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btnSettings;
     }
 }

@@ -29,6 +29,8 @@ namespace prjEindwerk_LotsOfLili
 
         int Page, Tab, previousTab, maxPages;
 
+        public List<(string Naam, Double Prijs)> Cart = new List<(string Naam, Double Prijs)>();
+
         public frmHome()
         {
             InitializeComponent();
@@ -48,6 +50,8 @@ namespace prjEindwerk_LotsOfLili
             // buttons --> copy code verminderen
             //
             // Verder testen --> meer producten plaatsen in Pins --> kijken if maxPages verandert !!!
+            //
+            // namen variabelen aanpassen --> test --> iets beter
 
             ProductDA p = new ProductDA();
 
@@ -135,6 +139,15 @@ namespace prjEindwerk_LotsOfLili
                     {
                         lblTest.Text = $"{product.Naam}\n € {product.Prijs}";
                     }
+
+                    if (lblTest.Text.Contains("Empty slot"))
+                    {
+                        pnlProducten.Controls["btnMandje" + (i + 1)].Enabled = false;
+                    }
+                    else
+                    {
+                        pnlProducten.Controls["btnMandje" + (i + 1)].Enabled = true;
+                    }
                 }
             }
 
@@ -159,7 +172,7 @@ namespace prjEindwerk_LotsOfLili
         private void btnMandje_Click(object sender, EventArgs e)
         {
             // Winkelmandje openen
-            frmMandje Mandje = new frmMandje();
+            frmMandje Mandje = new frmMandje(Cart);
             Mandje.Show();
             this.Hide();
         }
@@ -209,6 +222,50 @@ namespace prjEindwerk_LotsOfLili
         private void btnPins_Click(object sender, EventArgs e)
         {
             UpdateButton(4, btnPins);
+        }
+
+        private void AddToCart(int id)
+        {
+            Label test = (Label)pnlProducten.Controls["lblProduct" + id];
+
+            string test1 = test.Text;
+
+            string[] test2 = test1.Split('€');
+
+            if (double.TryParse(test2[1], out double Prijs))
+            {
+                Cart.Add((test2[0], Prijs));
+            }
+        }
+
+        private void btnMandje1_Click(object sender, EventArgs e)
+        {
+            AddToCart(1);
+        }
+
+        private void btnMandje2_Click(object sender, EventArgs e)
+        {
+            AddToCart(2);
+        }
+
+        private void btnMandje3_Click(object sender, EventArgs e)
+        {
+            AddToCart(3);
+        }
+
+        private void btnMandje4_Click(object sender, EventArgs e)
+        {
+            AddToCart(4);
+        }
+
+        private void btnMandje5_Click(object sender, EventArgs e)
+        {
+            AddToCart(5);
+        }
+
+        private void btnMandje6_Click(object sender, EventArgs e)
+        {
+            AddToCart(6);
         }
     }
 }

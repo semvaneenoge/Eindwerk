@@ -187,6 +187,7 @@
             this.btnMandje1.TabStop = false;
             this.btnMandje1.Text = "Winkelmandje";
             this.btnMandje1.UseVisualStyleBackColor = false;
+            this.btnMandje1.Click += new System.EventHandler(this.btnMandje1_Click);
             // 
             // lblProduct1
             // 
@@ -264,6 +265,7 @@
             this.btnMandje6.TabStop = false;
             this.btnMandje6.Text = "Winkelmandje";
             this.btnMandje6.UseVisualStyleBackColor = false;
+            this.btnMandje6.Click += new System.EventHandler(this.btnMandje6_Click);
             // 
             // lblProduct2
             // 
@@ -286,6 +288,7 @@
             this.btnMandje3.TabStop = false;
             this.btnMandje3.Text = "Winkelmandje";
             this.btnMandje3.UseVisualStyleBackColor = false;
+            this.btnMandje3.Click += new System.EventHandler(this.btnMandje3_Click);
             // 
             // btnMandje5
             // 
@@ -298,6 +301,7 @@
             this.btnMandje5.TabStop = false;
             this.btnMandje5.Text = "Winkelmandje";
             this.btnMandje5.UseVisualStyleBackColor = false;
+            this.btnMandje5.Click += new System.EventHandler(this.btnMandje5_Click);
             // 
             // picProduct1
             // 
@@ -331,6 +335,7 @@
             this.btnMandje2.TabStop = false;
             this.btnMandje2.Text = "Winkelmandje";
             this.btnMandje2.UseVisualStyleBackColor = false;
+            this.btnMandje2.Click += new System.EventHandler(this.btnMandje2_Click);
             // 
             // btnMandje4
             // 
@@ -343,6 +348,7 @@
             this.btnMandje4.TabStop = false;
             this.btnMandje4.Text = "Winkelmandje";
             this.btnMandje4.UseVisualStyleBackColor = false;
+            this.btnMandje4.Click += new System.EventHandler(this.btnMandje4_Click);
             // 
             // picProduct6
             // 

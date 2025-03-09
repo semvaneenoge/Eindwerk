@@ -29,7 +29,7 @@ namespace prjEindwerk_LotsOfLili
 
         int Page, Tab, previousTab, maxPages;
 
-        public List<(string Naam, Double Prijs)> Cart = new List<(string Naam, Double Prijs)>();
+        public List<Cart> Cart = new List<Cart>();
 
         public frmHome()
         {
@@ -57,12 +57,10 @@ namespace prjEindwerk_LotsOfLili
 
             Tab = 1;
 
-            lblProduct1.Paint += lblBorder;
-            lblProduct2.Paint += lblBorder;
-            lblProduct3.Paint += lblBorder;
-            lblProduct4.Paint += lblBorder;
-            lblProduct5.Paint += lblBorder;
-            lblProduct6.Paint += lblBorder;
+            for (int i = 0; i < 6; i++)
+            {
+                pnlProducten.Controls["lblProduct" + (i + 1)].Paint += lblBorder;
+            }
 
             checkPage();
         }
@@ -75,6 +73,8 @@ namespace prjEindwerk_LotsOfLili
             }
 
             lblGebruiker.Text = Name;
+
+            lblAantal.Text = $"Aantal producten: {Cart.Count}";
         }
 
         private void lblBorder(object sender, PaintEventArgs e)
@@ -172,7 +172,8 @@ namespace prjEindwerk_LotsOfLili
         private void btnMandje_Click(object sender, EventArgs e)
         {
             // Winkelmandje openen
-            frmMandje Mandje = new frmMandje(Cart);
+            frmMandje Mandje = new frmMandje();
+            Mandje.NewCart = Cart;
             Mandje.Show();
             this.Hide();
         }
@@ -226,16 +227,36 @@ namespace prjEindwerk_LotsOfLili
 
         private void AddToCart(int id)
         {
-            Label test = (Label)pnlProducten.Controls["lblProduct" + id];
+            Label lblProduct = (Label)pnlProducten.Controls["lblProduct" + id];
 
-            string test1 = test.Text;
+            string productText = lblProduct.Text;
 
-            string[] test2 = test1.Split('€');
+            string[] productParts = productText.Split('€');
 
-            if (double.TryParse(test2[1], out double Prijs))
+            if (double.TryParse(productParts[1], out double prijs))
             {
-                Cart.Add((test2[0], Prijs));
+                string naam = productParts[0].Trim();
+
+                bool isFound = false;
+
+                foreach (var item in Cart)
+                {
+                    if (item.Naam == naam)
+                    {
+                        item.Aantal++;
+                        isFound = true;
+                        break;
+                    }
+                }
+
+                if (!isFound)
+                {
+                    Cart.Add(new Cart(naam, prijs, 1));
+                }
             }
+
+            // beter begrijpen cart.sum !!!
+            lblAantal.Text = $"Aantal producten: {Cart.Sum(item => item.Aantal)}";
         }
 
         private void btnMandje1_Click(object sender, EventArgs e)

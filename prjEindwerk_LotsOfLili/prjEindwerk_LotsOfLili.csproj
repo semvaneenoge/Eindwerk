@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs" />
     <Compile Include="DA\GebruikersDA.cs" />
     <Compile Include="DA\ProductDA.cs" />
     <Compile Include="frmAdmin.cs">

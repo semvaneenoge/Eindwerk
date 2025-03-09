@@ -62,6 +62,7 @@
             this.btnAdmin = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.lblAantal = new System.Windows.Forms.Label();
             this.pnlProducten.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct6)).BeginInit();
@@ -457,12 +458,24 @@
             this.btnSettings.Text = "Instellingen";
             this.btnSettings.UseVisualStyleBackColor = true;
             // 
+            // lblAantal
+            // 
+            this.lblAantal.AutoSize = true;
+            this.lblAantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAantal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
+            this.lblAantal.Location = new System.Drawing.Point(116, 71);
+            this.lblAantal.Name = "lblAantal";
+            this.lblAantal.Size = new System.Drawing.Size(108, 13);
+            this.lblAantal.TabIndex = 12;
+            this.lblAantal.Text = "Aantal producten:";
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(739, 626);
+            this.Controls.Add(this.lblAantal);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnMandje);
@@ -533,5 +546,6 @@
         private System.Windows.Forms.Button btnMandje;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Label lblAantal;
     }
 }

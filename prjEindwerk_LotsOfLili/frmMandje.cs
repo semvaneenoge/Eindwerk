@@ -12,28 +12,72 @@ namespace prjEindwerk_LotsOfLili
 {
     public partial class frmMandje : Form
     {
-        List<(string Naam, double Prijs)> TestCart;
+        public List<Cart> NewCart;
 
         double  Totaal;
 
-        public frmMandje(List<(string Naam, double Prijs)> cart)
+        public frmMandje()
         {
             InitializeComponent();
-            TestCart = cart;
+
+            // --- notes ---
         }
 
         private void frmMandje_Load(object sender, EventArgs e)
         {
-            foreach (var item in TestCart)
-            {
-                ListViewItem items = new ListViewItem(item.Naam);
-                items.SubItems.Add("€ " + item.Prijs.ToString());
-                lsvMandje.Items.Add(items);
+            UpdateListview();
+        }
 
-                Totaal += item.Prijs;
+        private void UpdateListview()
+        {
+            lsvMandje.Items.Clear();
+            Totaal = 0;
+
+            foreach (var item in NewCart)
+            {
+                ListViewItem listItem = new ListViewItem(item.Naam);
+                listItem.SubItems.Add("€ " + item.Prijs.ToString());
+                listItem.SubItems.Add(item.Aantal.ToString());
+                lsvMandje.Items.Add(listItem);
+
+                Totaal += item.Prijs * item.Aantal;
             }
 
-            lblTotaal.Text = $"€ {Totaal}";
+            lblTotaal.Text = $"De totale prijs is € {Totaal}";
+        }
+
+        private void btnTerug_Click(object sender, EventArgs e)
+        {
+            frmHome Home = new frmHome();
+            Home.Cart = NewCart;
+            Home.Show();
+            this.Hide();
+        }
+
+        private void btnVerwijder_Click(object sender, EventArgs e)
+        {
+            if (lsvMandje.SelectedItems.Count > 0)
+            {
+                string selectedName = lsvMandje.SelectedItems[0].Text;
+
+                foreach (var item in NewCart)
+                {
+                    if (item.Naam == selectedName)
+                    {
+                        if (item.Aantal > 1)
+                        {
+                            item.Aantal--;
+                        }
+                        else
+                        {
+                            NewCart.Remove(item);
+                        }
+                        break;
+                    }
+                }
+
+                UpdateListview();
+            }
         }
     }
 }

@@ -24,8 +24,8 @@ namespace prjEindwerk_LotsOfLili.DA
         // Code proberen veranderen dat ik niet direct of volledig begrijp (kunnen uitleggen) --> Any
         // Nieuwe portemonnee terug toevoegen Keecie
 
-        public List<(int ID, string Naam, Double Prijs, Image Foto)> Horloges = new List<(int ID, string Naam, Double Prijs, Image Foto)>();
         public List<(int ID, string Naam, Double Prijs, Image Foto)> Agendas = new List<(int ID, string Naam, Double Prijs, Image Foto)>();
+        public List<(int ID, string Naam, Double Prijs, Image Foto)> Horloges = new List<(int ID, string Naam, Double Prijs, Image Foto)>();
         public List<(int ID, string Naam, Double Prijs, Image Foto)> Portemonnees = new List<(int ID, string Naam, Double Prijs, Image Foto)>();
         public List<(int ID, string Naam, Double Prijs, Image Foto)> Pins = new List<(int ID, string Naam, Double Prijs, Image Foto)>();
 
@@ -35,33 +35,30 @@ namespace prjEindwerk_LotsOfLili.DA
         {
             try
             {
-                using (MySqlConnection conn = Database.MakeConnection())
+                MySqlConnection conn = Database.MakeConnection();
+                
+                string query = "select * from eindwerk.tblAgenda";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                        
+                while (reader.Read())
                 {
-                    string query = "select * from eindwerk.tblAgenda";
+                    int productID = Convert.ToInt32(reader["ID"]);
+                    string productNaam = reader["Naam"].ToString();
+                    double productPrijs = Convert.ToDouble(reader["Prijs"]);
+                    Image productFoto = null;
+                    byte[] fotoBytes = reader["Foto"] as byte[];
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    if (fotoBytes != null)
                     {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int productID = Convert.ToInt32(reader["ID"]);
-                                string productNaam = reader["Naam"].ToString();
-                                double productPrijs = Convert.ToDouble(reader["Prijs"]);
-                                Image productFoto = null;
-                                byte[] fotoBytes = reader["Foto"] as byte[];
+                        MemoryStream ms = new MemoryStream(fotoBytes);
+                                    
+                        productFoto = Image.FromStream(ms);
 
-                                if (fotoBytes != null)
-                                {
-                                    using (MemoryStream ms = new MemoryStream(fotoBytes))
-                                    {
-                                        productFoto = Image.FromStream(ms);
-
-                                        Agendas.Add((productID, productNaam, productPrijs, productFoto));
-                                    }
-                                }
-                            }
-                        }
+                        Agendas.Add((productID, productNaam, productPrijs, productFoto));           
                     }
                 }
 
@@ -71,6 +68,8 @@ namespace prjEindwerk_LotsOfLili.DA
                 {
                     Agendas.Add((0, "Empty slot", 0.0, null));
                 }
+
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -82,34 +81,29 @@ namespace prjEindwerk_LotsOfLili.DA
         {
             try
             {
-                using (MySqlConnection conn = Database.MakeConnection())
+                MySqlConnection conn = Database.MakeConnection();
+                
+                string query = "select * from eindwerk.tblHorloge";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                        
+                while (reader.Read())
                 {
-                    string query = "select * from eindwerk.tblHorloge";
+                    int productID = Convert.ToInt32(reader["ID"]);
+                    string productNaam = reader["Naam"].ToString();
+                    double productPrijs = Convert.ToDouble(reader["Prijs"]);
+                    Image productFoto = null;
+                    byte[] fotoBytes = reader["Foto"] as byte[];
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    if (fotoBytes != null)
                     {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int productID = Convert.ToInt32(reader["ID"]);
-                                string productNaam = reader["Naam"].ToString();
-                                double productPrijs = Convert.ToDouble(reader["Prijs"]);
-                                Image productFoto = null;
-                                byte[] fotoBytes = reader["Foto"] as byte[];
+                        MemoryStream ms = new MemoryStream(fotoBytes);
+                                    
+                        productFoto = Image.FromStream(ms);
 
-                                if (fotoBytes != null)
-                                {
-                                    using (MemoryStream ms = new MemoryStream(fotoBytes))
-                                    {
-                                        productFoto = Image.FromStream(ms);
-
-                                        Horloges.Add((productID, productNaam, productPrijs, productFoto));
-                                        
-                                    }
-                                }
-                            }
-                        }
+                        Horloges.Add((productID, productNaam, productPrijs, productFoto));      
                     }
                 }
 
@@ -119,6 +113,8 @@ namespace prjEindwerk_LotsOfLili.DA
                 {
                     Horloges.Add((0, "Geen product", 0.0, null));
                 }
+
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -130,33 +126,29 @@ namespace prjEindwerk_LotsOfLili.DA
         {
             try
             {
-                using (MySqlConnection conn = Database.MakeConnection())
+                MySqlConnection conn = Database.MakeConnection();
+                
+                string query = "select * from eindwerk.tblPortemonnee";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                        
+                while (reader.Read())
                 {
-                    string query = "select * from eindwerk.tblPortemonnee";
+                    int productID = Convert.ToInt32(reader["ID"]);
+                    string productNaam = reader["Naam"].ToString();
+                    double productPrijs = Convert.ToDouble(reader["Prijs"]);
+                    Image productFoto = null;
+                    byte[] fotoBytes = reader["Foto"] as byte[];
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    if (fotoBytes != null)
                     {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int productID = Convert.ToInt32(reader["ID"]);
-                                string productNaam = reader["Naam"].ToString();
-                                double productPrijs = Convert.ToDouble(reader["Prijs"]);
-                                Image productFoto = null;
-                                byte[] fotoBytes = reader["Foto"] as byte[];
+                        MemoryStream ms = new MemoryStream(fotoBytes);
+                        
+                        productFoto = Image.FromStream(ms);
 
-                                if (fotoBytes != null)
-                                {
-                                    using (MemoryStream ms = new MemoryStream(fotoBytes))
-                                    {
-                                        productFoto = Image.FromStream(ms);
-
-                                        Portemonnees.Add((productID, productNaam, productPrijs, productFoto));
-                                    }
-                                }
-                            }
-                        }
+                        Portemonnees.Add((productID, productNaam, productPrijs, productFoto));
                     }
                 }
 
@@ -166,6 +158,8 @@ namespace prjEindwerk_LotsOfLili.DA
                 {
                     Portemonnees.Add((0, "Empty slot", 0.0, null));
                 }
+
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -177,33 +171,29 @@ namespace prjEindwerk_LotsOfLili.DA
         {
             try
             {
-                using (MySqlConnection conn = Database.MakeConnection())
+                MySqlConnection conn = Database.MakeConnection();
+                
+                string query = "select * from eindwerk.tblPin";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    string query = "select * from eindwerk.tblPin";
+                    int productID = Convert.ToInt32(reader["ID"]);
+                    string productNaam = reader["Naam"].ToString();
+                    double productPrijs = Convert.ToDouble(reader["Prijs"]);
+                    Image productFoto = null;
+                    byte[] fotoBytes = reader["Foto"] as byte[];
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    if (fotoBytes != null)
                     {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int productID = Convert.ToInt32(reader["ID"]);
-                                string productNaam = reader["Naam"].ToString();
-                                double productPrijs = Convert.ToDouble(reader["Prijs"]);
-                                Image productFoto = null;
-                                byte[] fotoBytes = reader["Foto"] as byte[];
+                        MemoryStream ms = new MemoryStream(fotoBytes);
 
-                                if (fotoBytes != null)
-                                {
-                                    using (MemoryStream ms = new MemoryStream(fotoBytes))
-                                    {
-                                        productFoto = Image.FromStream(ms);
+                        productFoto = Image.FromStream(ms);
 
-                                        Pins.Add((productID, productNaam, productPrijs, productFoto));
-                                    }
-                                }
-                            }
-                        }
+                        Pins.Add((productID, productNaam, productPrijs, productFoto));
                     }
                 }
 
@@ -213,6 +203,8 @@ namespace prjEindwerk_LotsOfLili.DA
                 {
                     Pins.Add((0, "Empty slot", 0.0, null));
                 }
+
+                conn.Close();
             }
             catch (Exception ex)
             {

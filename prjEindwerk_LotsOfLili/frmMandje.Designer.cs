@@ -36,6 +36,8 @@
             this.btnBetalen = new System.Windows.Forms.Button();
             this.btnTerug = new System.Windows.Forms.Button();
             this.btnVerwijder = new System.Windows.Forms.Button();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lsvMandje
@@ -46,9 +48,9 @@
             this.Aantal});
             this.lsvMandje.FullRowSelect = true;
             this.lsvMandje.HideSelection = false;
-            this.lsvMandje.Location = new System.Drawing.Point(39, 49);
+            this.lsvMandje.Location = new System.Drawing.Point(12, 49);
             this.lsvMandje.Name = "lsvMandje";
-            this.lsvMandje.Size = new System.Drawing.Size(308, 323);
+            this.lsvMandje.Size = new System.Drawing.Size(308, 284);
             this.lsvMandje.TabIndex = 0;
             this.lsvMandje.UseCompatibleStateImageBehavior = false;
             this.lsvMandje.View = System.Windows.Forms.View.Details;
@@ -70,7 +72,7 @@
             // lblTotaal
             // 
             this.lblTotaal.AutoSize = true;
-            this.lblTotaal.Location = new System.Drawing.Point(478, 80);
+            this.lblTotaal.Location = new System.Drawing.Point(340, 129);
             this.lblTotaal.Name = "lblTotaal";
             this.lblTotaal.Size = new System.Drawing.Size(35, 13);
             this.lblTotaal.TabIndex = 1;
@@ -78,16 +80,17 @@
             // 
             // btnBetalen
             // 
-            this.btnBetalen.Location = new System.Drawing.Point(645, 349);
+            this.btnBetalen.Location = new System.Drawing.Point(520, 310);
             this.btnBetalen.Name = "btnBetalen";
             this.btnBetalen.Size = new System.Drawing.Size(75, 23);
             this.btnBetalen.TabIndex = 2;
             this.btnBetalen.Text = "Betalen";
             this.btnBetalen.UseVisualStyleBackColor = true;
+            this.btnBetalen.Click += new System.EventHandler(this.btnBetalen_Click);
             // 
             // btnTerug
             // 
-            this.btnTerug.Location = new System.Drawing.Point(481, 349);
+            this.btnTerug.Location = new System.Drawing.Point(343, 310);
             this.btnTerug.Name = "btnTerug";
             this.btnTerug.Size = new System.Drawing.Size(75, 23);
             this.btnTerug.TabIndex = 3;
@@ -97,7 +100,7 @@
             // 
             // btnVerwijder
             // 
-            this.btnVerwijder.Location = new System.Drawing.Point(481, 296);
+            this.btnVerwijder.Location = new System.Drawing.Point(12, 339);
             this.btnVerwijder.Name = "btnVerwijder";
             this.btnVerwijder.Size = new System.Drawing.Size(107, 23);
             this.btnVerwijder.TabIndex = 4;
@@ -105,12 +108,23 @@
             this.btnVerwijder.UseVisualStyleBackColor = true;
             this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
             // 
+            // picLogo
+            // 
+            this.picLogo.Image = global::prjEindwerk_LotsOfLili.Properties.Resources.logo___Lots_of_Lili;
+            this.picLogo.Location = new System.Drawing.Point(343, 12);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(252, 79);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 5;
+            this.picLogo.TabStop = false;
+            // 
             // frmMandje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(607, 369);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnVerwijder);
             this.Controls.Add(this.btnTerug);
             this.Controls.Add(this.btnBetalen);
@@ -120,6 +134,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMandje";
             this.Load += new System.EventHandler(this.frmMandje_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +150,6 @@
         private System.Windows.Forms.Button btnTerug;
         private System.Windows.Forms.Button btnVerwijder;
         private System.Windows.Forms.ColumnHeader Aantal;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }

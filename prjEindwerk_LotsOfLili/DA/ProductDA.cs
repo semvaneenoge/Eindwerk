@@ -22,6 +22,7 @@ namespace prjEindwerk_LotsOfLili.DA
         // Fotos agenda aanpassen --> achtergrond verwijderen (eerst kijken om foto te updaten in database / als admin)
         //
         // Code proberen veranderen dat ik niet direct of volledig begrijp (kunnen uitleggen) --> Any
+        //
         // Nieuwe portemonnee terug toevoegen Keecie
 
         public List<(int ID, string Naam, Double Prijs, Image Foto)> Agendas = new List<(int ID, string Naam, Double Prijs, Image Foto)>();

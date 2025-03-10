@@ -26,6 +26,7 @@ namespace prjEindwerk_LotsOfLili
     public partial class frmHome : Form
     {
         public bool isAdmin {  get; set; }
+        public string customerNameHome { get; set; }
 
         int Page, Tab, previousTab, maxPages;
 
@@ -47,11 +48,11 @@ namespace prjEindwerk_LotsOfLili
             //
             // !!! Commentaar typen bij ALLES !!!
             //
-            // buttons --> copy code verminderen
-            //
             // Verder testen --> meer producten plaatsen in Pins --> kijken if maxPages verandert !!!
             //
             // namen variabelen aanpassen --> test --> iets beter
+            //
+            // betalen --> mail versturen met banknummer om te storten
 
             ProductDA p = new ProductDA();
 
@@ -72,7 +73,7 @@ namespace prjEindwerk_LotsOfLili
                 btnAdmin.Visible = true;
             }
 
-            lblGebruiker.Text = Name;
+            lblGebruiker.Text = customerNameHome;
 
             lblAantal.Text = $"Aantal producten: {Cart.Count}";
         }
@@ -137,6 +138,7 @@ namespace prjEindwerk_LotsOfLili
                     }
                     if (lblTest != null)
                     {
+                        
                         lblTest.Text = $"{product.Naam}\n € {product.Prijs}";
                     }
 
@@ -174,6 +176,7 @@ namespace prjEindwerk_LotsOfLili
             // Winkelmandje openen
             frmMandje Mandje = new frmMandje();
             Mandje.NewCart = Cart;
+            Mandje.customerName = customerNameHome;
             Mandje.Show();
             this.Hide();
         }
@@ -183,6 +186,14 @@ namespace prjEindwerk_LotsOfLili
             // Admin menu openen
             frmAdmin Admin = new frmAdmin();
             Admin.Show();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Instellingen instellingen = new Instellingen();
+            instellingen.customerName = customerNameHome;
+            instellingen.Show();
+            this.Hide();
         }
 
         private void UpdateButton(int tab, System.Windows.Forms.Button selectedButton)

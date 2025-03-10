@@ -73,9 +73,55 @@ namespace prjEindwerk_LotsOfLili.DA
             // Uitvoeren van commando
             mySqlCmd.ExecuteScalar();
 
-            Naam = G.Voornaam + G.Naam;
+            Naam = G.Voornaam + " " + G.Naam;
 
             MessageBox.Show("U bent geregistreerd");
+            conn.Close();
+        }
+
+        public static void WWControle(Gebruikers G)
+        {
+            MySqlConnection conn = Database.MakeConnection();
+
+            string query = "select Wachtwoord from tblGebruikers where Wachtwoord = @ww";
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@ww", G.Wachtwoord);
+
+            cmd.ExecuteScalar();
+
+            conn.Close();
+        }
+
+        public static void WWVeranderen(Gebruikers G, string currentWW, string newWW)
+        {
+            MySqlConnection conn = Database.MakeConnection();
+
+            string query1 = "select Wachtwoord from tblGebruikers where Wachtwoord = @ww";
+
+            MySqlCommand cmd1 = new MySqlCommand(query1, conn);
+
+            cmd1.CommandType = CommandType.Text;
+
+            cmd1.Parameters.AddWithValue("@ww", currentWW);
+
+            cmd1.ExecuteScalar();
+
+
+
+            //string query2 = "UPDATE Eindwerk.tblGebruikers SET Wachtwoord = @newWW WHERE tblGebruikers.Wachtwoord = @Wachtwoord";
+
+            //MySqlCommand cmd2 = new MySqlCommand(query2, conn);
+
+            //cmd2.CommandType = CommandType.Text;
+
+            //cmd2.Parameters.AddWithValue("@Wachtwoord", G.Wachtwoord);
+            //cmd2.Parameters.AddWithValue("@newWW", newWW);
+
+            //cmd2.ExecuteScalar();
             conn.Close();
         }
     }

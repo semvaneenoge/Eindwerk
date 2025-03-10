@@ -15,8 +15,8 @@ namespace prjEindwerk_LotsOfLili
 {
     public partial class frmStart : Form
     {
-
-        string Naam;
+        public string customerName;
+     
         public frmStart()
         {
             InitializeComponent();
@@ -46,14 +46,14 @@ namespace prjEindwerk_LotsOfLili
             G.Email = txtEmailInlog.Text;
             G.Wachtwoord = txtWWInlog.Text;
 
-            bool blnLogin = GebruikersDA.LoginValidation(G, out isAdmin, out Naam);
+            bool blnLogin = GebruikersDA.LoginValidation(G, out isAdmin, out customerName);
 
             if (blnLogin == true)
             {
                 this.Hide();
                 frmHome Dashboard = new frmHome();
                 Dashboard.isAdmin = isAdmin;
-                Dashboard.Name = Naam;
+                Dashboard.customerNameHome = customerName;
                 Dashboard.Show();
             }
             else
@@ -84,11 +84,11 @@ namespace prjEindwerk_LotsOfLili
                 G.Email = txtEmailRegistreer.Text;
                 G.Wachtwoord = txtWWRegistreer.Text;
 
-                GebruikersDA.Registreren(G, out Naam);
+                GebruikersDA.Registreren(G, out customerName);
 
                 this.Hide();
                 frmHome Dashboard = new frmHome();
-                Dashboard.Name = Naam;
+                Dashboard.Name = customerName;
                 Dashboard.Show();
             }
             else

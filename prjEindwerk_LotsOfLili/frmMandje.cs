@@ -14,6 +14,8 @@ namespace prjEindwerk_LotsOfLili
     {
         public List<Cart> NewCart;
 
+        public string customerName;
+
         double  Totaal;
 
         public frmMandje()
@@ -50,6 +52,7 @@ namespace prjEindwerk_LotsOfLili
         {
             frmHome Home = new frmHome();
             Home.Cart = NewCart;
+            Home.customerNameHome = customerName;
             Home.Show();
             this.Hide();
         }
@@ -78,6 +81,11 @@ namespace prjEindwerk_LotsOfLili
 
                 UpdateListview();
             }
+        }
+
+        private void btnBetalen_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

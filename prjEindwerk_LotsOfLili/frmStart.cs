@@ -23,7 +23,7 @@ namespace prjEindwerk_LotsOfLili
 
             // ---Notes---
             //
-            // Registreren controle enkel WW en herhalen, moet meer controle --> error bij enkel WW en herhalen
+            // Meer controle --> tel, post etc. --> nummers
             //
             // Reset() --> verder uitwerken + PasswordChar
             // 
@@ -50,11 +50,13 @@ namespace prjEindwerk_LotsOfLili
 
             if (blnLogin == true)
             {
+                string email = txtEmailInlog.Text.Trim();
+                frmHome Home = new frmHome();
+                Home.userEmail = email;
+                Home.isAdmin = isAdmin;
+                Home.customerNameHome = customerName;
+                Home.Show();
                 this.Hide();
-                frmHome Dashboard = new frmHome();
-                Dashboard.isAdmin = isAdmin;
-                Dashboard.customerNameHome = customerName;
-                Dashboard.Show();
             }
             else
             {
@@ -86,10 +88,18 @@ namespace prjEindwerk_LotsOfLili
 
                 GebruikersDA.Registreren(G, out customerName);
 
+                if (string.IsNullOrEmpty(customerName))
+                {
+                    // stopt de rest van de code
+                    return;
+                }
+
                 this.Hide();
-                frmHome Dashboard = new frmHome();
-                Dashboard.Name = customerName;
-                Dashboard.Show();
+                frmHome Home = new frmHome();
+                string email = txtEmailRegistreer.Text;
+                Home.userEmail = email;
+                Home.customerNameHome = customerName;
+                Home.Show();
             }
             else
             {

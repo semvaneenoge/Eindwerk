@@ -25,8 +25,9 @@ namespace prjEindwerk_LotsOfLili
 {
     public partial class frmHome : Form
     {
-        public bool isAdmin {  get; set; }
+        public bool isAdmin { get; set; }
         public string customerNameHome { get; set; }
+        public string userEmail { get; set; }
 
         int Page, Tab, previousTab, maxPages;
 
@@ -38,21 +39,19 @@ namespace prjEindwerk_LotsOfLili
 
             // ---Notes---
             //
-            // Linksboven: Gebruiker + instellingen (WW wijzigen) + winkelmandje
-            //
             // Admin: producten toevoegen/verwijderen (database), producten aanpassen (naam, prijs, foto)
             //
             // Image in databank --> ProductDA (chatgpt)
             //
-            // Probeer process memory te verminderen
-            //
             // !!! Commentaar typen bij ALLES !!!
-            //
-            // Verder testen --> meer producten plaatsen in Pins --> kijken if maxPages verandert !!!
             //
             // namen variabelen aanpassen --> test --> iets beter
             //
             // betalen --> mail versturen met banknummer om te storten
+            //
+            // postcode in database fixen
+            //
+            // Foutmeldingen duidelijker maken --> specifieker
 
             ProductDA p = new ProductDA();
 
@@ -75,7 +74,7 @@ namespace prjEindwerk_LotsOfLili
 
             lblGebruiker.Text = customerNameHome;
 
-            lblAantal.Text = $"Aantal producten: {Cart.Count}";
+            TotaalPrroducten();
         }
 
         private void lblBorder(object sender, PaintEventArgs e)
@@ -145,6 +144,7 @@ namespace prjEindwerk_LotsOfLili
                     if (lblTest.Text.Contains("Empty slot"))
                     {
                         pnlProducten.Controls["btnMandje" + (i + 1)].Enabled = false;
+                        pnlProducten.Controls["lblProduct" + (i + 1)].Text = "";
                     }
                     else
                     {
@@ -175,8 +175,9 @@ namespace prjEindwerk_LotsOfLili
         {
             // Winkelmandje openen
             frmMandje Mandje = new frmMandje();
-            Mandje.NewCart = Cart;
+            Mandje.Cart = Cart;
             Mandje.customerName = customerNameHome;
+            Mandje.userEmail = userEmail;
             Mandje.Show();
             this.Hide();
         }
@@ -192,6 +193,8 @@ namespace prjEindwerk_LotsOfLili
         {
             Instellingen instellingen = new Instellingen();
             instellingen.customerName = customerNameHome;
+            instellingen.userEmail = userEmail;
+            instellingen.Cart = Cart;
             instellingen.Show();
             this.Hide();
         }
@@ -266,8 +269,19 @@ namespace prjEindwerk_LotsOfLili
                 }
             }
 
-            // beter begrijpen cart.sum !!!
-            lblAantal.Text = $"Aantal producten: {Cart.Sum(item => item.Aantal)}";
+            TotaalPrroducten();
+        }
+
+        private void TotaalPrroducten()
+        {
+            int Totaal = 0;
+            foreach (var item in Cart)
+            {
+                Totaal += item.Aantal;
+            }
+
+            lblAantal.Text = $"Aantal producten: {Totaal}";
+
         }
 
         private void btnMandje1_Click(object sender, EventArgs e)

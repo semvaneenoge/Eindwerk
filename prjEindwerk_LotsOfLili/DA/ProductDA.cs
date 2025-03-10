@@ -18,10 +18,6 @@ namespace prjEindwerk_LotsOfLili.DA
         // ---Notes---
         //
         // Oppassen voor webp bestanden !!!
-        // 
-        // Fotos agenda aanpassen --> achtergrond verwijderen (eerst kijken om foto te updaten in database / als admin)
-        //
-        // Code proberen veranderen dat ik niet direct of volledig begrijp (kunnen uitleggen) --> Any
         //
         // Nieuwe portemonnee terug toevoegen Keecie
 
@@ -112,7 +108,7 @@ namespace prjEindwerk_LotsOfLili.DA
 
                 for (int i = 0; i < placeholdersNeeded; i++)
                 {
-                    Horloges.Add((0, "Geen product", 0.0, null));
+                    Horloges.Add((0, "Empty slot", 0.0, null));
                 }
 
                 conn.Close();

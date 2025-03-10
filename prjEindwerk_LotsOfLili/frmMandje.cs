@@ -12,7 +12,9 @@ namespace prjEindwerk_LotsOfLili
 {
     public partial class frmMandje : Form
     {
-        public List<Cart> NewCart;
+        public string userEmail;
+
+        public List<Cart> Cart;
 
         public string customerName;
 
@@ -35,7 +37,7 @@ namespace prjEindwerk_LotsOfLili
             lsvMandje.Items.Clear();
             Totaal = 0;
 
-            foreach (var item in NewCart)
+            foreach (var item in Cart)
             {
                 ListViewItem listItem = new ListViewItem(item.Naam);
                 listItem.SubItems.Add("€ " + item.Prijs.ToString());
@@ -51,8 +53,9 @@ namespace prjEindwerk_LotsOfLili
         private void btnTerug_Click(object sender, EventArgs e)
         {
             frmHome Home = new frmHome();
-            Home.Cart = NewCart;
+            Home.Cart = Cart;
             Home.customerNameHome = customerName;
+            Home.userEmail = userEmail;
             Home.Show();
             this.Hide();
         }
@@ -63,7 +66,7 @@ namespace prjEindwerk_LotsOfLili
             {
                 string selectedName = lsvMandje.SelectedItems[0].Text;
 
-                foreach (var item in NewCart)
+                foreach (var item in Cart)
                 {
                     if (item.Naam == selectedName)
                     {
@@ -73,7 +76,7 @@ namespace prjEindwerk_LotsOfLili
                         }
                         else
                         {
-                            NewCart.Remove(item);
+                            Cart.Remove(item);
                         }
                         break;
                     }

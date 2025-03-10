@@ -86,6 +86,16 @@ namespace prjEindwerk_LotsOfLili
             }
         }
 
+        private void btnVerwijderAlleGeselecteerd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerwijderAlles_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnBetalen_Click(object sender, EventArgs e)
         {
 

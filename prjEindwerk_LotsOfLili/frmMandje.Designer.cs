@@ -37,6 +37,8 @@
             this.btnTerug = new System.Windows.Forms.Button();
             this.btnVerwijder = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnVerwijderAlleGeselecteerd = new System.Windows.Forms.Button();
+            this.btnVerwijderAlles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,9 +50,9 @@
             this.Aantal});
             this.lsvMandje.FullRowSelect = true;
             this.lsvMandje.HideSelection = false;
-            this.lsvMandje.Location = new System.Drawing.Point(12, 49);
+            this.lsvMandje.Location = new System.Drawing.Point(12, 12);
             this.lsvMandje.Name = "lsvMandje";
-            this.lsvMandje.Size = new System.Drawing.Size(308, 284);
+            this.lsvMandje.Size = new System.Drawing.Size(317, 284);
             this.lsvMandje.TabIndex = 0;
             this.lsvMandje.UseCompatibleStateImageBehavior = false;
             this.lsvMandje.View = System.Windows.Forms.View.Details;
@@ -80,7 +82,7 @@
             // 
             // btnBetalen
             // 
-            this.btnBetalen.Location = new System.Drawing.Point(520, 310);
+            this.btnBetalen.Location = new System.Drawing.Point(432, 220);
             this.btnBetalen.Name = "btnBetalen";
             this.btnBetalen.Size = new System.Drawing.Size(75, 23);
             this.btnBetalen.TabIndex = 2;
@@ -90,7 +92,7 @@
             // 
             // btnTerug
             // 
-            this.btnTerug.Location = new System.Drawing.Point(343, 310);
+            this.btnTerug.Location = new System.Drawing.Point(432, 249);
             this.btnTerug.Name = "btnTerug";
             this.btnTerug.Size = new System.Drawing.Size(75, 23);
             this.btnTerug.TabIndex = 3;
@@ -100,11 +102,11 @@
             // 
             // btnVerwijder
             // 
-            this.btnVerwijder.Location = new System.Drawing.Point(12, 339);
+            this.btnVerwijder.Location = new System.Drawing.Point(12, 302);
             this.btnVerwijder.Name = "btnVerwijder";
             this.btnVerwijder.Size = new System.Drawing.Size(107, 23);
             this.btnVerwijder.TabIndex = 4;
-            this.btnVerwijder.Text = "Verwijder item";
+            this.btnVerwijder.Text = "Verwijder product";
             this.btnVerwijder.UseVisualStyleBackColor = true;
             this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
             // 
@@ -118,12 +120,34 @@
             this.picLogo.TabIndex = 5;
             this.picLogo.TabStop = false;
             // 
+            // btnVerwijderAlleGeselecteerd
+            // 
+            this.btnVerwijderAlleGeselecteerd.Location = new System.Drawing.Point(125, 302);
+            this.btnVerwijderAlleGeselecteerd.Name = "btnVerwijderAlleGeselecteerd";
+            this.btnVerwijderAlleGeselecteerd.Size = new System.Drawing.Size(204, 23);
+            this.btnVerwijderAlleGeselecteerd.TabIndex = 6;
+            this.btnVerwijderAlleGeselecteerd.Text = "Verwijder alle geselecteerde producten";
+            this.btnVerwijderAlleGeselecteerd.UseVisualStyleBackColor = true;
+            this.btnVerwijderAlleGeselecteerd.Click += new System.EventHandler(this.btnVerwijderAlleGeselecteerd_Click);
+            // 
+            // btnVerwijderAlles
+            // 
+            this.btnVerwijderAlles.Location = new System.Drawing.Point(335, 302);
+            this.btnVerwijderAlles.Name = "btnVerwijderAlles";
+            this.btnVerwijderAlles.Size = new System.Drawing.Size(131, 23);
+            this.btnVerwijderAlles.TabIndex = 7;
+            this.btnVerwijderAlles.Text = "Verwijder all producten";
+            this.btnVerwijderAlles.UseVisualStyleBackColor = true;
+            this.btnVerwijderAlles.Click += new System.EventHandler(this.btnVerwijderAlles_Click);
+            // 
             // frmMandje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(607, 369);
+            this.ClientSize = new System.Drawing.Size(605, 334);
+            this.Controls.Add(this.btnVerwijderAlles);
+            this.Controls.Add(this.btnVerwijderAlleGeselecteerd);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnVerwijder);
             this.Controls.Add(this.btnTerug);
@@ -151,5 +175,7 @@
         private System.Windows.Forms.Button btnVerwijder;
         private System.Windows.Forms.ColumnHeader Aantal;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Button btnVerwijderAlleGeselecteerd;
+        private System.Windows.Forms.Button btnVerwijderAlles;
     }
 }

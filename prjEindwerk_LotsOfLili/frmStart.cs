@@ -22,16 +22,82 @@ namespace prjEindwerk_LotsOfLili
             InitializeComponent();
 
             // ---Notes---
-            //
-            // Meer controle --> tel, post etc. --> nummers
-            //
-            // Reset() --> verder uitwerken + PasswordChar --> laten werken met tab
 
-            txtEmailInlog.Tag = txtEmailInlog.Text;
-            txtWWInlog.Tag = txtWWInlog.Text;
+            // Voert methodes uit
+            // Tags instellen
+            setTags(grbLogin);
+            setTags(grbRegistreer);
 
-            txtWWRegistreer.Tag = txtWWRegistreer.Text;
-            txtHerhaalWW.Tag = txtHerhaalWW.Text;
+            // Reset instellen aan controls
+            ResetToevoegen(grbLogin);
+            ResetToevoegen(grbRegistreer);
+        }
+
+        private void setTags(Control control)
+        {
+            // Geeft overeenkomende textboxen een Tag
+            foreach (Control item in control.Controls)
+            {
+                if (item is TextBox txt)
+                {
+                    txt.Tag = txt.Text;
+                }
+            }
+        }
+
+        // Textboxen leegmaken + terug vullen
+        private void Reset(object sender, EventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            bool password = txt.Name.Contains("WW");
+
+            // Controle op focus van textbox
+            if (txt.Focused)
+            {
+                //Textbox leegmaken of password character instellen
+                if (txt.Text == txt.Tag.ToString())
+                {
+                    txt.Clear();
+                }
+
+                if (password)
+                {
+                    txt.PasswordChar = '*';
+                }
+            }
+            else
+            {
+                // Textbox terug vullen of password character instellen
+                if (string.IsNullOrEmpty(txt.Text))
+                {
+                    txt.Text = txt.Tag.ToString();
+
+                    if (password)
+                    {
+                        txt.PasswordChar = '\0';
+                    }
+                }
+                else
+                {
+                    if (password)
+                    {
+                        txt.PasswordChar = '*';
+                    }
+                }
+            }
+        }
+
+        private void ResetToevoegen(Control control)
+        {
+            // Geeft Reset() door aan overeenkomende textboxen
+            foreach (Control item in control.Controls)
+            {
+                if (item is TextBox txt && txt.Tag != null)
+                {
+                    txt.Enter += Reset;
+                    txt.Leave += Reset;
+                }
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -41,13 +107,16 @@ namespace prjEindwerk_LotsOfLili
 
             bool isAdmin;
 
+            // Gegevens invullen
             G.Email = txtEmailInlog.Text;
             G.Wachtwoord = txtWWInlog.Text;
 
             bool blnLogin = GebruikersDA.LoginValidation(G, out isAdmin, out customerName);
 
+            // Controle op juiste inloggegevens
             if (blnLogin == true)
             {
+                // Gegevens doorgeven en Home openenen
                 string email = txtEmailInlog.Text.Trim();
                 frmHome Home = new frmHome();
                 Home.userEmail = email;
@@ -75,35 +144,75 @@ namespace prjEindwerk_LotsOfLili
             // Registratie
             Gebruikers G = new Gebruikers();
 
-            if (txtHerhaalWW.Text == txtWWRegistreer.Text)
+            // Controle op default tekst en getallen
+            if (txtVoornaam.Text != txtVoornaam.Tag.ToString())
             {
-                G.Voornaam = txtVoornaam.Text;
-                G.Naam = txtNaam.Text;
-                G.Adres = txtAdres.Text;
-                G.Telefoon = txtTelefoon.Text;
-                G.Email = txtEmailRegistreer.Text;
-                G.Wachtwoord = txtWWRegistreer.Text;
-
-                GebruikersDA.Registreren(G, out customerName);
-
-                if (string.IsNullOrEmpty(customerName))
+                if (txtNaam.Text != txtNaam.Tag.ToString())
                 {
-                    // stopt de rest van de code
-                    return;
-                }
+                    if (txtAdres.Text != txtAdres.Tag.ToString())
+                    {
+                        if (int.TryParse(txtPostcode.Text, out int postcode))
+                        {
+                            if (int.TryParse(txtTelefoon.Text, out int telefoon))
+                            {
+                                if (txtEmailRegistreer.Text != txtEmailRegistreer.Tag.ToString())
+                                {
+                                    if (txtHerhaalWW.Text == txtWWRegistreer.Text)
+                                    {
+                                        G.Voornaam = txtVoornaam.Text;
+                                        G.Naam = txtNaam.Text;
+                                        G.Adres = txtAdres.Text;
+                                        G.Postcode = Convert.ToInt32(txtPostcode.Text);
+                                        G.Telefoon = txtTelefoon.Text;
+                                        G.Email = txtEmailRegistreer.Text;
+                                        G.Wachtwoord = txtWWRegistreer.Text;
 
-                this.Hide();
-                frmHome Home = new frmHome();
-                string email = txtEmailRegistreer.Text;
-                Home.userEmail = email;
-                Home.customerNameHome = customerName;
-                Home.Show();
+                                        GebruikersDA.Registreren(G, out customerName);
+
+                                        // Controle op lege naam
+                                        if (string.IsNullOrEmpty(customerName))
+                                        {
+                                            // Vroeg stoppen, zal volgende code niet uitvoeren
+                                            return;
+                                        }
+
+                                        this.Hide();
+                                        frmHome Home = new frmHome();
+                                        string email = txtEmailRegistreer.Text;
+                                        Home.userEmail = email;
+                                        Home.customerNameHome = customerName;
+                                        Home.Show();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Wachtwoorden komen niet overeen.");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Gelieve een getal in te vullen", "Telefoon");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Gelieve een getal in te vullen", "Postcode");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Gelieve een adres in te vullen", "Adres");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Gelieve een naam in te vullen", "Naam");
+                }
             }
             else
             {
-                // Foutmelding
-                MessageBox.Show("Foutieve gegevens.");
-            }
+                MessageBox.Show("Gelieve een voornaam in te vullen", "Voornaam");
+            }            
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
@@ -111,74 +220,6 @@ namespace prjEindwerk_LotsOfLili
             // Login tonen
             grbRegistreer.Visible = false;
             this.Height = 460;
-        }
-
-
-        // Textboxen leegmaken + terug vullen
-        
-        private void Reset(object sender, EventArgs e)
-        {
-            TextBox txt = sender as TextBox;
-
-            if (txt.Focused)
-            {
-                if (txt.Text == txt.Tag.ToString())
-                {
-                    txt.Clear();
-                }
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(txt.Text))
-                {
-                    txt.Text = txt.Tag.ToString();
-                }
-            }
-        }
-
-        private void txtEmailInlog_Enter(object sender, EventArgs e)
-        {
-            Reset(sender, e );
-        }
-
-        private void txtEmailInlog_Leave(object sender, EventArgs e)
-        {
-            Reset(sender, e);
-        }
-
-        private void txtWWInlog_Enter(object sender, EventArgs e)
-        {
-            Reset(sender, e);
-            txtWWInlog.PasswordChar = '*';
-        }
-
-        private void txtWWInlog_Leave(object sender, EventArgs e)
-        {
-            Reset(sender, e);
-            if (txtWWInlog.Text == "" || txtWWInlog.Text == txtWWInlog.Tag.ToString())
-            {
-                txtWWInlog.PasswordChar = '\0';
-            }
-        }
-
-        private void txtWWRegistreer_Enter(object sender, EventArgs e)
-        {
-            Reset(sender, e);
-        }
-
-        private void txtWWRegistreer_Leave(object sender, EventArgs e)
-        {
-            Reset(sender, e);
-        }
-
-        private void txtHerhaalWW_Enter(object sender, EventArgs e)
-        {
-            Reset(sender, e);
-        }
-
-        private void txtHerhaalWW_Leave(object sender, EventArgs e)
-        {
-            Reset(sender, e);
         }
     }
 }

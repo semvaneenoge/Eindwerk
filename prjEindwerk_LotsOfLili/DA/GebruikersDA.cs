@@ -19,7 +19,7 @@ namespace prjEindwerk_LotsOfLili.DA
             isAdmin = false;
             Naam = "";
 
-            // verbinding met databank
+            // Verbinding met databank
             MySqlConnection conn = Database.MakeConnection();
 
             string query = "SELECT count(1), Admin, Voornaam, Naam from Eindwerk.tblgebruikers where Email = @Email and Wachtwoord = @Wachtwoord";
@@ -58,25 +58,28 @@ namespace prjEindwerk_LotsOfLili.DA
 
             try
             {
+                // Controle op dubbele email
                 string check = "select count(*) from Eindwerk.tblgebruikers where Email = @Email";
 
                 MySqlCommand cmd = new MySqlCommand(check, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Email", G.Email);
 
+                // Waarde opslaan van uitgevoerde query
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
 
+                // Controle dubbele email
                 if (count > 0)
                 {
                     MessageBox.Show("Dit email is al in gebruik. Gelieve een ander email te gebruiken.");
-                    conn.Close();
                     return;
                 }
 
-                string quary = "INSERT INTO Eindwerk.tblgebruikers(Adres, Email, Naam, Postcode, Telefoon, Voornaam, Wachtwoord) " +
+                // Invoegen in datababase
+                string query = "INSERT INTO Eindwerk.tblgebruikers(Adres, Email, Naam, Postcode, Telefoon, Voornaam, Wachtwoord) " +
                                "VALUES (@Adres, @Email, @Naam, @Postcode, @Telefoon, @Voornaam, @Wachtwoord)";
                 // Voert sql statements uit
-                MySqlCommand mySqlCmd = new MySqlCommand(quary, conn);
+                MySqlCommand mySqlCmd = new MySqlCommand(query, conn);
                 // Soort commando --> text
                 mySqlCmd.CommandType = CommandType.Text;
                 // Parameters toevoegen
@@ -97,8 +100,7 @@ namespace prjEindwerk_LotsOfLili.DA
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}\n" +
-                    $"U bent niet geregistreerd");
+                MessageBox.Show($"Er is een fout opgetreden bij het registreren: {ex.Message}\n", "Fout", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             // sluit de database (ook als er een fout is)
             finally
@@ -115,6 +117,7 @@ namespace prjEindwerk_LotsOfLili.DA
 
             try
             {
+                // Wachtwoord ophalen uit database
                 string query = "select Wachtwoord from Eindwerk.tblGebruikers where Email = @Email";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -122,6 +125,7 @@ namespace prjEindwerk_LotsOfLili.DA
                 cmd.Parameters.AddWithValue("@Email", G.Email);
                 var result = cmd.ExecuteScalar();
 
+                // Controle 
                 if (result != null)
                 {
                     currentWW = result.ToString();
@@ -130,8 +134,7 @@ namespace prjEindwerk_LotsOfLili.DA
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Er is een fout opgetreden {ex.Message}\n" +
-                    "Het wachtwoord is niet gevonden.");
+                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}\n", "Fout", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -145,6 +148,7 @@ namespace prjEindwerk_LotsOfLili.DA
 
             try
             {
+                // Wachtwoord bijwerken met het nieuwe
                 string query = "UPDATE Eindwerk.tblGebruikers SET Wachtwoord = @newWW WHERE Email = @Email and tblGebruikers.Wachtwoord = @Wachtwoord";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -155,13 +159,11 @@ namespace prjEindwerk_LotsOfLili.DA
                 cmd.Parameters.AddWithValue("@Wachtwoord", G.Wachtwoord);
                 cmd.Parameters.AddWithValue("@newWW", newWW);
 
-                cmd.ExecuteScalar();
-
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Er is een fout opgetreden {ex.Message}\n" +
-                    "Het wachtwoord is niet veranderd.");
+                MessageBox.Show($"Er is een fout opgetreden bij het wijzigen van het wachtwoord: {ex.Message}\n", "Fout", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

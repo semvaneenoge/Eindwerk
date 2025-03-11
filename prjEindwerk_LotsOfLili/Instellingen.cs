@@ -15,6 +15,8 @@ namespace prjEindwerk_LotsOfLili
 {
     public partial class Instellingen : Form
     {
+        public bool isAdmin;
+
         public string userEmail { get; set; }
 
         public List<Cart> Cart;
@@ -28,18 +30,16 @@ namespace prjEindwerk_LotsOfLili
             InitializeComponent();
 
             // --- notes ---
-            //
-            // error:
-            // juist ww invullen --> nieuw ww niet invullen, drukken op terug
-            // terug naar instellingen en juist ww proberen invullen
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
         {
+            // Waarden doorgeven en Home tonen
             frmHome Home = new frmHome();
             Home.customerNameHome = customerName;
             Home.userEmail = userEmail;
             Home.Cart = Cart;
+            Home.isAdmin = isAdmin;
             Home.Show();
             this.Hide();
         }
@@ -49,22 +49,27 @@ namespace prjEindwerk_LotsOfLili
             Gebruikers G = new Gebruikers();
             G.Email = userEmail;
 
+            // Textbox waarde opvangen
             ingegevenWW = txtWW.Text;
 
+            // Controle of het leeg is
             if (string.IsNullOrEmpty(ingegevenWW))
             {
                 MessageBox.Show("Gelieve een wachtwoord in te geven!", "");
             }
 
+            // Controle methode uitvoeren
             opgeslagenWW = "";
             GebruikersDA.WWControle(G, out opgeslagenWW);
 
+            // Controle ophalen van wachtwoord
             if (string.IsNullOrEmpty(opgeslagenWW))
             {
                 MessageBox.Show("Er is een probleem met het ophalen van het wachtwoord.");
                 return;
             }
 
+            // Controle of ingegeven wachtwoord overeenkomt met database
             if (ingegevenWW == opgeslagenWW)
             {
                 btnOk.Visible = false;
@@ -89,8 +94,10 @@ namespace prjEindwerk_LotsOfLili
             Gebruikers G = new Gebruikers();
             G.Email = userEmail;
 
+            // Textbox waarde eerste wachtwoord opvangen
             string newWW1 = txtNieuwWW.Text;
 
+            // Controle nieuw wachtwoord gelijk als oude
             if (newWW1 == ingegevenWW)
             {
                 MessageBox.Show("Wachtwoord mag niet hetzelfde zijn als de vorige!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -99,14 +106,17 @@ namespace prjEindwerk_LotsOfLili
             }
             else
             {
+                // Textbox waarde tweede wachtwoord opvangen
                 string newWW2 = txtControleWW.Text;
 
+                // Controle of eerste wachtwoord leeg is
                 if (string.IsNullOrEmpty(newWW1))
                 {
                     MessageBox.Show("Nieuw wachtwoord mag niet leeg zijn!", "");
                     return;
                 }
 
+                // Controle of wachtwoorden overeenkomen
                 if (newWW2 != newWW1)
                 {
                     MessageBox.Show("Wachtwoorden komen niet overeen!", "Fout wachtwoord");

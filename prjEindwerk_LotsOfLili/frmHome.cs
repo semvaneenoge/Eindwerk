@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace prjEindwerk_LotsOfLili
 {
@@ -29,34 +28,22 @@ namespace prjEindwerk_LotsOfLili
         public string customerNameHome { get; set; }
         public string userEmail { get; set; }
 
-        int Page, Tab, previousTab, maxPages;
-
         public List<Cart> Cart = new List<Cart>();
+
+        int Page, Tab, previousTab, maxPages;
 
         public frmHome()
         {
             InitializeComponent();
 
             // --- notes ---
-            //
-            // Admin: producten toevoegen/verwijderen (database), producten aanpassen (naam, prijs, foto)
-            //
-            // Image in databank --> ProductDA (chatgpt)
-            //
-            // !!! Commentaar typen bij ALLES !!!
-            //
-            // namen variabelen aanpassen --> test --> iets beter
-            //
-            // betalen --> mail versturen met banknummer om te storten
-            //
-            // postcode in database fixen
-            //
-            // Foutmeldingen duidelijker maken --> specifieker
 
             ProductDA p = new ProductDA();
 
+            // Standaardweergave
             Tab = 1;
 
+            // Labels een border geven
             for (int i = 0; i < 6; i++)
             {
                 pnlProducten.Controls["lblProduct" + (i + 1)].Paint += lblBorder;
@@ -67,18 +54,22 @@ namespace prjEindwerk_LotsOfLili
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            // Controle op admin
             if (isAdmin)
             {
+                // Knop tonen
                 btnAdmin.Visible = true;
             }
 
+            // Naam tonen
             lblGebruiker.Text = customerNameHome;
 
-            TotaalPrroducten();
+            TotaalProducten();
         }
 
         private void lblBorder(object sender, PaintEventArgs e)
         {
+            //Labels een border geven
             Label lbl = sender as Label;
 
             ControlPaint.DrawBorder(e.Graphics, lblProduct1.DisplayRectangle, Color.Black, ButtonBorderStyle.Solid);
@@ -88,49 +79,63 @@ namespace prjEindwerk_LotsOfLili
         {
             ProductDA p = new ProductDA();
 
+            // Max. aantal producten per pagina
             int maxProducts = 6;
+            // Standaardweergave producten
             var ProductsList = p.Agendas;
 
+            // Controle of Tab veranderd --> Pagina resetten
             if (Tab != previousTab)
             {
                 Page = 0;
             }
 
+            // Tab opslaan
             previousTab = Tab;
 
+            // List en aantal pagina's ophalen aan de hand van geselecteerd Tab
             switch (Tab)
             {
                 case 1:
+                    // List Agendas ophalen en pagina's instellen
                     p.AgendasInvoegen();
                     ProductsList = p.Agendas;
                     maxPages = ProductsList.Count / maxProducts;
                     break;
                 case 2:
+                    // List Horloges ophalen en pagina's instellen
                     p.HorlogesInvoegen();
                     ProductsList = p.Horloges;
                     maxPages = ProductsList.Count / maxProducts;
                     break;
                 case 3:
+                    // List Portemonnees ophalen en pagina's instellen
                     p.PortemonneesInvoegen();
                     ProductsList = p.Portemonnees;
                     maxPages = ProductsList.Count / maxProducts;
                     break;
                 case 4:
+                    // List Pins ophalen en pagina's instellen
                     p.PinsInvoegen();
                     ProductsList = p.Pins;
                     maxPages = ProductsList.Count / maxProducts;
                     break;
             }
 
+            // Producten invullen in panel
             for (int i = 0; i < maxProducts; i++)
             {
+                // Picturebox en Label krijgen voor het product van de huidige pagina
                 PictureBox picProduct = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
                 Label lblProduct = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
 
+                // Controle op meer producten
                 if (i < ProductsList.Count)
                 {
+                    // Product ophalen op basis van pagina
                     var product = ProductsList[i + (maxProducts * Page)];
 
+                    // Gegevens invullen in Picturebox en Label
                     if (picProduct != null)
                     {
                         picProduct.Image = product.Foto;
@@ -141,6 +146,8 @@ namespace prjEindwerk_LotsOfLili
                         lblProduct.Text = $"{product.Naam}\n € {product.Prijs}";
                     }
 
+                    // Controle op lege slot
+                    // Label leegmaken en button niet meer kunnen gebruiken
                     if (lblProduct.Text.Contains("Empty slot"))
                     {
                         pnlProducten.Controls["btnMandje" + (i + 1)].Enabled = false;
@@ -153,20 +160,24 @@ namespace prjEindwerk_LotsOfLili
                 }
             }
 
+            // Pagina knoppen aan/uit zetten aan de hand van huidige pagina
             btnVorige.Enabled = Page > 0;
             btnVolgende.Enabled = Page < maxPages - 1;
 
+            // Huidige pagina tonen
             lblPagina.Text = $"pagina {Page + 1} / {maxPages}";
         }
 
         private void btnVorige_Click(object sender, EventArgs e)
         {
+            // Pagina terug gaan --> waarde verminderen
             Page--;
             checkPage();
         }
 
         private void btnVolgende_Click(object sender, EventArgs e)
         {
+            // Pagina verder gaan --> waarde vermeerderen
             Page++;
             checkPage();
         }
@@ -178,6 +189,7 @@ namespace prjEindwerk_LotsOfLili
             Mandje.Cart = Cart;
             Mandje.customerName = customerNameHome;
             Mandje.userEmail = userEmail;
+            Mandje.isAdmin = isAdmin;
             Mandje.Show();
             this.Hide();
         }
@@ -186,7 +198,12 @@ namespace prjEindwerk_LotsOfLili
         {
             // Admin menu openen
             frmAdmin Admin = new frmAdmin();
+            Admin.Cart = Cart;
+            Admin.customerName = customerNameHome;
+            Admin.userEmail = userEmail;
+            Admin.isAdmin = isAdmin;
             Admin.Show();
+            this.Hide();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -195,12 +212,14 @@ namespace prjEindwerk_LotsOfLili
             instellingen.customerName = customerNameHome;
             instellingen.userEmail = userEmail;
             instellingen.Cart = Cart;
+            instellingen.isAdmin = isAdmin;
             instellingen.Show();
             this.Hide();
         }
 
         private void UpdateButton(int tab, System.Windows.Forms.Button selectedButton)
         {
+            // Knoppen van Tabs updaten --> aan/uit zetten en kleur veranderen
             Tab = tab;
 
             btnAgendas.BackColor = Color.White;
@@ -221,40 +240,51 @@ namespace prjEindwerk_LotsOfLili
 
         private void btnAgendas_Click(object sender, EventArgs e)
         {
+            // Knop en waarde doorgeven
             UpdateButton(1, btnAgendas);
         }
 
         private void btnHorloges_Click(object sender, EventArgs e)
         {
+            // Knop en waarde doorgeven
             UpdateButton(2, btnHorloges);
         }
 
         private void btnPortemonnee_Click(object sender, EventArgs e)
         {
+            // Knop en waarde doorgeven
             UpdateButton(3, btnPortemonnee);
         }
 
         private void btnPins_Click(object sender, EventArgs e)
         {
+            // Knop en waarde doorgeven
             UpdateButton(4, btnPins);
         }
 
         private void AddToCart(int id)
         {
+            // Juiste Label gebruiken aan de hand van id
             Label lblProduct = (Label)pnlProducten.Controls["lblProduct" + id];
 
+            // Tekstwaarde opvangen van Label
             string productText = lblProduct.Text;
 
+            // String splitsen
             string[] productParts = productText.Split('€');
 
+            // Prijs van product omzetten naar een double
             if (double.TryParse(productParts[1], out double prijs))
             {
+                // Naam van product opvangen
                 string naam = productParts[0].Trim();
 
                 bool isFound = false;
 
+                // Producten in Cart doorlopen
                 foreach (var item in Cart)
                 {
+                    // Controle of product al in mandje zit
                     if (item.Naam == naam)
                     {
                         item.Aantal++;
@@ -263,17 +293,19 @@ namespace prjEindwerk_LotsOfLili
                     }
                 }
 
+                // Controle product nog niet in Cart --> toevoegen
                 if (!isFound)
                 {
                     Cart.Add(new Cart(naam, prijs, 1));
                 }
             }
 
-            TotaalPrroducten();
+            TotaalProducten();
         }
 
-        private void TotaalPrroducten()
+        private void TotaalProducten()
         {
+            // Totale aantal producten berekenen in List (Cart)
             int Totaal = 0;
             foreach (var item in Cart)
             {
@@ -281,36 +313,41 @@ namespace prjEindwerk_LotsOfLili
             }
 
             lblAantal.Text = $"Aantal producten: {Totaal}";
-
         }
 
         private void btnMandje1_Click(object sender, EventArgs e)
         {
+            // ID doorgeven
             AddToCart(1);
         }
 
         private void btnMandje2_Click(object sender, EventArgs e)
         {
+            // ID doorgeven
             AddToCart(2);
         }
 
         private void btnMandje3_Click(object sender, EventArgs e)
         {
+            // ID doorgeven
             AddToCart(3);
         }
 
         private void btnMandje4_Click(object sender, EventArgs e)
         {
+            // ID doorgeven
             AddToCart(4);
         }
 
         private void btnMandje5_Click(object sender, EventArgs e)
         {
+            // ID doorgeven
             AddToCart(5);
         }
 
         private void btnMandje6_Click(object sender, EventArgs e)
         {
+            // ID doorgeven
             AddToCart(6);
         }
     }

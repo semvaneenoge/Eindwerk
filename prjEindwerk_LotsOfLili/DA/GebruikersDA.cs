@@ -97,7 +97,8 @@ namespace prjEindwerk_LotsOfLili.DA
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Er is een fout opgetreden: " + ex.Message);
+                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}\n" +
+                    $"U bent niet geregistreerd");
             }
             // sluit de database (ook als er een fout is)
             finally
@@ -129,28 +130,43 @@ namespace prjEindwerk_LotsOfLili.DA
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Er is een fout opgetreden" + ex.Message);
+                MessageBox.Show($"Er is een fout opgetreden {ex.Message}\n" +
+                    "Het wachtwoord is niet gevonden.");
             }
-
-            conn.Close();
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public static void WWVeranderen(Gebruikers G, string newWW)
         {
             MySqlConnection conn = Database.MakeConnection();
 
-            string query = "UPDATE Eindwerk.tblGebruikers SET Wachtwoord = @newWW WHERE Email = @Email and tblGebruikers.Wachtwoord = @Wachtwoord";
+            try
+            {
+                string query = "UPDATE Eindwerk.tblGebruikers SET Wachtwoord = @newWW WHERE Email = @Email and tblGebruikers.Wachtwoord = @Wachtwoord";
 
-            MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlCommand cmd = new MySqlCommand(query, conn);
 
-            cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.Text;
 
-            cmd.Parameters.AddWithValue("@Email", G.Email);
-            cmd.Parameters.AddWithValue("@Wachtwoord", G.Wachtwoord);
-            cmd.Parameters.AddWithValue("@newWW", newWW);
+                cmd.Parameters.AddWithValue("@Email", G.Email);
+                cmd.Parameters.AddWithValue("@Wachtwoord", G.Wachtwoord);
+                cmd.Parameters.AddWithValue("@newWW", newWW);
 
-            cmd.ExecuteScalar();
-            conn.Close();
+                cmd.ExecuteScalar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Er is een fout opgetreden {ex.Message}\n" +
+                    "Het wachtwoord is niet veranderd.");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

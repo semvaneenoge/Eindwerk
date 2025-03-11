@@ -25,7 +25,7 @@ namespace prjEindwerk_LotsOfLili
             //
             // Meer controle --> tel, post etc. --> nummers
             //
-            // Reset() --> verder uitwerken + PasswordChar
+            // Reset() --> verder uitwerken + PasswordChar --> laten werken met tab
 
             txtEmailInlog.Tag = txtEmailInlog.Text;
             txtWWInlog.Tag = txtWWInlog.Text;

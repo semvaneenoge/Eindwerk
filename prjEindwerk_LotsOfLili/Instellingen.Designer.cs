@@ -41,7 +41,7 @@
             // 
             // btnWWVeranderen
             // 
-            this.btnWWVeranderen.Location = new System.Drawing.Point(149, 112);
+            this.btnWWVeranderen.Location = new System.Drawing.Point(149, 80);
             this.btnWWVeranderen.Name = "btnWWVeranderen";
             this.btnWWVeranderen.Size = new System.Drawing.Size(173, 23);
             this.btnWWVeranderen.TabIndex = 1;
@@ -52,7 +52,7 @@
             // 
             // btnTerug
             // 
-            this.btnTerug.Location = new System.Drawing.Point(13, 112);
+            this.btnTerug.Location = new System.Drawing.Point(13, 80);
             this.btnTerug.Name = "btnTerug";
             this.btnTerug.Size = new System.Drawing.Size(75, 23);
             this.btnTerug.TabIndex = 2;
@@ -72,7 +72,7 @@
             // lblNieuwWW
             // 
             this.lblNieuwWW.AutoSize = true;
-            this.lblNieuwWW.Location = new System.Drawing.Point(12, 41);
+            this.lblNieuwWW.Location = new System.Drawing.Point(12, 9);
             this.lblNieuwWW.Name = "lblNieuwWW";
             this.lblNieuwWW.Size = new System.Drawing.Size(153, 13);
             this.lblNieuwWW.TabIndex = 3;
@@ -82,7 +82,7 @@
             // lblControleWW
             // 
             this.lblControleWW.AutoSize = true;
-            this.lblControleWW.Location = new System.Drawing.Point(12, 74);
+            this.lblControleWW.Location = new System.Drawing.Point(12, 42);
             this.lblControleWW.Name = "lblControleWW";
             this.lblControleWW.Size = new System.Drawing.Size(115, 13);
             this.lblControleWW.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             // txtNieuwWW
             // 
-            this.txtNieuwWW.Location = new System.Drawing.Point(181, 38);
+            this.txtNieuwWW.Location = new System.Drawing.Point(181, 6);
             this.txtNieuwWW.Name = "txtNieuwWW";
             this.txtNieuwWW.PasswordChar = '*';
             this.txtNieuwWW.Size = new System.Drawing.Size(141, 20);
@@ -108,7 +108,7 @@
             // 
             // txtControleWW
             // 
-            this.txtControleWW.Location = new System.Drawing.Point(181, 71);
+            this.txtControleWW.Location = new System.Drawing.Point(181, 39);
             this.txtControleWW.Name = "txtControleWW";
             this.txtControleWW.PasswordChar = '*';
             this.txtControleWW.Size = new System.Drawing.Size(141, 20);
@@ -117,7 +117,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(247, 112);
+            this.btnOk.Location = new System.Drawing.Point(247, 80);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 5;
@@ -130,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(334, 147);
+            this.ClientSize = new System.Drawing.Size(334, 109);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.txtControleWW);
             this.Controls.Add(this.txtNieuwWW);

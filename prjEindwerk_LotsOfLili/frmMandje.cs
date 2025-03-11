@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace prjEindwerk_LotsOfLili
 {
@@ -47,7 +48,7 @@ namespace prjEindwerk_LotsOfLili
                 Totaal += item.Prijs * item.Aantal;
             }
 
-            lblTotaal.Text = $"De totale prijs is € {Totaal}";
+            lblTotPrijs.Text = $"€ {Totaal}";
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
@@ -64,11 +65,11 @@ namespace prjEindwerk_LotsOfLili
         {
             if (lsvMandje.SelectedItems.Count > 0)
             {
-                string selectedName = lsvMandje.SelectedItems[0].Text;
+                string selectedProduct = lsvMandje.SelectedItems[0].Text;
 
                 foreach (var item in Cart)
                 {
-                    if (item.Naam == selectedName)
+                    if (item.Naam == selectedProduct)
                     {
                         if (item.Aantal > 1)
                         {
@@ -88,12 +89,27 @@ namespace prjEindwerk_LotsOfLili
 
         private void btnVerwijderAlleGeselecteerd_Click(object sender, EventArgs e)
         {
+            if (lsvMandje.SelectedItems.Count > 0)
+            {
+                string selectedProduct = lsvMandje.SelectedItems[0].Text;
 
+                foreach (var item in Cart)
+                {
+                    if (item.Naam == selectedProduct)
+                    {
+                        Cart.Remove(item);
+                        break;
+                    }
+                }
+
+                UpdateListview();
+            }
         }
 
         private void btnVerwijderAlles_Click(object sender, EventArgs e)
         {
-
+            Cart.Clear();
+            UpdateListview();
         }
 
         private void btnBetalen_Click(object sender, EventArgs e)

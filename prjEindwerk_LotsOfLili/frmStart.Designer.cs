@@ -196,6 +196,7 @@
             this.txtHerhaalWW.ForeColor = System.Drawing.Color.Gray;
             this.txtHerhaalWW.Location = new System.Drawing.Point(102, 346);
             this.txtHerhaalWW.Name = "txtHerhaalWW";
+            this.txtHerhaalWW.PasswordChar = '*';
             this.txtHerhaalWW.Size = new System.Drawing.Size(270, 26);
             this.txtHerhaalWW.TabIndex = 18;
             this.txtHerhaalWW.Text = "Wachtwoord herhalen";
@@ -208,6 +209,7 @@
             this.txtWWRegistreer.ForeColor = System.Drawing.Color.Gray;
             this.txtWWRegistreer.Location = new System.Drawing.Point(102, 314);
             this.txtWWRegistreer.Name = "txtWWRegistreer";
+            this.txtWWRegistreer.PasswordChar = '*';
             this.txtWWRegistreer.Size = new System.Drawing.Size(270, 26);
             this.txtWWRegistreer.TabIndex = 17;
             this.txtWWRegistreer.Text = "Wachtwoord";

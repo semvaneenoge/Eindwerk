@@ -37,7 +37,7 @@ namespace prjEindwerk_LotsOfLili
         {
             InitializeComponent();
 
-            // ---notes---
+            // --- notes ---
             //
             // Admin: producten toevoegen/verwijderen (database), producten aanpassen (naam, prijs, foto)
             //
@@ -52,8 +52,6 @@ namespace prjEindwerk_LotsOfLili
             // postcode in database fixen
             //
             // Foutmeldingen duidelijker maken --> specifieker
-            //
-            // Buttons items verwijderen
 
             ProductDA p = new ProductDA();
 
@@ -126,24 +124,24 @@ namespace prjEindwerk_LotsOfLili
 
             for (int i = 0; i < maxProducts; i++)
             {
-                PictureBox picTest = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
-                Label lblTest = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
+                PictureBox picProduct = (PictureBox)pnlProducten.Controls["picProduct" + (i + 1)];
+                Label lblProduct = (Label)pnlProducten.Controls["lblProduct" + (i + 1)];
 
                 if (i < ProductsList.Count)
                 {
                     var product = ProductsList[i + (maxProducts * Page)];
 
-                    if (picTest != null)
+                    if (picProduct != null)
                     {
-                        picTest.Image = product.Foto;
+                        picProduct.Image = product.Foto;
                     }
-                    if (lblTest != null)
+                    if (lblProduct != null)
                     {
-                        
-                        lblTest.Text = $"{product.Naam}\n € {product.Prijs}";
+
+                        lblProduct.Text = $"{product.Naam}\n € {product.Prijs}";
                     }
 
-                    if (lblTest.Text.Contains("Empty slot"))
+                    if (lblProduct.Text.Contains("Empty slot"))
                     {
                         pnlProducten.Controls["btnMandje" + (i + 1)].Enabled = false;
                         pnlProducten.Controls["lblProduct" + (i + 1)].Text = "";

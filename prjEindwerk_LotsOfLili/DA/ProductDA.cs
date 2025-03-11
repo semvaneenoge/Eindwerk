@@ -15,7 +15,7 @@ namespace prjEindwerk_LotsOfLili.DA
     public class ProductDA
     {
 
-        // ---Notes---
+        // --- notes ---
         //
         // Oppassen voor webp bestanden !!!
         //
@@ -30,10 +30,10 @@ namespace prjEindwerk_LotsOfLili.DA
 
         public void AgendasInvoegen()
         {
+            MySqlConnection conn = Database.MakeConnection();
+                
             try
             {
-                MySqlConnection conn = Database.MakeConnection();
-                
                 string query = "select * from eindwerk.tblAgenda";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -65,21 +65,24 @@ namespace prjEindwerk_LotsOfLili.DA
                 {
                     Agendas.Add((0, "Empty slot", 0.0, null));
                 }
-
-                conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
+                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}\n" +
+                    $"Producten zijn niet gevonden");
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
         public void HorlogesInvoegen()
         {
+            MySqlConnection conn = Database.MakeConnection();
+                
             try
             {
-                MySqlConnection conn = Database.MakeConnection();
-                
                 string query = "select * from eindwerk.tblHorloge";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -110,21 +113,24 @@ namespace prjEindwerk_LotsOfLili.DA
                 {
                     Horloges.Add((0, "Empty slot", 0.0, null));
                 }
-
-                conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
+                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}\n" +
+                    $"Producten zijn niet gevonden");
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
         public void PortemonneesInvoegen()
         {
+            MySqlConnection conn = Database.MakeConnection();
+            
             try
             {
-                MySqlConnection conn = Database.MakeConnection();
-                
                 string query = "select * from eindwerk.tblPortemonnee";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -155,21 +161,24 @@ namespace prjEindwerk_LotsOfLili.DA
                 {
                     Portemonnees.Add((0, "Empty slot", 0.0, null));
                 }
-
-                conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
+                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}\n" +
+                    $"Producten zijn niet gevonden");
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
         public void PinsInvoegen()
         {
+            MySqlConnection conn = Database.MakeConnection();
+            
             try
             {
-                MySqlConnection conn = Database.MakeConnection();
-                
                 string query = "select * from eindwerk.tblPin";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -200,12 +209,15 @@ namespace prjEindwerk_LotsOfLili.DA
                 {
                     Pins.Add((0, "Empty slot", 0.0, null));
                 }
-
-                conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
+                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}\n" +
+                    $"Producten zijn niet gevonden");
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

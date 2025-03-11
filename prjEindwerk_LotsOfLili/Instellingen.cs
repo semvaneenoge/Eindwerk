@@ -26,12 +26,19 @@ namespace prjEindwerk_LotsOfLili
         public Instellingen()
         {
             InitializeComponent();
+
+            // --- notes ---
+            //
+            // error:
+            // juist ww invullen --> nieuw ww niet invullen, drukken op terug
+            // terug naar instellingen en juist ww proberen invullen
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
         {
             frmHome Home = new frmHome();
             Home.customerNameHome = customerName;
+            Home.userEmail = userEmail;
             Home.Cart = Cart;
             Home.Show();
             this.Hide();

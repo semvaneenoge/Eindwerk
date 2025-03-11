@@ -37,7 +37,7 @@ namespace prjEindwerk_LotsOfLili
         {
             InitializeComponent();
 
-            // ---Notes---
+            // ---notes---
             //
             // Admin: producten toevoegen/verwijderen (database), producten aanpassen (naam, prijs, foto)
             //
@@ -52,6 +52,8 @@ namespace prjEindwerk_LotsOfLili
             // postcode in database fixen
             //
             // Foutmeldingen duidelijker maken --> specifieker
+            //
+            // Buttons items verwijderen
 
             ProductDA p = new ProductDA();
 

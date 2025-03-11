@@ -21,7 +21,7 @@ namespace prjEindwerk_LotsOfLili
 
         public string customerName;
 
-        int pogingen;
+        string ingegevenWW, opgeslagenWW;
 
         public Instellingen()
         {
@@ -37,14 +37,19 @@ namespace prjEindwerk_LotsOfLili
             this.Hide();
         }
 
-        private void btnWWVeranderen_Click(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
             Gebruikers G = new Gebruikers();
             G.Email = userEmail;
-            
-            string ingegevenWW = Interaction.InputBox("Gelieve uw huidig wachtwoord in te vullen.", "Controle wachtwoord");
 
-            string opgeslagenWW = "";
+            ingegevenWW = txtWW.Text;
+
+            if (string.IsNullOrEmpty(ingegevenWW))
+            {
+                MessageBox.Show("Gelieve een wachtwoord in te geven!", "");
+            }
+
+            opgeslagenWW = "";
             GebruikersDA.WWControle(G, out opgeslagenWW);
 
             if (string.IsNullOrEmpty(opgeslagenWW))
@@ -53,48 +58,70 @@ namespace prjEindwerk_LotsOfLili
                 return;
             }
 
-            while (pogingen < 3)
+            if (ingegevenWW == opgeslagenWW)
             {
-                if (ingegevenWW == opgeslagenWW)
+                btnOk.Visible = false;
+                btnWWVeranderen.Visible = true;
+                lblWW.Visible = false;
+                lblNieuwWW.Visible = true;
+                lblControleWW.Visible = true;
+                txtWW.Visible = false;
+                txtNieuwWW.Visible = true;
+                txtControleWW.Visible = true;
+            }
+            else if (ingegevenWW != opgeslagenWW && !string.IsNullOrEmpty(ingegevenWW))
+            {
+                MessageBox.Show("Wachtwoord is fout.", "");
+            }
+
+            txtWW.Clear();
+        }
+
+        private void btnWWVeranderen_Click(object sender, EventArgs e)
+        {
+            Gebruikers G = new Gebruikers();
+            G.Email = userEmail;
+
+            string newWW1 = txtNieuwWW.Text;
+
+            if (newWW1 == ingegevenWW)
+            {
+                MessageBox.Show("Wachtwoord mag niet hetzelfde zijn als de vorige!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNieuwWW.Clear();
+                txtControleWW.Clear();
+            }
+            else
+            {
+                string newWW2 = txtControleWW.Text;
+
+                if (string.IsNullOrEmpty(newWW1))
                 {
-                    string newWW1 = Interaction.InputBox("Gelieve uw nieuw wachtwoord in the geven.", "Nieuw wachtwoord");
+                    MessageBox.Show("Nieuw wachtwoord mag niet leeg zijn!", "");
+                    return;
+                }
 
-                    if (string.IsNullOrEmpty(newWW1))
-                    {
-                        MessageBox.Show("Nieuw wachtwoord mag niet leeg zijn!", "");
-                        continue;
-                    }
-
-                    if (newWW1 == ingegevenWW)
-                    {
-                        MessageBox.Show("Wachtwoord mag niet hetzelfde zijn als de vorige!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    else
-                    {
-                        string newWW2 = Interaction.InputBox("Gelieve uw nieuw wachtwoord herhalen.", "Controle nieuw wachtwoord");
-
-                        if (newWW2 != newWW1)
-                        {
-                            MessageBox.Show("Wachtwoorden komen niet overeen!", "Fout wachtwoord");
-                        }
-                        else
-                        {
-                            G.Wachtwoord = opgeslagenWW;
-                            GebruikersDA.WWVeranderen(G, newWW2);
-                            MessageBox.Show("Uw wachtwoord is veranderd.", "");
-                            break;
-                        }
-                    }
-
-                    
+                if (newWW2 != newWW1)
+                {
+                    MessageBox.Show("Wachtwoorden komen niet overeen!", "Fout wachtwoord");
+                    txtNieuwWW.Clear();
+                    txtControleWW.Clear();
                 }
                 else
                 {
-                    pogingen++;
-                    if (pogingen == 3)
-                    {
-                        MessageBox.Show("Te veel pogingen! Probeer het later opnieuw.");
-                    }
+                    G.Wachtwoord = opgeslagenWW;
+                    GebruikersDA.WWVeranderen(G, newWW2);
+                    MessageBox.Show("Uw wachtwoord is veranderd.", "");
+                    txtWW.Clear();
+                    txtNieuwWW.Clear();
+                    txtControleWW.Clear();
+                    btnOk.Visible = true;
+                    btnWWVeranderen.Visible = false;
+                    lblWW.Visible = true;
+                    lblNieuwWW.Visible = false;
+                    lblControleWW.Visible = false;
+                    txtWW.Visible = true;
+                    txtNieuwWW.Visible = false;
+                    txtControleWW.Visible = false;
                 }
             }
         }

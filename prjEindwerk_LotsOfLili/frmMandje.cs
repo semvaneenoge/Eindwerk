@@ -151,7 +151,7 @@ namespace prjEindwerk_LotsOfLili
                 }
 
                 // Totaalbedrag toevoegen aan tekst
-                emailTekst += $"\nTotaalbedrag: {Totaal}";
+                emailTekst += $"\nTotaalbedrag: € {Totaal}";
 
                 // Nieuwe mail maken
                 MailMessage mail = new MailMessage();

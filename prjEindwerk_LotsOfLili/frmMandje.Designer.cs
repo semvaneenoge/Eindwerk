@@ -189,6 +189,7 @@
             this.Name = "frmMandje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMandje";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMandje_FormClosed);
             this.Load += new System.EventHandler(this.frmMandje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);

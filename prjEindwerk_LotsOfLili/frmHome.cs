@@ -147,15 +147,18 @@ namespace prjEindwerk_LotsOfLili
                     }
 
                     // Controle op lege slot
-                    // Label leegmaken en button niet meer kunnen gebruiken
+                    // Niets tonen in geval van geen product (leeg slot)
                     if (lblProduct.Text.Contains("Empty slot"))
                     {
-                        pnlProducten.Controls["btnMandje" + (i + 1)].Enabled = false;
-                        pnlProducten.Controls["lblProduct" + (i + 1)].Text = "";
+                        pnlProducten.Controls["picProduct" + (i + 1)].Visible = false;
+                        pnlProducten.Controls["lblProduct" + (i + 1)].Visible = false;
+                        pnlProducten.Controls["btnMandje" + (i + 1)].Visible = false;
                     }
                     else
                     {
-                        pnlProducten.Controls["btnMandje" + (i + 1)].Enabled = true;
+                        pnlProducten.Controls["picProduct" + (i + 1)].Visible = true;
+                        pnlProducten.Controls["lblProduct" + (i + 1)].Visible = true;
+                        pnlProducten.Controls["btnMandje" + (i + 1)].Visible = true;
                     }
                 }
             }
@@ -215,6 +218,13 @@ namespace prjEindwerk_LotsOfLili
             instellingen.isAdmin = isAdmin;
             instellingen.Show();
             this.Hide();
+        }
+
+        private void btnAfmelden_Click(object sender, EventArgs e)
+        {
+            frmStart start = new frmStart();
+            start.Show();
+            this.Close();
         }
 
         private void UpdateButton(int tab, System.Windows.Forms.Button selectedButton)

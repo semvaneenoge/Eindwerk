@@ -144,6 +144,20 @@ namespace prjEindwerk_LotsOfLili
             // Registratie
             Gebruikers G = new Gebruikers();
 
+            string controlePost = txtPostcode.Text.Trim();
+            string controleTel1 = txtTelefoon.Text.Replace(" ", "");
+
+            bool controleTel2;
+
+            if (controleTel1.StartsWith("+"))
+            {
+                controleTel2 = controleTel1.Substring(1).All(char.IsDigit);
+            }
+            else
+            {
+                controleTel2 = controleTel1.All(char.IsDigit);
+            }
+
             // Controle op default tekst en getallen
             if (txtVoornaam.Text != txtVoornaam.Tag.ToString())
             {
@@ -151,9 +165,9 @@ namespace prjEindwerk_LotsOfLili
                 {
                     if (txtAdres.Text != txtAdres.Tag.ToString())
                     {
-                        if (int.TryParse(txtPostcode.Text, out int postcode))
+                        if (controlePost.All(char.IsDigit))
                         {
-                            if (int.TryParse(txtTelefoon.Text, out int telefoon))
+                            if (controleTel2)
                             {
                                 if (txtEmailRegistreer.Text != txtEmailRegistreer.Tag.ToString())
                                 {

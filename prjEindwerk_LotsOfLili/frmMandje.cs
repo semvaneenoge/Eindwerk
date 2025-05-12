@@ -35,6 +35,20 @@ namespace prjEindwerk_LotsOfLili
         {
             // Listview updaten bij laden van form
             UpdateListview();
+
+            checkList();
+        }
+
+        private void checkList()
+        {
+            if (lsvMandje.Items.Count == 0)
+            {
+                btnBetalen.Enabled = false;
+            }
+            else
+            {
+                btnBetalen.Enabled = true;
+            }
         }
 
         private void UpdateListview()
@@ -101,6 +115,8 @@ namespace prjEindwerk_LotsOfLili
 
                 // List terug updaten
                 UpdateListview();
+
+                checkList();
             }
         }
 
@@ -126,6 +142,8 @@ namespace prjEindwerk_LotsOfLili
 
                 // List terug updaten
                 UpdateListview();
+
+                checkList();
             }
         }
 
@@ -134,6 +152,8 @@ namespace prjEindwerk_LotsOfLili
             // List leegmaken en listview updaten
             Cart.Clear();
             UpdateListview();
+
+            checkList();
         }
 
         private void btnBetalen_Click(object sender, EventArgs e)
@@ -178,6 +198,18 @@ namespace prjEindwerk_LotsOfLili
             // List leegmaken en listview updaten
             Cart.Clear();
             UpdateListview();
+        }
+
+        private void frmMandje_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Waarden doorgeven en Home weergeven
+            frmHome Home = new frmHome();
+            Home.Cart = Cart;
+            Home.customerNameHome = customerName;
+            Home.userEmail = userEmail;
+            Home.isAdmin = isAdmin;
+            Home.Show();
+            this.Hide();
         }
     }
 }

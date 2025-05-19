@@ -94,6 +94,7 @@
             // 
             this.btnAgendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
             this.btnAgendas.Enabled = false;
+            this.btnAgendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgendas.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgendas.Location = new System.Drawing.Point(25, 138);
             this.btnAgendas.Name = "btnAgendas";
@@ -106,6 +107,7 @@
             // 
             // btnHorloges
             // 
+            this.btnHorloges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHorloges.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHorloges.Location = new System.Drawing.Point(221, 138);
             this.btnHorloges.Name = "btnHorloges";
@@ -118,6 +120,7 @@
             // 
             // btnPortemonnee
             // 
+            this.btnPortemonnee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPortemonnee.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPortemonnee.Location = new System.Drawing.Point(417, 138);
             this.btnPortemonnee.Name = "btnPortemonnee";
@@ -130,6 +133,7 @@
             // 
             // btnPins
             // 
+            this.btnPins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPins.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPins.Location = new System.Drawing.Point(613, 138);
             this.btnPins.Name = "btnPins";
@@ -435,6 +439,7 @@
             // 
             // btnMandje
             // 
+            this.btnMandje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMandje.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMandje.Location = new System.Drawing.Point(25, 93);
             this.btnMandje.Name = "btnMandje";
@@ -447,6 +452,7 @@
             // 
             // btnAdmin
             // 
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.Location = new System.Drawing.Point(331, 12);
             this.btnAdmin.Name = "btnAdmin";
@@ -470,6 +476,7 @@
             // 
             // btnSettings
             // 
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.Location = new System.Drawing.Point(25, 62);
             this.btnSettings.Name = "btnSettings";
@@ -485,7 +492,7 @@
             this.lblAantal.AutoSize = true;
             this.lblAantal.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAantal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
-            this.lblAantal.Location = new System.Drawing.Point(138, 99);
+            this.lblAantal.Location = new System.Drawing.Point(131, 99);
             this.lblAantal.Name = "lblAantal";
             this.lblAantal.Size = new System.Drawing.Size(127, 14);
             this.lblAantal.TabIndex = 12;
@@ -493,6 +500,7 @@
             // 
             // btnAfmelden
             // 
+            this.btnAfmelden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAfmelden.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAfmelden.Location = new System.Drawing.Point(25, 31);
             this.btnAfmelden.Name = "btnAfmelden";

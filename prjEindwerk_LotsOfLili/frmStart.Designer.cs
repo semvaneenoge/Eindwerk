@@ -55,6 +55,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(136, 260);
             this.btnLogin.Name = "btnLogin";
@@ -67,6 +68,7 @@
             // 
             // btnRegistratie
             // 
+            this.btnRegistratie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistratie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistratie.Location = new System.Drawing.Point(136, 342);
             this.btnRegistratie.Name = "btnRegistratie";
@@ -90,22 +92,22 @@
             // 
             // txtEmailInlog
             // 
-            this.txtEmailInlog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailInlog.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailInlog.ForeColor = System.Drawing.Color.Gray;
             this.txtEmailInlog.Location = new System.Drawing.Point(101, 196);
             this.txtEmailInlog.Name = "txtEmailInlog";
-            this.txtEmailInlog.Size = new System.Drawing.Size(272, 26);
+            this.txtEmailInlog.Size = new System.Drawing.Size(272, 29);
             this.txtEmailInlog.TabIndex = 2;
             this.txtEmailInlog.TabStop = false;
             this.txtEmailInlog.Text = "Email";
             // 
             // txtWWInlog
             // 
-            this.txtWWInlog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWWInlog.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWWInlog.ForeColor = System.Drawing.Color.Gray;
             this.txtWWInlog.Location = new System.Drawing.Point(101, 228);
             this.txtWWInlog.Name = "txtWWInlog";
-            this.txtWWInlog.Size = new System.Drawing.Size(272, 26);
+            this.txtWWInlog.Size = new System.Drawing.Size(272, 29);
             this.txtWWInlog.TabIndex = 3;
             this.txtWWInlog.TabStop = false;
             this.txtWWInlog.Text = "Wachtwoord";
@@ -113,10 +115,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 323);
+            this.label1.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(158, 323);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 16);
+            this.label1.Size = new System.Drawing.Size(159, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Nog geen account gemaakt?";
             // 
@@ -160,11 +162,11 @@
             // 
             // txtPostcode
             // 
-            this.txtPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPostcode.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPostcode.ForeColor = System.Drawing.Color.Gray;
             this.txtPostcode.Location = new System.Drawing.Point(102, 218);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(270, 26);
+            this.txtPostcode.Size = new System.Drawing.Size(270, 29);
             this.txtPostcode.TabIndex = 15;
             this.txtPostcode.TabStop = false;
             this.txtPostcode.Text = "Postcode";
@@ -191,83 +193,84 @@
             // 
             // txtHerhaalWW
             // 
-            this.txtHerhaalWW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHerhaalWW.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHerhaalWW.ForeColor = System.Drawing.Color.Gray;
             this.txtHerhaalWW.Location = new System.Drawing.Point(102, 346);
             this.txtHerhaalWW.Name = "txtHerhaalWW";
-            this.txtHerhaalWW.Size = new System.Drawing.Size(270, 26);
+            this.txtHerhaalWW.Size = new System.Drawing.Size(270, 29);
             this.txtHerhaalWW.TabIndex = 19;
             this.txtHerhaalWW.TabStop = false;
             this.txtHerhaalWW.Text = "Wachtwoord herhalen";
             // 
             // txtWWRegistreer
             // 
-            this.txtWWRegistreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWWRegistreer.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWWRegistreer.ForeColor = System.Drawing.Color.Gray;
             this.txtWWRegistreer.Location = new System.Drawing.Point(102, 314);
             this.txtWWRegistreer.Name = "txtWWRegistreer";
-            this.txtWWRegistreer.Size = new System.Drawing.Size(270, 26);
+            this.txtWWRegistreer.Size = new System.Drawing.Size(270, 29);
             this.txtWWRegistreer.TabIndex = 18;
             this.txtWWRegistreer.TabStop = false;
             this.txtWWRegistreer.Text = "Wachtwoord";
             // 
             // txtEmailRegistreer
             // 
-            this.txtEmailRegistreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailRegistreer.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailRegistreer.ForeColor = System.Drawing.Color.Gray;
             this.txtEmailRegistreer.Location = new System.Drawing.Point(102, 282);
             this.txtEmailRegistreer.Name = "txtEmailRegistreer";
-            this.txtEmailRegistreer.Size = new System.Drawing.Size(270, 26);
+            this.txtEmailRegistreer.Size = new System.Drawing.Size(270, 29);
             this.txtEmailRegistreer.TabIndex = 17;
             this.txtEmailRegistreer.TabStop = false;
             this.txtEmailRegistreer.Text = "Email";
             // 
             // txtTelefoon
             // 
-            this.txtTelefoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefoon.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefoon.ForeColor = System.Drawing.Color.Gray;
             this.txtTelefoon.Location = new System.Drawing.Point(102, 250);
             this.txtTelefoon.Name = "txtTelefoon";
-            this.txtTelefoon.Size = new System.Drawing.Size(270, 26);
+            this.txtTelefoon.Size = new System.Drawing.Size(270, 29);
             this.txtTelefoon.TabIndex = 16;
             this.txtTelefoon.TabStop = false;
             this.txtTelefoon.Text = "Telefoon";
             // 
             // txtAdres
             // 
-            this.txtAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdres.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdres.ForeColor = System.Drawing.Color.Gray;
             this.txtAdres.Location = new System.Drawing.Point(102, 186);
             this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(270, 26);
+            this.txtAdres.Size = new System.Drawing.Size(270, 29);
             this.txtAdres.TabIndex = 14;
             this.txtAdres.TabStop = false;
             this.txtAdres.Text = "Straat + nr";
             // 
             // txtNaam
             // 
-            this.txtNaam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNaam.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNaam.ForeColor = System.Drawing.Color.Gray;
             this.txtNaam.Location = new System.Drawing.Point(102, 154);
             this.txtNaam.Name = "txtNaam";
-            this.txtNaam.Size = new System.Drawing.Size(270, 26);
+            this.txtNaam.Size = new System.Drawing.Size(270, 29);
             this.txtNaam.TabIndex = 13;
             this.txtNaam.TabStop = false;
             this.txtNaam.Text = "Naam";
             // 
             // txtVoornaam
             // 
-            this.txtVoornaam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVoornaam.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVoornaam.ForeColor = System.Drawing.Color.Gray;
             this.txtVoornaam.Location = new System.Drawing.Point(102, 122);
             this.txtVoornaam.Name = "txtVoornaam";
-            this.txtVoornaam.Size = new System.Drawing.Size(270, 26);
+            this.txtVoornaam.Size = new System.Drawing.Size(270, 29);
             this.txtVoornaam.TabIndex = 12;
             this.txtVoornaam.TabStop = false;
             this.txtVoornaam.Text = "Voornaam";
             // 
             // btnRegistreer
             // 
+            this.btnRegistreer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistreer.Location = new System.Drawing.Point(170, 378);
             this.btnRegistreer.Name = "btnRegistreer";

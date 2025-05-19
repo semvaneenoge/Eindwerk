@@ -161,43 +161,120 @@ namespace prjEindwerk_LotsOfLili
             try
             {
                 // Tekst van mail maken
-                string emailTekst = "Bedankt voor het shoppen bij Lots of Lili! Gelieve het geld over te maken op ons banknummer: BE20 9733 5462 4556.\n\n" +
-                    "Hier een lijst van alle gekochte producten:\n\n";
+                string klantEmail = $@"
+<!DOCTYPE html>
+<html>
+<body>
+    <p>Bedankt voor het shoppen bij Lots of Lili! Gelieve het geld over te maken op ons banknummer: BE20 9733 5462 4556.</p>
+    <p>Hier een lijst van alle gekochte producten:</p>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Aantal</th>
+        <th>Prijs</th>
+    </tr>";
 
                 // Producten toevoegen aan tekst
                 foreach (var item in Cart)
                 {
-                    emailTekst += $"{item.Naam} - {item.Aantal} x € {item.Prijs} = € {item.Aantal * item.Prijs}\n";
+                    klantEmail += $@"
+    <tr>
+        <td>{item.Naam}</td>
+        <td>{item.Aantal}</td>
+        <td>€ {item.Prijs}</td>
+        <td>€ {item.Aantal * item.Prijs}</td>
+    </tr>";
                 }
 
                 // Totaalbedrag toevoegen aan tekst
-                emailTekst += $"\nTotaalbedrag: € {Totaal}";
+                klantEmail += $@"
+<p>Totaalbedrag: € {Totaal}</p>
+</table>
+</body>
+</html>";
 
                 // Nieuwe mail maken
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("eindwerk.lotsoflili@gmail.com");
-                mail.To.Add(userEmail);
-                mail.Subject = "Betalen Lots of Lili";
-                mail.Body = emailTekst;
+                MailMessage mail1 = new MailMessage();
+                mail1.From = new MailAddress("eindwerk.lotsoflili@gmail.com");
+                mail1.To.Add(userEmail);
+                mail1.Subject = "Betalen Lots of Lili";
+                mail1.Body = klantEmail;
+                mail1.IsBodyHtml = true;
 
                 // Smtp-client instellen voor het verzenden van de email (via gmail)
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                smtp.Port = 587;
-                smtp.Credentials = new NetworkCredential("eindwerk.lotsoflili@gmail.com", "aefq jsmm sgty iwga");
-                smtp.EnableSsl = true;
+                SmtpClient smtp1 = new SmtpClient("smtp.gmail.com");
+                smtp1.Port = 587;
+                smtp1.Credentials = new NetworkCredential("eindwerk.lotsoflili@gmail.com", "aefq jsmm sgty iwga");
+                smtp1.EnableSsl = true;
+                    
+                // M1ail verzenden
+                smtp1.Send(mail1);
 
-                // Mail verzenden
-                smtp.Send(mail);
-                MessageBox.Show("Email is succesvol verzonden.");
+                try
+                {
+                    // Tekst van mail maken
+                    string bestellingEmail = $@"
+<!DOCTYPE html>
+<html>
+<body>
+    <p>Er is een bestelling geplaatst op naam van {customerName} (email: {userEmail})</p>
+    <p>Bestelde producten:</p>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Aantal</th>
+        <th>Prijs</th>
+    </tr>";
+                    
+                    // Producten toevoegen aan tekst
+                    foreach (var item in Cart)
+                    {
+                        bestellingEmail += $@"
+    <tr>
+        <td>{item.Naam}</td>
+        <td>{item.Aantal}</td>
+        <td>€ {item.Prijs}</td>
+        <td>€ {item.Aantal * item.Prijs}</td>
+    </tr>";
+                    }
+
+                    bestellingEmail += $@"
+</table>
+</body>
+</html>";
+
+                    // Nieuwe mail maken
+                    MailMessage mail2 = new MailMessage();
+                    mail2.From = new MailAddress("eindwerk.lotsoflili@gmail.com");
+                    mail2.To.Add("testen.eindwerk@gmail.com");
+                    mail2.Subject = "Bestelling Lots of Lili";
+                    mail2.Body = bestellingEmail;
+                    mail2.IsBodyHtml = true;
+
+                    // Smtp-client instellen voor het verzenden van de email (via gmail)
+                    SmtpClient smtp2 = new SmtpClient("smtp.gmail.com");
+                    smtp2.Port = 587;
+                    smtp2.Credentials = new NetworkCredential("eindwerk.lotsoflili@gmail.com", "aefq jsmm sgty iwga");
+                    smtp2.EnableSsl = true;
+
+                    // Mail verzenden
+                    smtp2.Send(mail2);
+                    MessageBox.Show("Email is succesvol verzonden.");
+                }
+                catch (Exception ex1)
+                {
+                    MessageBox.Show($"Er is een fout opgetreden bij het verzenden van de email: {ex1.Message}.");
+                }
             }
-            catch (Exception ex)
+            catch (Exception ex2)
             {
-                MessageBox.Show($"Er is een fout opgetreden bij het verzenden van de email: {ex.Message}.");
+                MessageBox.Show($"Er is een fout opgetreden bij het verzenden van de email: {ex2.Message}.");
             }
 
             // List leegmaken en listview updaten
             Cart.Clear();
             UpdateListview();
+            checkList();
         }
 
         private void frmMandje_FormClosed(object sender, FormClosedEventArgs e)

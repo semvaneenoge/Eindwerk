@@ -38,6 +38,17 @@ namespace prjEindwerk_LotsOfLili
             this.Hide();
         }
 
+        private void frmAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmHome Home = new frmHome();
+            Home.Cart = Cart;
+            Home.customerNameHome = customerName;
+            Home.userEmail = userEmail;
+            Home.isAdmin = isAdmin;
+            Home.Show();
+            this.Hide();
+        }
+
         private void btnProductFoto_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();

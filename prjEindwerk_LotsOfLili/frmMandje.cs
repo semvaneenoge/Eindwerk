@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using prjEindwerk_LotsOfLili.DA;
+using prjEindwerk_LotsOfLili.Helper;
 
 namespace prjEindwerk_LotsOfLili
 {
     public partial class frmMandje : Form
     {
         public bool isAdmin;
+
+        public int userID;
 
         public string userEmail;
 
@@ -79,6 +83,20 @@ namespace prjEindwerk_LotsOfLili
             // Waarden doorgeven en Home weergeven
             frmHome Home = new frmHome();
             Home.Cart = Cart;
+            Home.userID = userID;
+            Home.customerNameHome = customerName;
+            Home.userEmail = userEmail;
+            Home.isAdmin = isAdmin;
+            Home.Show();
+            this.Hide();
+        }
+
+        private void frmMandje_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Waarden doorgeven en Home weergeven
+            frmHome Home = new frmHome();
+            Home.Cart = Cart;
+            Home.userID = userID;
             Home.customerNameHome = customerName;
             Home.userEmail = userEmail;
             Home.isAdmin = isAdmin;
@@ -158,20 +176,29 @@ namespace prjEindwerk_LotsOfLili
 
         private void btnBetalen_Click(object sender, EventArgs e)
         {
+            BestellingDA bestellingDA = new BestellingDA();
+
             try
             {
                 // Tekst van mail maken
                 string klantEmail = $@"
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+th {{margin-left: 50px}}
+td {{margin-left: 50px}}
+</style>
+</head>
 <body>
     <p>Bedankt voor het shoppen bij Lots of Lili! Gelieve het geld over te maken op ons banknummer: BE20 9733 5462 4556.</p>
     <p>Hier een lijst van alle gekochte producten:</p>
 <table>
     <tr>
-        <th>Product</th>
-        <th>Aantal</th>
-        <th>Prijs</th>
+        <th style='padding-left: 50px;'>Product</th>
+        <th style='padding-left: 50px;'>Aantal</th>
+        <th style='padding-left: 50px;'>Prijs</th>
+        <th style='padding-left: 50px;'>Totaal</th>
     </tr>";
 
                 // Producten toevoegen aan tekst
@@ -179,10 +206,10 @@ namespace prjEindwerk_LotsOfLili
                 {
                     klantEmail += $@"
     <tr>
-        <td>{item.Naam}</td>
-        <td>{item.Aantal}</td>
-        <td>€ {item.Prijs}</td>
-        <td>€ {item.Aantal * item.Prijs}</td>
+        <td style='padding-left: 50px;'>{item.Naam}</td>
+        <td style='padding-left: 50px;'>{item.Aantal}</td>
+        <td style='padding-left: 50px;'>€ {item.Prijs}</td>
+        <td style='padding-left: 50px;'>€ {item.Aantal * item.Prijs}</td>
     </tr>";
                 }
 
@@ -204,7 +231,7 @@ namespace prjEindwerk_LotsOfLili
                 // Smtp-client instellen voor het verzenden van de email (via gmail)
                 SmtpClient smtp1 = new SmtpClient("smtp.gmail.com");
                 smtp1.Port = 587;
-                smtp1.Credentials = new NetworkCredential("eindwerk.lotsoflili@gmail.com", "aefq jsmm sgty iwga");
+                smtp1.Credentials = new NetworkCredential("testen.eindwerk@gmail.com", "lijw vqjp inbo avjd");
                 smtp1.EnableSsl = true;
                     
                 // M1ail verzenden
@@ -217,13 +244,18 @@ namespace prjEindwerk_LotsOfLili
 <!DOCTYPE html>
 <html>
 <body>
-    <p>Er is een bestelling geplaatst op naam van {customerName} (email: {userEmail})</p>
+    <p>Er is een bestelling geplaatst.</p>
+    <p>Naam: {customerName}</p>
+    <p>Email: {userEmail}</p>
+    <p>
+    <br>
     <p>Bestelde producten:</p>
 <table>
     <tr>
-        <th>Product</th>
-        <th>Aantal</th>
-        <th>Prijs</th>
+        <th style='padding-left: 50px;'>Product</th>
+        <th style='padding-left: 50px;'>Aantal</th>
+        <th style='padding-left: 50px;'>Prijs</th>
+        <th style='padding-left: 50px;'>Totaal</th>
     </tr>";
                     
                     // Producten toevoegen aan tekst
@@ -231,14 +263,15 @@ namespace prjEindwerk_LotsOfLili
                     {
                         bestellingEmail += $@"
     <tr>
-        <td>{item.Naam}</td>
-        <td>{item.Aantal}</td>
-        <td>€ {item.Prijs}</td>
-        <td>€ {item.Aantal * item.Prijs}</td>
+        <td style='padding-left: 50px;'>{item.Naam}</td>
+        <td style='padding-left: 50px;'>{item.Aantal}</td>
+        <td style='padding-left: 50px;'>€ {item.Prijs}</td>
+        <td style='padding-left: 50px;'>€ {item.Aantal * item.Prijs}</td>
     </tr>";
                     }
 
                     bestellingEmail += $@"
+<p>Totaalbedrag: € {Totaal}</p>
 </table>
 </body>
 </html>";
@@ -259,6 +292,9 @@ namespace prjEindwerk_LotsOfLili
 
                     // Mail verzenden
                     smtp2.Send(mail2);
+
+                    bestellingDA.SaveCartAsJSON(userID, Cart);
+
                     MessageBox.Show("Email is succesvol verzonden.");
                 }
                 catch (Exception ex1)
@@ -275,18 +311,6 @@ namespace prjEindwerk_LotsOfLili
             Cart.Clear();
             UpdateListview();
             checkList();
-        }
-
-        private void frmMandje_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            // Waarden doorgeven en Home weergeven
-            frmHome Home = new frmHome();
-            Home.Cart = Cart;
-            Home.customerNameHome = customerName;
-            Home.userEmail = userEmail;
-            Home.isAdmin = isAdmin;
-            Home.Show();
-            this.Hide();
         }
     }
 }

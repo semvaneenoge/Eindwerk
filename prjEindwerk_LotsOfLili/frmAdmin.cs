@@ -16,21 +16,90 @@ namespace prjEindwerk_LotsOfLili
     {
         public bool isAdmin;
 
+        public int userID;
+
         public string userEmail;
 
         public List<Cart> Cart;
 
         public string customerName;
 
+        Dictionary<string, int> klantNaamID = new Dictionary<string, int>();
+
         public frmAdmin()
         {
             InitializeComponent();
+        }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+            lsbKlanten.Items.Clear();
+            lsvBestellingen.Items.Clear();
+            lsvDetails.Items.Clear();
+
+            BestellingDA bestellingDA = new BestellingDA();
+
+            List<(int klantID, string klantNaam)> klanten = bestellingDA.GetCustomerNames();
+
+            klantNaamID.Clear();
+            foreach (var klant in klanten)
+            {
+                klantNaamID[klant.klantNaam] = klant.klantID;
+                lsbKlanten.Items.Add(klant.klantNaam);
+            }
+        }
+
+        private void lsbKlanten_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lsvBestellingen.Items.Clear();
+            lsvDetails.Items.Clear();
+
+            BestellingDA bestellingDA = new BestellingDA();
+
+            if (lsbKlanten.SelectedItems.Count > 0)
+            {
+                string selectedName = lsbKlanten.SelectedItem.ToString();
+                int klantID = klantNaamID[selectedName];
+
+                List<(int, DateTime)> bestellingen = bestellingDA.GetOrdersByCustomer(klantID);
+
+                foreach (var (bestellingID, datum) in bestellingen)
+                {
+                    ListViewItem item = new ListViewItem(bestellingID.ToString());
+                    item.SubItems.Add(datum.ToShortDateString());
+                    item.Tag = bestellingID;
+                    lsvBestellingen.Items.Add(item);
+                }
+            }
+        }
+
+        private void lsvBestellingen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lsvDetails.Items.Clear();
+
+            BestellingDA bestellingDA = new BestellingDA();
+
+            if (lsvBestellingen.SelectedItems.Count > 0)
+            {
+                int bestellingID = (int)lsvBestellingen.SelectedItems[0].Tag;
+
+                List<Cart> lijstProducten = bestellingDA.GetOrderDetails(bestellingID);
+
+                foreach (Cart product in lijstProducten)
+                {
+                    ListViewItem item = new ListViewItem(product.Naam);
+                    item.SubItems.Add(product.Prijs.ToString());
+                    item.SubItems.Add(product.Aantal.ToString());
+                    lsvDetails.Items.Add(item);
+                }
+            }
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
         {
             frmHome Home = new frmHome();
             Home.Cart = Cart;
+            Home.userID = userID;
             Home.customerNameHome = customerName;
             Home.userEmail = userEmail;
             Home.isAdmin = isAdmin;
@@ -42,6 +111,7 @@ namespace prjEindwerk_LotsOfLili
         {
             frmHome Home = new frmHome();
             Home.Cart = Cart;
+            Home.userID = userID;
             Home.customerNameHome = customerName;
             Home.userEmail = userEmail;
             Home.isAdmin = isAdmin;

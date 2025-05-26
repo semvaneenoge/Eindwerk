@@ -13,16 +13,17 @@ namespace prjEindwerk_LotsOfLili.DA
 {
     public class GebruikersDA
     {
-        public static bool LoginValidation(Gebruikers G, out bool isAdmin, out string Naam)
+        public static bool LoginValidation(Gebruikers G, out int ID, out bool isAdmin, out string Naam)
         {
             bool blnLogin = false;
             isAdmin = false;
+            ID = -1;
             Naam = "";
 
             // Verbinding met databank
             MySqlConnection conn = Database.MakeConnection();
 
-            string query = "SELECT count(1), Admin, Voornaam, Naam from Eindwerk.tblgebruikers where Email = @Email and Wachtwoord = @Wachtwoord";
+            string query = "SELECT count(1), Admin, GebruikerID, Voornaam, Naam from Eindwerk.tblgebruikers where Email = @Email and Wachtwoord = @Wachtwoord";
             // Voert sql statements uit
             MySqlCommand mySqlCmd = new MySqlCommand(query, conn);
             // Soort commando --> text
@@ -40,7 +41,8 @@ namespace prjEindwerk_LotsOfLili.DA
                 if (count == 1)
                 {
                     isAdmin = reader.GetInt32(1) == 1;
-                    Naam = reader.GetString(2) + " " + reader.GetString(3);
+                    ID = reader.GetInt32(2);
+                    Naam = reader.GetString(3) + " " + reader.GetString(4);
                     blnLogin = true;
                 }
             }
@@ -49,9 +51,10 @@ namespace prjEindwerk_LotsOfLili.DA
             return blnLogin;
         }
 
-        public static void Registreren(Gebruikers G, out string Naam)
+        public static void Registreren(Gebruikers G, out string Naam, out int ID)
         {
             Naam = "";
+            ID = -1;
 
             // verbinding met databank
             MySqlConnection conn = Database.MakeConnection();
@@ -94,6 +97,9 @@ namespace prjEindwerk_LotsOfLili.DA
                 // Uitvoeren van commando
                 mySqlCmd.ExecuteNonQuery();
 
+                // mySqlCmd.LastInsertedId --> geeft laatst gegenereerde ID terug
+                // (int) --> type cast --> dit object behandelen als een int, zelfs als het bv. een long is
+                ID = (int)mySqlCmd.LastInsertedId;
                 Naam = G.Voornaam + " " + G.Naam;
 
                 MessageBox.Show("U bent geregistreerd");

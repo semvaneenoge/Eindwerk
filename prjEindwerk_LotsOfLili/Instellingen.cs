@@ -17,7 +17,9 @@ namespace prjEindwerk_LotsOfLili
     {
         public bool isAdmin;
 
-        public string userEmail { get; set; }
+        public int userID;
+
+        public string userEmail;
 
         public List<Cart> Cart;
 
@@ -36,6 +38,20 @@ namespace prjEindwerk_LotsOfLili
         {
             // Waarden doorgeven en Home tonen
             frmHome Home = new frmHome();
+            Home.userID = userID;
+            Home.customerNameHome = customerName;
+            Home.userEmail = userEmail;
+            Home.Cart = Cart;
+            Home.isAdmin = isAdmin;
+            Home.Show();
+            this.Hide();
+        }
+
+        private void Instellingen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Waarden doorgeven en Home tonen
+            frmHome Home = new frmHome();
+            Home.userID = userID;
             Home.customerNameHome = customerName;
             Home.userEmail = userEmail;
             Home.Cart = Cart;

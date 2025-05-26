@@ -143,6 +143,7 @@
             this.Name = "Instellingen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Instellingen";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Instellingen_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

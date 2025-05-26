@@ -64,6 +64,7 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.lblAantal = new System.Windows.Forms.Label();
             this.btnAfmelden = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlProducten.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct6)).BeginInit();
@@ -454,7 +455,7 @@
             // 
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(331, 12);
+            this.btnAdmin.Location = new System.Drawing.Point(131, 31);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(100, 25);
             this.btnAdmin.TabIndex = 10;
@@ -467,7 +468,7 @@
             // picLogo
             // 
             this.picLogo.Image = global::prjEindwerk_LotsOfLili.Properties.Resources.logo___Lots_of_Lili;
-            this.picLogo.Location = new System.Drawing.Point(463, 12);
+            this.picLogo.Location = new System.Drawing.Point(400, 22);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(252, 79);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -490,11 +491,11 @@
             // lblAantal
             // 
             this.lblAantal.AutoSize = true;
-            this.lblAantal.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAantal.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAantal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
-            this.lblAantal.Location = new System.Drawing.Point(131, 99);
+            this.lblAantal.Location = new System.Drawing.Point(128, 97);
             this.lblAantal.Name = "lblAantal";
-            this.lblAantal.Size = new System.Drawing.Size(127, 14);
+            this.lblAantal.Size = new System.Drawing.Size(122, 18);
             this.lblAantal.TabIndex = 12;
             this.lblAantal.Text = "Aantal producten:";
             // 
@@ -511,12 +512,25 @@
             this.btnAfmelden.UseVisualStyleBackColor = true;
             this.btnAfmelden.Click += new System.EventHandler(this.btnAfmelden_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
+            this.label3.Location = new System.Drawing.Point(334, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(381, 22);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Geef iets bijzonders: stijlvolle agenda’s, horloges en meer";
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(739, 661);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAfmelden);
             this.Controls.Add(this.lblAantal);
             this.Controls.Add(this.btnSettings);
@@ -591,5 +605,6 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Label lblAantal;
         private System.Windows.Forms.Button btnAfmelden;
+        private System.Windows.Forms.Label label3;
     }
 }

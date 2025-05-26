@@ -47,6 +47,7 @@
             this.txtNaam = new System.Windows.Forms.TextBox();
             this.txtVoornaam = new System.Windows.Forms.TextBox();
             this.btnRegistreer = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
             this.grbLogin.SuspendLayout();
             this.grbRegistreer.SuspendLayout();
@@ -132,6 +133,7 @@
             this.grbLogin.Controls.Add(this.btnLogin);
             this.grbLogin.Controls.Add(this.txtEmailInlog);
             this.grbLogin.Controls.Add(this.btnRegistratie);
+            this.grbLogin.Controls.Add(this.label2);
             this.grbLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.grbLogin.Location = new System.Drawing.Point(0, -6);
             this.grbLogin.Name = "grbLogin";
@@ -281,6 +283,17 @@
             this.btnRegistreer.UseVisualStyleBackColor = true;
             this.btnRegistreer.Click += new System.EventHandler(this.btnRegistreer_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
+            this.label2.Location = new System.Drawing.Point(51, 149);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(373, 19);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Cadeaus met stijl: agenda’s, horloges, portemonnees en pins";
+            // 
             // frmStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +335,7 @@
         private System.Windows.Forms.Button btnRegistreer;
         private System.Windows.Forms.Button btnTerug;
         private System.Windows.Forms.TextBox txtPostcode;
+        private System.Windows.Forms.Label label2;
     }
 }
 

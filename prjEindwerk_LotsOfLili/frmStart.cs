@@ -16,6 +16,8 @@ namespace prjEindwerk_LotsOfLili
     public partial class frmStart : Form
     {
         public string customerName;
+
+        public int ID;
      
         public frmStart()
         {
@@ -111,7 +113,7 @@ namespace prjEindwerk_LotsOfLili
             G.Email = txtEmailInlog.Text;
             G.Wachtwoord = txtWWInlog.Text;
 
-            bool blnLogin = GebruikersDA.LoginValidation(G, out isAdmin, out customerName);
+            bool blnLogin = GebruikersDA.LoginValidation(G, out ID, out isAdmin, out customerName);
 
             // Controle op juiste inloggegevens
             if (blnLogin == true)
@@ -121,6 +123,7 @@ namespace prjEindwerk_LotsOfLili
                 frmHome Home = new frmHome();
                 Home.userEmail = email;
                 Home.isAdmin = isAdmin;
+                Home.userID = ID;
                 Home.customerNameHome = customerName;
                 Home.Show();
                 this.Hide();
@@ -181,7 +184,7 @@ namespace prjEindwerk_LotsOfLili
                                         G.Email = txtEmailRegistreer.Text;
                                         G.Wachtwoord = txtWWRegistreer.Text;
 
-                                        GebruikersDA.Registreren(G, out customerName);
+                                        GebruikersDA.Registreren(G, out customerName, out ID);
 
                                         // Controle op lege naam
                                         if (string.IsNullOrEmpty(customerName))
@@ -194,6 +197,7 @@ namespace prjEindwerk_LotsOfLili
                                         frmHome Home = new frmHome();
                                         string email = txtEmailRegistreer.Text;
                                         Home.userEmail = email;
+                                        Home.userID = ID;
                                         Home.customerNameHome = customerName;
                                         Home.Show();
                                     }

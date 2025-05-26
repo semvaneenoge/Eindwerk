@@ -24,9 +24,13 @@ namespace prjEindwerk_LotsOfLili
 {
     public partial class frmHome : Form
     {
-        public bool isAdmin { get; set; }
-        public string customerNameHome { get; set; }
-        public string userEmail { get; set; }
+        public bool isAdmin;
+
+        public int userID;
+        
+        public string customerNameHome;
+        
+        public string userEmail;
 
         public List<Cart> Cart = new List<Cart>();
 
@@ -190,6 +194,7 @@ namespace prjEindwerk_LotsOfLili
             // Winkelmandje openen
             frmMandje Mandje = new frmMandje();
             Mandje.Cart = Cart;
+            Mandje.userID = userID;
             Mandje.customerName = customerNameHome;
             Mandje.userEmail = userEmail;
             Mandje.isAdmin = isAdmin;
@@ -202,6 +207,7 @@ namespace prjEindwerk_LotsOfLili
             // Admin menu openen
             frmAdmin Admin = new frmAdmin();
             Admin.Cart = Cart;
+            Admin.userID = userID;
             Admin.customerName = customerNameHome;
             Admin.userEmail = userEmail;
             Admin.isAdmin = isAdmin;
@@ -213,6 +219,7 @@ namespace prjEindwerk_LotsOfLili
         {
             Instellingen instellingen = new Instellingen();
             instellingen.customerName = customerNameHome;
+            instellingen.userID = userID;
             instellingen.userEmail = userEmail;
             instellingen.Cart = Cart;
             instellingen.isAdmin = isAdmin;

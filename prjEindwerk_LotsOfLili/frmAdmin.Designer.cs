@@ -73,6 +73,7 @@
             this.btnProductToevoegen.Name = "btnProductToevoegen";
             this.btnProductToevoegen.Size = new System.Drawing.Size(212, 25);
             this.btnProductToevoegen.TabIndex = 0;
+            this.btnProductToevoegen.TabStop = false;
             this.btnProductToevoegen.Text = "Product toevoegen";
             this.btnProductToevoegen.UseVisualStyleBackColor = true;
             this.btnProductToevoegen.Click += new System.EventHandler(this.btnProductToevoegen_Click);
@@ -85,6 +86,7 @@
             this.btnProductVerwijderen.Name = "btnProductVerwijderen";
             this.btnProductVerwijderen.Size = new System.Drawing.Size(218, 25);
             this.btnProductVerwijderen.TabIndex = 1;
+            this.btnProductVerwijderen.TabStop = false;
             this.btnProductVerwijderen.Text = "Product verwijderen";
             this.btnProductVerwijderen.UseVisualStyleBackColor = true;
             this.btnProductVerwijderen.Click += new System.EventHandler(this.btnProductVerwijderen_Click);
@@ -187,6 +189,7 @@
             this.btnProductFoto.Name = "btnProductFoto";
             this.btnProductFoto.Size = new System.Drawing.Size(109, 25);
             this.btnProductFoto.TabIndex = 9;
+            this.btnProductFoto.TabStop = false;
             this.btnProductFoto.Text = "Foto kiezen";
             this.btnProductFoto.UseVisualStyleBackColor = true;
             this.btnProductFoto.Click += new System.EventHandler(this.btnProductFoto_Click);
@@ -220,6 +223,7 @@
             this.btnTerug.Name = "btnTerug";
             this.btnTerug.Size = new System.Drawing.Size(436, 25);
             this.btnTerug.TabIndex = 12;
+            this.btnTerug.TabStop = false;
             this.btnTerug.Text = "Terug";
             this.btnTerug.UseVisualStyleBackColor = false;
             this.btnTerug.Click += new System.EventHandler(this.btnTerug_Click);

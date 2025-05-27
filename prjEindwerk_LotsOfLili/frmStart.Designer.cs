@@ -98,7 +98,7 @@
             this.txtEmailInlog.Location = new System.Drawing.Point(101, 196);
             this.txtEmailInlog.Name = "txtEmailInlog";
             this.txtEmailInlog.Size = new System.Drawing.Size(272, 29);
-            this.txtEmailInlog.TabIndex = 2;
+            this.txtEmailInlog.TabIndex = 1;
             this.txtEmailInlog.TabStop = false;
             this.txtEmailInlog.Text = "Email";
             // 
@@ -109,7 +109,7 @@
             this.txtWWInlog.Location = new System.Drawing.Point(101, 228);
             this.txtWWInlog.Name = "txtWWInlog";
             this.txtWWInlog.Size = new System.Drawing.Size(272, 29);
-            this.txtWWInlog.TabIndex = 3;
+            this.txtWWInlog.TabIndex = 2;
             this.txtWWInlog.TabStop = false;
             this.txtWWInlog.Text = "Wachtwoord";
             // 
@@ -167,9 +167,10 @@
             this.txtPostcode.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPostcode.ForeColor = System.Drawing.Color.Gray;
             this.txtPostcode.Location = new System.Drawing.Point(101, 209);
+            this.txtPostcode.MaxLength = 4;
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(270, 29);
-            this.txtPostcode.TabIndex = 15;
+            this.txtPostcode.TabIndex = 6;
             this.txtPostcode.TabStop = false;
             this.txtPostcode.Text = "Postcode";
             // 
@@ -180,6 +181,7 @@
             this.btnTerug.Name = "btnTerug";
             this.btnTerug.Size = new System.Drawing.Size(134, 30);
             this.btnTerug.TabIndex = 21;
+            this.btnTerug.TabStop = false;
             this.btnTerug.Text = "Terug";
             this.btnTerug.UseVisualStyleBackColor = true;
             this.btnTerug.Click += new System.EventHandler(this.btnTerug_Click);
@@ -201,7 +203,7 @@
             this.txtHerhaalWW.Location = new System.Drawing.Point(101, 337);
             this.txtHerhaalWW.Name = "txtHerhaalWW";
             this.txtHerhaalWW.Size = new System.Drawing.Size(270, 29);
-            this.txtHerhaalWW.TabIndex = 19;
+            this.txtHerhaalWW.TabIndex = 10;
             this.txtHerhaalWW.TabStop = false;
             this.txtHerhaalWW.Text = "Wachtwoord herhalen";
             // 
@@ -212,7 +214,7 @@
             this.txtWWRegistreer.Location = new System.Drawing.Point(101, 305);
             this.txtWWRegistreer.Name = "txtWWRegistreer";
             this.txtWWRegistreer.Size = new System.Drawing.Size(270, 29);
-            this.txtWWRegistreer.TabIndex = 18;
+            this.txtWWRegistreer.TabIndex = 9;
             this.txtWWRegistreer.TabStop = false;
             this.txtWWRegistreer.Text = "Wachtwoord";
             // 
@@ -223,7 +225,7 @@
             this.txtEmailRegistreer.Location = new System.Drawing.Point(101, 273);
             this.txtEmailRegistreer.Name = "txtEmailRegistreer";
             this.txtEmailRegistreer.Size = new System.Drawing.Size(270, 29);
-            this.txtEmailRegistreer.TabIndex = 17;
+            this.txtEmailRegistreer.TabIndex = 8;
             this.txtEmailRegistreer.TabStop = false;
             this.txtEmailRegistreer.Text = "Email";
             // 
@@ -234,7 +236,7 @@
             this.txtTelefoon.Location = new System.Drawing.Point(101, 241);
             this.txtTelefoon.Name = "txtTelefoon";
             this.txtTelefoon.Size = new System.Drawing.Size(270, 29);
-            this.txtTelefoon.TabIndex = 16;
+            this.txtTelefoon.TabIndex = 7;
             this.txtTelefoon.TabStop = false;
             this.txtTelefoon.Text = "Telefoon";
             // 
@@ -245,7 +247,7 @@
             this.txtAdres.Location = new System.Drawing.Point(101, 177);
             this.txtAdres.Name = "txtAdres";
             this.txtAdres.Size = new System.Drawing.Size(270, 29);
-            this.txtAdres.TabIndex = 14;
+            this.txtAdres.TabIndex = 5;
             this.txtAdres.TabStop = false;
             this.txtAdres.Text = "Straat + nr";
             // 
@@ -256,7 +258,7 @@
             this.txtNaam.Location = new System.Drawing.Point(101, 145);
             this.txtNaam.Name = "txtNaam";
             this.txtNaam.Size = new System.Drawing.Size(270, 29);
-            this.txtNaam.TabIndex = 13;
+            this.txtNaam.TabIndex = 4;
             this.txtNaam.TabStop = false;
             this.txtNaam.Text = "Naam";
             // 
@@ -267,7 +269,7 @@
             this.txtVoornaam.Location = new System.Drawing.Point(101, 113);
             this.txtVoornaam.Name = "txtVoornaam";
             this.txtVoornaam.Size = new System.Drawing.Size(270, 29);
-            this.txtVoornaam.TabIndex = 12;
+            this.txtVoornaam.TabIndex = 3;
             this.txtVoornaam.TabStop = false;
             this.txtVoornaam.Text = "Voornaam";
             // 

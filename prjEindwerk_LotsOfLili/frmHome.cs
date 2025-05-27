@@ -147,7 +147,7 @@ namespace prjEindwerk_LotsOfLili
                     if (lblProduct != null)
                     {
 
-                        lblProduct.Text = $"{product.Naam}\n € {product.Prijs}";
+                        lblProduct.Text = $"{product.Naam}\n € {product.Prijs.ToString("0.00")}";
                     }
 
                     // Controle op lege slot

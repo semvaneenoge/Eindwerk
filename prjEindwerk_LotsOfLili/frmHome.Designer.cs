@@ -468,7 +468,7 @@
             // picLogo
             // 
             this.picLogo.Image = global::prjEindwerk_LotsOfLili.Properties.Resources.logo___Lots_of_Lili;
-            this.picLogo.Location = new System.Drawing.Point(400, 22);
+            this.picLogo.Location = new System.Drawing.Point(454, 10);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(252, 79);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -491,11 +491,11 @@
             // lblAantal
             // 
             this.lblAantal.AutoSize = true;
-            this.lblAantal.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAantal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
+            this.lblAantal.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAantal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(153)))), ((int)(((byte)(141)))));
             this.lblAantal.Location = new System.Drawing.Point(128, 97);
             this.lblAantal.Name = "lblAantal";
-            this.lblAantal.Size = new System.Drawing.Size(122, 18);
+            this.lblAantal.Size = new System.Drawing.Size(105, 18);
             this.lblAantal.TabIndex = 12;
             this.lblAantal.Text = "Aantal producten:";
             // 
@@ -517,7 +517,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(153)))), ((int)(((byte)(141)))));
             this.label3.Location = new System.Drawing.Point(334, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(381, 22);

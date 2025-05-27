@@ -65,7 +65,7 @@ namespace prjEindwerk_LotsOfLili
             foreach (var item in Cart)
             {
                 ListViewItem listItem = new ListViewItem(item.Naam);
-                listItem.SubItems.Add("€ " + item.Prijs.ToString());
+                listItem.SubItems.Add("€ " + item.Prijs.ToString("0.00"));
                 listItem.SubItems.Add(item.Aantal.ToString());
                 // Listview vullen
                 lsvMandje.Items.Add(listItem);
@@ -75,7 +75,7 @@ namespace prjEindwerk_LotsOfLili
             }
 
             // Totale prijs tonen
-            lblTotPrijs.Text = $"€ {Totaal}";
+            lblTotPrijs.Text = $"€ {Totaal.ToString("0.00")}";
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
@@ -195,10 +195,10 @@ td {{margin-left: 50px}}
     <p>Hier een lijst van alle gekochte producten:</p>
 <table>
     <tr>
-        <th style='padding-left: 50px;'>Product</th>
-        <th style='padding-left: 50px;'>Aantal</th>
-        <th style='padding-left: 50px;'>Prijs</th>
-        <th style='padding-left: 50px;'>Totaal</th>
+        <th style='padding-right: 10px;'>Product</th>
+        <th style='padding-right: 10px;'>Aantal</th>
+        <th style='padding-right: 10px;'>Prijs</th>
+        <th style='padding-right: 10px;'>Totaal</th>
     </tr>";
 
                 // Producten toevoegen aan tekst
@@ -206,16 +206,16 @@ td {{margin-left: 50px}}
                 {
                     klantEmail += $@"
     <tr>
-        <td style='padding-left: 50px;'>{item.Naam}</td>
-        <td style='padding-left: 50px;'>{item.Aantal}</td>
-        <td style='padding-left: 50px;'>€ {item.Prijs}</td>
-        <td style='padding-left: 50px;'>€ {item.Aantal * item.Prijs}</td>
+        <td style='padding-right: 10px;'>{item.Naam}</td>
+        <td style='padding-right: 10px;'>{item.Aantal}</td>
+        <td style='padding-right: 10px;'>€ {item.Prijs.ToString("0.00")}</td>
+        <td style='padding-right: 10px;'>€ {(item.Aantal * item.Prijs).ToString("0.00")}</td>
     </tr>";
                 }
 
                 // Totaalbedrag toevoegen aan tekst
                 klantEmail += $@"
-<p>Totaalbedrag: € {Totaal}</p>
+<p>Totaalbedrag: € {Totaal.ToString("0.00")}</p>
 </table>
 </body>
 </html>";
@@ -252,10 +252,10 @@ td {{margin-left: 50px}}
     <p>Bestelde producten:</p>
 <table>
     <tr>
-        <th style='padding-left: 50px;'>Product</th>
-        <th style='padding-left: 50px;'>Aantal</th>
-        <th style='padding-left: 50px;'>Prijs</th>
-        <th style='padding-left: 50px;'>Totaal</th>
+        <th style='padding-right: 10px;'>Product</th>
+        <th style='padding-right: 10px;'>Aantal</th>
+        <th style='padding-right: 10px;'>Prijs</th>
+        <th style='padding-right: 10px;'>Totaal</th>
     </tr>";
                     
                     // Producten toevoegen aan tekst
@@ -263,15 +263,15 @@ td {{margin-left: 50px}}
                     {
                         bestellingEmail += $@"
     <tr>
-        <td style='padding-left: 50px;'>{item.Naam}</td>
-        <td style='padding-left: 50px;'>{item.Aantal}</td>
-        <td style='padding-left: 50px;'>€ {item.Prijs}</td>
-        <td style='padding-left: 50px;'>€ {item.Aantal * item.Prijs}</td>
+        <td style='padding-right: 10px;'>{item.Naam}</td>
+        <td style='padding-right: 10px;'>{item.Aantal}</td>
+        <td style='padding-right: 10px;'>€ {item.Prijs.ToString("0.00")}</td>
+        <td style='padding-right: 10px;'>€ {(item.Aantal * item.Prijs).ToString("0.00")}</td>
     </tr>";
                     }
 
                     bestellingEmail += $@"
-<p>Totaalbedrag: € {Totaal}</p>
+<p>Totaalbedrag: € {Totaal.ToString("0.00")}</p>
 </table>
 </body>
 </html>";

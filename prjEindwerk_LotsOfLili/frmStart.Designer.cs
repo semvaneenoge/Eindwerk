@@ -166,7 +166,7 @@
             // 
             this.txtPostcode.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPostcode.ForeColor = System.Drawing.Color.Gray;
-            this.txtPostcode.Location = new System.Drawing.Point(102, 218);
+            this.txtPostcode.Location = new System.Drawing.Point(101, 209);
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(270, 29);
             this.txtPostcode.TabIndex = 15;
@@ -175,9 +175,10 @@
             // 
             // btnTerug
             // 
-            this.btnTerug.Location = new System.Drawing.Point(170, 426);
+            this.btnTerug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTerug.Location = new System.Drawing.Point(169, 415);
             this.btnTerug.Name = "btnTerug";
-            this.btnTerug.Size = new System.Drawing.Size(134, 23);
+            this.btnTerug.Size = new System.Drawing.Size(134, 30);
             this.btnTerug.TabIndex = 21;
             this.btnTerug.Text = "Terug";
             this.btnTerug.UseVisualStyleBackColor = true;
@@ -186,7 +187,7 @@
             // picLogo2
             // 
             this.picLogo2.Image = global::prjEindwerk_LotsOfLili.Properties.Resources.logo___Lots_of_Lili;
-            this.picLogo2.Location = new System.Drawing.Point(57, 18);
+            this.picLogo2.Location = new System.Drawing.Point(56, 9);
             this.picLogo2.Name = "picLogo2";
             this.picLogo2.Size = new System.Drawing.Size(360, 95);
             this.picLogo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,7 +198,7 @@
             // 
             this.txtHerhaalWW.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHerhaalWW.ForeColor = System.Drawing.Color.Gray;
-            this.txtHerhaalWW.Location = new System.Drawing.Point(102, 346);
+            this.txtHerhaalWW.Location = new System.Drawing.Point(101, 337);
             this.txtHerhaalWW.Name = "txtHerhaalWW";
             this.txtHerhaalWW.Size = new System.Drawing.Size(270, 29);
             this.txtHerhaalWW.TabIndex = 19;
@@ -208,7 +209,7 @@
             // 
             this.txtWWRegistreer.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWWRegistreer.ForeColor = System.Drawing.Color.Gray;
-            this.txtWWRegistreer.Location = new System.Drawing.Point(102, 314);
+            this.txtWWRegistreer.Location = new System.Drawing.Point(101, 305);
             this.txtWWRegistreer.Name = "txtWWRegistreer";
             this.txtWWRegistreer.Size = new System.Drawing.Size(270, 29);
             this.txtWWRegistreer.TabIndex = 18;
@@ -219,7 +220,7 @@
             // 
             this.txtEmailRegistreer.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailRegistreer.ForeColor = System.Drawing.Color.Gray;
-            this.txtEmailRegistreer.Location = new System.Drawing.Point(102, 282);
+            this.txtEmailRegistreer.Location = new System.Drawing.Point(101, 273);
             this.txtEmailRegistreer.Name = "txtEmailRegistreer";
             this.txtEmailRegistreer.Size = new System.Drawing.Size(270, 29);
             this.txtEmailRegistreer.TabIndex = 17;
@@ -230,7 +231,7 @@
             // 
             this.txtTelefoon.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefoon.ForeColor = System.Drawing.Color.Gray;
-            this.txtTelefoon.Location = new System.Drawing.Point(102, 250);
+            this.txtTelefoon.Location = new System.Drawing.Point(101, 241);
             this.txtTelefoon.Name = "txtTelefoon";
             this.txtTelefoon.Size = new System.Drawing.Size(270, 29);
             this.txtTelefoon.TabIndex = 16;
@@ -241,7 +242,7 @@
             // 
             this.txtAdres.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdres.ForeColor = System.Drawing.Color.Gray;
-            this.txtAdres.Location = new System.Drawing.Point(102, 186);
+            this.txtAdres.Location = new System.Drawing.Point(101, 177);
             this.txtAdres.Name = "txtAdres";
             this.txtAdres.Size = new System.Drawing.Size(270, 29);
             this.txtAdres.TabIndex = 14;
@@ -252,7 +253,7 @@
             // 
             this.txtNaam.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNaam.ForeColor = System.Drawing.Color.Gray;
-            this.txtNaam.Location = new System.Drawing.Point(102, 154);
+            this.txtNaam.Location = new System.Drawing.Point(101, 145);
             this.txtNaam.Name = "txtNaam";
             this.txtNaam.Size = new System.Drawing.Size(270, 29);
             this.txtNaam.TabIndex = 13;
@@ -263,7 +264,7 @@
             // 
             this.txtVoornaam.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVoornaam.ForeColor = System.Drawing.Color.Gray;
-            this.txtVoornaam.Location = new System.Drawing.Point(102, 122);
+            this.txtVoornaam.Location = new System.Drawing.Point(101, 113);
             this.txtVoornaam.Name = "txtVoornaam";
             this.txtVoornaam.Size = new System.Drawing.Size(270, 29);
             this.txtVoornaam.TabIndex = 12;
@@ -274,9 +275,9 @@
             // 
             this.btnRegistreer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistreer.Location = new System.Drawing.Point(170, 378);
+            this.btnRegistreer.Location = new System.Drawing.Point(169, 374);
             this.btnRegistreer.Name = "btnRegistreer";
-            this.btnRegistreer.Size = new System.Drawing.Size(134, 42);
+            this.btnRegistreer.Size = new System.Drawing.Size(134, 35);
             this.btnRegistreer.TabIndex = 19;
             this.btnRegistreer.TabStop = false;
             this.btnRegistreer.Text = "Registreer";
@@ -287,7 +288,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(153)))), ((int)(((byte)(141)))));
             this.label2.Location = new System.Drawing.Point(51, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(373, 19);

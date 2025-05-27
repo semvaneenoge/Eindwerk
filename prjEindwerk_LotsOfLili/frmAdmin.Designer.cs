@@ -56,16 +56,22 @@
             this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProductToevoegen
             // 
+            this.btnProductToevoegen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductToevoegen.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductToevoegen.Location = new System.Drawing.Point(16, 319);
+            this.btnProductToevoegen.Location = new System.Drawing.Point(19, 332);
             this.btnProductToevoegen.Name = "btnProductToevoegen";
-            this.btnProductToevoegen.Size = new System.Drawing.Size(218, 25);
+            this.btnProductToevoegen.Size = new System.Drawing.Size(212, 25);
             this.btnProductToevoegen.TabIndex = 0;
             this.btnProductToevoegen.Text = "Product toevoegen";
             this.btnProductToevoegen.UseVisualStyleBackColor = true;
@@ -73,8 +79,9 @@
             // 
             // btnProductVerwijderen
             // 
+            this.btnProductVerwijderen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductVerwijderen.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductVerwijderen.Location = new System.Drawing.Point(234, 319);
+            this.btnProductVerwijderen.Location = new System.Drawing.Point(237, 332);
             this.btnProductVerwijderen.Name = "btnProductVerwijderen";
             this.btnProductVerwijderen.Size = new System.Drawing.Size(218, 25);
             this.btnProductVerwijderen.TabIndex = 1;
@@ -86,7 +93,7 @@
             // 
             this.lblProductNaam.AutoSize = true;
             this.lblProductNaam.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductNaam.Location = new System.Drawing.Point(13, 148);
+            this.lblProductNaam.Location = new System.Drawing.Point(16, 166);
             this.lblProductNaam.Name = "lblProductNaam";
             this.lblProductNaam.Size = new System.Drawing.Size(133, 18);
             this.lblProductNaam.TabIndex = 2;
@@ -96,7 +103,7 @@
             // 
             this.lblProductPrijs.AutoSize = true;
             this.lblProductPrijs.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductPrijs.Location = new System.Drawing.Point(13, 207);
+            this.lblProductPrijs.Location = new System.Drawing.Point(16, 223);
             this.lblProductPrijs.Name = "lblProductPrijs";
             this.lblProductPrijs.Size = new System.Drawing.Size(124, 18);
             this.lblProductPrijs.TabIndex = 2;
@@ -106,7 +113,7 @@
             // 
             this.lblProductFoto.AutoSize = true;
             this.lblProductFoto.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductFoto.Location = new System.Drawing.Point(13, 266);
+            this.lblProductFoto.Location = new System.Drawing.Point(16, 278);
             this.lblProductFoto.Name = "lblProductFoto";
             this.lblProductFoto.Size = new System.Drawing.Size(163, 18);
             this.lblProductFoto.TabIndex = 2;
@@ -159,7 +166,7 @@
             // txtProductNaam
             // 
             this.txtProductNaam.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductNaam.Location = new System.Drawing.Point(16, 169);
+            this.txtProductNaam.Location = new System.Drawing.Point(19, 193);
             this.txtProductNaam.Name = "txtProductNaam";
             this.txtProductNaam.Size = new System.Drawing.Size(134, 22);
             this.txtProductNaam.TabIndex = 7;
@@ -167,15 +174,16 @@
             // txtProductPrijs
             // 
             this.txtProductPrijs.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductPrijs.Location = new System.Drawing.Point(16, 228);
+            this.txtProductPrijs.Location = new System.Drawing.Point(19, 247);
             this.txtProductPrijs.Name = "txtProductPrijs";
             this.txtProductPrijs.Size = new System.Drawing.Size(134, 22);
             this.txtProductPrijs.TabIndex = 8;
             // 
             // btnProductFoto
             // 
+            this.btnProductFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductFoto.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductFoto.Location = new System.Drawing.Point(16, 287);
+            this.btnProductFoto.Location = new System.Drawing.Point(19, 299);
             this.btnProductFoto.Name = "btnProductFoto";
             this.btnProductFoto.Size = new System.Drawing.Size(109, 25);
             this.btnProductFoto.TabIndex = 9;
@@ -189,36 +197,38 @@
             this.panel1.Controls.Add(this.rdbHorloges);
             this.panel1.Controls.Add(this.rdbPortemonnees);
             this.panel1.Controls.Add(this.rdbPins);
-            this.panel1.Location = new System.Drawing.Point(16, 43);
+            this.panel1.Location = new System.Drawing.Point(19, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(132, 100);
             this.panel1.TabIndex = 10;
             // 
             // picFoto
             // 
-            this.picFoto.Location = new System.Drawing.Point(182, 43);
+            this.picFoto.Location = new System.Drawing.Point(185, 68);
             this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(270, 270);
+            this.picFoto.Size = new System.Drawing.Size(270, 255);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFoto.TabIndex = 11;
             this.picFoto.TabStop = false;
             // 
             // btnTerug
             // 
+            this.btnTerug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
+            this.btnTerug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTerug.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerug.Location = new System.Drawing.Point(19, 432);
+            this.btnTerug.Location = new System.Drawing.Point(19, 363);
             this.btnTerug.Name = "btnTerug";
             this.btnTerug.Size = new System.Drawing.Size(436, 25);
             this.btnTerug.TabIndex = 12;
             this.btnTerug.Text = "Terug";
-            this.btnTerug.UseVisualStyleBackColor = true;
+            this.btnTerug.UseVisualStyleBackColor = false;
             this.btnTerug.Click += new System.EventHandler(this.btnTerug_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(15, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(406, 31);
             this.label1.TabIndex = 13;
@@ -228,7 +238,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(488, 9);
+            this.label2.Location = new System.Drawing.Point(481, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(270, 31);
             this.label2.TabIndex = 14;
@@ -237,9 +247,9 @@
             // lsbKlanten
             // 
             this.lsbKlanten.FormattingEnabled = true;
-            this.lsbKlanten.Location = new System.Drawing.Point(494, 64);
+            this.lsbKlanten.Location = new System.Drawing.Point(486, 98);
             this.lsbKlanten.Name = "lsbKlanten";
-            this.lsbKlanten.Size = new System.Drawing.Size(120, 277);
+            this.lsbKlanten.Size = new System.Drawing.Size(120, 290);
             this.lsbKlanten.TabIndex = 15;
             this.lsbKlanten.SelectedIndexChanged += new System.EventHandler(this.lsbKlanten_SelectedIndexChanged);
             // 
@@ -247,7 +257,7 @@
             // 
             this.lblKlanten.AutoSize = true;
             this.lblKlanten.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKlanten.Location = new System.Drawing.Point(491, 43);
+            this.lblKlanten.Location = new System.Drawing.Point(483, 77);
             this.lblKlanten.Name = "lblKlanten";
             this.lblKlanten.Size = new System.Drawing.Size(50, 18);
             this.lblKlanten.TabIndex = 16;
@@ -260,9 +270,9 @@
             this.Datum});
             this.lsvBestellingen.FullRowSelect = true;
             this.lsvBestellingen.HideSelection = false;
-            this.lsvBestellingen.Location = new System.Drawing.Point(639, 64);
+            this.lsvBestellingen.Location = new System.Drawing.Point(631, 98);
             this.lsvBestellingen.Name = "lsvBestellingen";
-            this.lsvBestellingen.Size = new System.Drawing.Size(159, 277);
+            this.lsvBestellingen.Size = new System.Drawing.Size(159, 290);
             this.lsvBestellingen.TabIndex = 17;
             this.lsvBestellingen.UseCompatibleStateImageBehavior = false;
             this.lsvBestellingen.View = System.Windows.Forms.View.Details;
@@ -282,7 +292,7 @@
             // 
             this.lblBestellingen.AutoSize = true;
             this.lblBestellingen.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBestellingen.Location = new System.Drawing.Point(636, 43);
+            this.lblBestellingen.Location = new System.Drawing.Point(628, 77);
             this.lblBestellingen.Name = "lblBestellingen";
             this.lblBestellingen.Size = new System.Drawing.Size(71, 18);
             this.lblBestellingen.TabIndex = 18;
@@ -292,11 +302,11 @@
             // 
             this.lblDetails.AutoSize = true;
             this.lblDetails.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetails.Location = new System.Drawing.Point(820, 43);
+            this.lblDetails.Location = new System.Drawing.Point(812, 77);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(93, 18);
+            this.lblDetails.Size = new System.Drawing.Size(43, 18);
             this.lblDetails.TabIndex = 20;
-            this.lblDetails.Text = "bestelling details";
+            this.lblDetails.Text = "Details";
             // 
             // lsvDetails
             // 
@@ -306,9 +316,9 @@
             this.Aantal});
             this.lsvDetails.FullRowSelect = true;
             this.lsvDetails.HideSelection = false;
-            this.lsvDetails.Location = new System.Drawing.Point(823, 64);
+            this.lsvDetails.Location = new System.Drawing.Point(815, 98);
             this.lsvDetails.Name = "lsvDetails";
-            this.lsvDetails.Size = new System.Drawing.Size(271, 277);
+            this.lsvDetails.Size = new System.Drawing.Size(271, 290);
             this.lsvDetails.TabIndex = 19;
             this.lsvDetails.UseCompatibleStateImageBehavior = false;
             this.lsvDetails.View = System.Windows.Forms.View.Details;
@@ -328,12 +338,51 @@
             this.Aantal.Text = "Aantal";
             this.Aantal.Width = 53;
             // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(469, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1, 375);
+            this.label3.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(484, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(288, 1);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "label4";
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = global::prjEindwerk_LotsOfLili.Properties.Resources.logo___Lots_of_Lili;
+            this.picLogo.Location = new System.Drawing.Point(864, 18);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(230, 56);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 23;
+            this.picLogo.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(21, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(400, 1);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "label5";
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1106, 554);
+            this.ClientSize = new System.Drawing.Size(1106, 400);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.lsvDetails);
             this.Controls.Add(this.lblBestellingen);
@@ -353,6 +402,7 @@
             this.Controls.Add(this.lblProductNaam);
             this.Controls.Add(this.btnProductVerwijderen);
             this.Controls.Add(this.btnProductToevoegen);
+            this.Controls.Add(this.picLogo);
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin menu";
@@ -361,6 +411,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +447,9 @@
         private System.Windows.Forms.ColumnHeader Naam;
         private System.Windows.Forms.ColumnHeader Prijs;
         private System.Windows.Forms.ColumnHeader Aantal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -87,6 +87,7 @@
             // 
             // btnBetalen
             // 
+            this.btnBetalen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBetalen.Location = new System.Drawing.Point(342, 180);
             this.btnBetalen.Name = "btnBetalen";
             this.btnBetalen.Size = new System.Drawing.Size(250, 35);
@@ -97,12 +98,14 @@
             // 
             // btnTerug
             // 
+            this.btnTerug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
+            this.btnTerug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTerug.Location = new System.Drawing.Point(342, 221);
             this.btnTerug.Name = "btnTerug";
             this.btnTerug.Size = new System.Drawing.Size(250, 35);
             this.btnTerug.TabIndex = 3;
             this.btnTerug.Text = "Terug";
-            this.btnTerug.UseVisualStyleBackColor = true;
+            this.btnTerug.UseVisualStyleBackColor = false;
             this.btnTerug.Click += new System.EventHandler(this.btnTerug_Click);
             // 
             // btnVerwijder

@@ -135,6 +135,7 @@ namespace prjEindwerk_LotsOfLili
         private void btnProductToevoegen_Click(object sender, EventArgs e)
         {
             string productType = "";
+            string productNaam = "";
 
             if (rdbAgendas.Checked)
             {
@@ -158,11 +159,14 @@ namespace prjEindwerk_LotsOfLili
                 return;
             }
 
-            string productNaam = txtProductNaam.Text;
+            if (txtProductNaam.Text != "")
+            {
+                productNaam = txtProductNaam.Text;
+            }
 
             if (!double.TryParse(txtProductPrijs.Text, out double productPrijs))
             {
-                MessageBox.Show("Geef een geldige prijs in te geven.", "Prijs");
+                MessageBox.Show("Gelieve een geldige prijs in te geven.", "Prijs");
                 return;
             }
 
@@ -180,6 +184,13 @@ namespace prjEindwerk_LotsOfLili
             }
 
             ProductDA.ProductToevoegen(productType, productNaam, productPrijs, productFoto);
+
+            txtProductNaam.Clear();
+            txtProductPrijs.Clear();
+            rdbAgendas.Checked = false;
+            rdbHorloges.Checked = false;
+            rdbPortemonnees.Checked = false;
+            rdbPins.Checked = false;
         }
 
         private void btnProductVerwijderen_Click(object sender, EventArgs e)
@@ -211,6 +222,13 @@ namespace prjEindwerk_LotsOfLili
             string productNaam = txtProductNaam.Text;
 
             ProductDA.ProductVerwijderen(productType, productNaam);
+
+            txtProductNaam.Clear();
+            txtProductPrijs.Clear();
+            rdbAgendas.Checked = false;
+            rdbHorloges.Checked = false;
+            rdbPortemonnees.Checked = false;
+            rdbPins.Checked = false;
         }
     }
 }

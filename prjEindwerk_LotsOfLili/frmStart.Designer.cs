@@ -201,6 +201,7 @@
             this.txtHerhaalWW.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHerhaalWW.ForeColor = System.Drawing.Color.Gray;
             this.txtHerhaalWW.Location = new System.Drawing.Point(101, 337);
+            this.txtHerhaalWW.MaxLength = 100;
             this.txtHerhaalWW.Name = "txtHerhaalWW";
             this.txtHerhaalWW.Size = new System.Drawing.Size(270, 29);
             this.txtHerhaalWW.TabIndex = 10;
@@ -212,6 +213,7 @@
             this.txtWWRegistreer.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWWRegistreer.ForeColor = System.Drawing.Color.Gray;
             this.txtWWRegistreer.Location = new System.Drawing.Point(101, 305);
+            this.txtWWRegistreer.MaxLength = 100;
             this.txtWWRegistreer.Name = "txtWWRegistreer";
             this.txtWWRegistreer.Size = new System.Drawing.Size(270, 29);
             this.txtWWRegistreer.TabIndex = 9;
@@ -223,6 +225,7 @@
             this.txtEmailRegistreer.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailRegistreer.ForeColor = System.Drawing.Color.Gray;
             this.txtEmailRegistreer.Location = new System.Drawing.Point(101, 273);
+            this.txtEmailRegistreer.MaxLength = 100;
             this.txtEmailRegistreer.Name = "txtEmailRegistreer";
             this.txtEmailRegistreer.Size = new System.Drawing.Size(270, 29);
             this.txtEmailRegistreer.TabIndex = 8;
@@ -234,6 +237,7 @@
             this.txtTelefoon.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefoon.ForeColor = System.Drawing.Color.Gray;
             this.txtTelefoon.Location = new System.Drawing.Point(101, 241);
+            this.txtTelefoon.MaxLength = 30;
             this.txtTelefoon.Name = "txtTelefoon";
             this.txtTelefoon.Size = new System.Drawing.Size(270, 29);
             this.txtTelefoon.TabIndex = 7;
@@ -245,6 +249,7 @@
             this.txtAdres.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdres.ForeColor = System.Drawing.Color.Gray;
             this.txtAdres.Location = new System.Drawing.Point(101, 177);
+            this.txtAdres.MaxLength = 150;
             this.txtAdres.Name = "txtAdres";
             this.txtAdres.Size = new System.Drawing.Size(270, 29);
             this.txtAdres.TabIndex = 5;
@@ -256,6 +261,7 @@
             this.txtNaam.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNaam.ForeColor = System.Drawing.Color.Gray;
             this.txtNaam.Location = new System.Drawing.Point(101, 145);
+            this.txtNaam.MaxLength = 50;
             this.txtNaam.Name = "txtNaam";
             this.txtNaam.Size = new System.Drawing.Size(270, 29);
             this.txtNaam.TabIndex = 4;
@@ -267,6 +273,7 @@
             this.txtVoornaam.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVoornaam.ForeColor = System.Drawing.Color.Gray;
             this.txtVoornaam.Location = new System.Drawing.Point(101, 113);
+            this.txtVoornaam.MaxLength = 50;
             this.txtVoornaam.Name = "txtVoornaam";
             this.txtVoornaam.Size = new System.Drawing.Size(270, 29);
             this.txtVoornaam.TabIndex = 3;

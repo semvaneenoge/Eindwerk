@@ -180,8 +180,8 @@ namespace prjEindwerk_LotsOfLili
 
             try
             {
-                // Tekst van mail maken
-                string klantEmail = $@"
+                // Tekst van mail maken (klant)
+                string bodyEmailKlant = $@"
 <!DOCTYPE html>
 <html>
 <head>
@@ -204,7 +204,7 @@ td {{margin-left: 50px}}
                 // Producten toevoegen aan tekst
                 foreach (var item in Cart)
                 {
-                    klantEmail += $@"
+                    bodyEmailKlant += $@"
     <tr>
         <td style='padding-right: 10px;'>{item.Naam}</td>
         <td style='padding-right: 10px;'>{item.Aantal}</td>
@@ -214,33 +214,33 @@ td {{margin-left: 50px}}
                 }
 
                 // Totaalbedrag toevoegen aan tekst
-                klantEmail += $@"
+                bodyEmailKlant += $@"
 <p>Totaalbedrag: € {Totaal.ToString("0.00")}</p>
 </table>
 </body>
 </html>";
 
                 // Nieuwe mail maken
-                MailMessage mail1 = new MailMessage();
-                mail1.From = new MailAddress("eindwerk.lotsoflili@gmail.com");
-                mail1.To.Add(userEmail);
-                mail1.Subject = "Betalen Lots of Lili";
-                mail1.Body = klantEmail;
-                mail1.IsBodyHtml = true;
+                MailMessage mailKlant = new MailMessage();
+                mailKlant.From = new MailAddress("eindwerk.lotsoflili@gmail.com");
+                mailKlant.To.Add(userEmail);
+                mailKlant.Subject = "Betalen Lots of Lili";
+                mailKlant.Body = bodyEmailKlant;
+                mailKlant.IsBodyHtml = true;
 
                 // Smtp-client instellen voor het verzenden van de email (via gmail)
-                SmtpClient smtp1 = new SmtpClient("smtp.gmail.com");
-                smtp1.Port = 587;
-                smtp1.Credentials = new NetworkCredential("testen.eindwerk@gmail.com", "lijw vqjp inbo avjd");
-                smtp1.EnableSsl = true;
+                SmtpClient smtpKlant = new SmtpClient("smtp.gmail.com");
+                smtpKlant.Port = 587;
+                smtpKlant.Credentials = new NetworkCredential("testen.eindwerk@gmail.com", "lijw vqjp inbo avjd");
+                smtpKlant.EnableSsl = true;
                     
                 // M1ail verzenden
-                smtp1.Send(mail1);
+                smtpKlant.Send(mailKlant);
 
                 try
                 {
                     // Tekst van mail maken
-                    string bestellingEmail = $@"
+                    string bodyEmailAdmin = $@"
 <!DOCTYPE html>
 <html>
 <body>
@@ -261,7 +261,7 @@ td {{margin-left: 50px}}
                     // Producten toevoegen aan tekst
                     foreach (var item in Cart)
                     {
-                        bestellingEmail += $@"
+                        bodyEmailKlant += $@"
     <tr>
         <td style='padding-right: 10px;'>{item.Naam}</td>
         <td style='padding-right: 10px;'>{item.Aantal}</td>
@@ -270,28 +270,28 @@ td {{margin-left: 50px}}
     </tr>";
                     }
 
-                    bestellingEmail += $@"
+                    bodyEmailKlant += $@"
 <p>Totaalbedrag: € {Totaal.ToString("0.00")}</p>
 </table>
 </body>
 </html>";
 
                     // Nieuwe mail maken
-                    MailMessage mail2 = new MailMessage();
-                    mail2.From = new MailAddress("eindwerk.lotsoflili@gmail.com");
-                    mail2.To.Add("testen.eindwerk@gmail.com");
-                    mail2.Subject = "Bestelling Lots of Lili";
-                    mail2.Body = bestellingEmail;
-                    mail2.IsBodyHtml = true;
+                    MailMessage mailAdmin = new MailMessage();
+                    mailAdmin.From = new MailAddress("eindwerk.lotsoflili@gmail.com");
+                    mailAdmin.To.Add("testen.eindwerk@gmail.com");
+                    mailAdmin.Subject = "Bestelling Lots of Lili";
+                    mailAdmin.Body = bodyEmailKlant;
+                    mailAdmin.IsBodyHtml = true;
 
                     // Smtp-client instellen voor het verzenden van de email (via gmail)
-                    SmtpClient smtp2 = new SmtpClient("smtp.gmail.com");
-                    smtp2.Port = 587;
-                    smtp2.Credentials = new NetworkCredential("eindwerk.lotsoflili@gmail.com", "aefq jsmm sgty iwga");
-                    smtp2.EnableSsl = true;
+                    SmtpClient smtpAdmin = new SmtpClient("smtp.gmail.com");
+                    smtpAdmin.Port = 587;
+                    smtpAdmin.Credentials = new NetworkCredential("eindwerk.lotsoflili@gmail.com", "aefq jsmm sgty iwga");
+                    smtpAdmin.EnableSsl = true;
 
                     // Mail verzenden
-                    smtp2.Send(mail2);
+                    smtpAdmin.Send(mailAdmin);
 
                     bestellingDA.SaveCartAsJSON(userID, Cart);
 

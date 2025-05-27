@@ -40,7 +40,7 @@
             this.txtProductNaam = new System.Windows.Forms.TextBox();
             this.txtProductPrijs = new System.Windows.Forms.TextBox();
             this.btnProductFoto = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCategorie = new System.Windows.Forms.Panel();
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.btnTerug = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlCategorie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -69,9 +69,9 @@
             // 
             this.btnProductToevoegen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductToevoegen.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductToevoegen.Location = new System.Drawing.Point(19, 332);
+            this.btnProductToevoegen.Location = new System.Drawing.Point(19, 330);
             this.btnProductToevoegen.Name = "btnProductToevoegen";
-            this.btnProductToevoegen.Size = new System.Drawing.Size(212, 25);
+            this.btnProductToevoegen.Size = new System.Drawing.Size(212, 27);
             this.btnProductToevoegen.TabIndex = 0;
             this.btnProductToevoegen.TabStop = false;
             this.btnProductToevoegen.Text = "Product toevoegen";
@@ -82,9 +82,9 @@
             // 
             this.btnProductVerwijderen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductVerwijderen.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductVerwijderen.Location = new System.Drawing.Point(237, 332);
+            this.btnProductVerwijderen.Location = new System.Drawing.Point(237, 330);
             this.btnProductVerwijderen.Name = "btnProductVerwijderen";
-            this.btnProductVerwijderen.Size = new System.Drawing.Size(218, 25);
+            this.btnProductVerwijderen.Size = new System.Drawing.Size(218, 27);
             this.btnProductVerwijderen.TabIndex = 1;
             this.btnProductVerwijderen.TabStop = false;
             this.btnProductVerwijderen.Text = "Product verwijderen";
@@ -95,7 +95,7 @@
             // 
             this.lblProductNaam.AutoSize = true;
             this.lblProductNaam.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductNaam.Location = new System.Drawing.Point(16, 166);
+            this.lblProductNaam.Location = new System.Drawing.Point(16, 167);
             this.lblProductNaam.Name = "lblProductNaam";
             this.lblProductNaam.Size = new System.Drawing.Size(133, 18);
             this.lblProductNaam.TabIndex = 2;
@@ -105,7 +105,7 @@
             // 
             this.lblProductPrijs.AutoSize = true;
             this.lblProductPrijs.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductPrijs.Location = new System.Drawing.Point(16, 223);
+            this.lblProductPrijs.Location = new System.Drawing.Point(16, 222);
             this.lblProductPrijs.Name = "lblProductPrijs";
             this.lblProductPrijs.Size = new System.Drawing.Size(124, 18);
             this.lblProductPrijs.TabIndex = 2;
@@ -115,7 +115,7 @@
             // 
             this.lblProductFoto.AutoSize = true;
             this.lblProductFoto.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductFoto.Location = new System.Drawing.Point(16, 278);
+            this.lblProductFoto.Location = new System.Drawing.Point(16, 277);
             this.lblProductFoto.Name = "lblProductFoto";
             this.lblProductFoto.Size = new System.Drawing.Size(163, 18);
             this.lblProductFoto.TabIndex = 2;
@@ -167,43 +167,43 @@
             // 
             // txtProductNaam
             // 
-            this.txtProductNaam.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductNaam.Location = new System.Drawing.Point(19, 193);
+            this.txtProductNaam.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductNaam.Location = new System.Drawing.Point(19, 188);
             this.txtProductNaam.Name = "txtProductNaam";
-            this.txtProductNaam.Size = new System.Drawing.Size(134, 22);
+            this.txtProductNaam.Size = new System.Drawing.Size(134, 25);
             this.txtProductNaam.TabIndex = 7;
             // 
             // txtProductPrijs
             // 
-            this.txtProductPrijs.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductPrijs.Location = new System.Drawing.Point(19, 247);
+            this.txtProductPrijs.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductPrijs.Location = new System.Drawing.Point(19, 243);
             this.txtProductPrijs.Name = "txtProductPrijs";
-            this.txtProductPrijs.Size = new System.Drawing.Size(134, 22);
+            this.txtProductPrijs.Size = new System.Drawing.Size(134, 25);
             this.txtProductPrijs.TabIndex = 8;
             // 
             // btnProductFoto
             // 
             this.btnProductFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductFoto.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductFoto.Location = new System.Drawing.Point(19, 299);
+            this.btnProductFoto.Location = new System.Drawing.Point(19, 298);
             this.btnProductFoto.Name = "btnProductFoto";
-            this.btnProductFoto.Size = new System.Drawing.Size(109, 25);
+            this.btnProductFoto.Size = new System.Drawing.Size(134, 25);
             this.btnProductFoto.TabIndex = 9;
             this.btnProductFoto.TabStop = false;
             this.btnProductFoto.Text = "Foto kiezen";
             this.btnProductFoto.UseVisualStyleBackColor = true;
             this.btnProductFoto.Click += new System.EventHandler(this.btnProductFoto_Click);
             // 
-            // panel1
+            // pnlCategorie
             // 
-            this.panel1.Controls.Add(this.rdbAgendas);
-            this.panel1.Controls.Add(this.rdbHorloges);
-            this.panel1.Controls.Add(this.rdbPortemonnees);
-            this.panel1.Controls.Add(this.rdbPins);
-            this.panel1.Location = new System.Drawing.Point(19, 68);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(132, 100);
-            this.panel1.TabIndex = 10;
+            this.pnlCategorie.Controls.Add(this.rdbAgendas);
+            this.pnlCategorie.Controls.Add(this.rdbHorloges);
+            this.pnlCategorie.Controls.Add(this.rdbPortemonnees);
+            this.pnlCategorie.Controls.Add(this.rdbPins);
+            this.pnlCategorie.Location = new System.Drawing.Point(19, 68);
+            this.pnlCategorie.Name = "pnlCategorie";
+            this.pnlCategorie.Size = new System.Drawing.Size(132, 100);
+            this.pnlCategorie.TabIndex = 10;
             // 
             // picFoto
             // 
@@ -219,9 +219,9 @@
             this.btnTerug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
             this.btnTerug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTerug.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerug.Location = new System.Drawing.Point(19, 363);
+            this.btnTerug.Location = new System.Drawing.Point(19, 361);
             this.btnTerug.Name = "btnTerug";
-            this.btnTerug.Size = new System.Drawing.Size(436, 25);
+            this.btnTerug.Size = new System.Drawing.Size(436, 27);
             this.btnTerug.TabIndex = 12;
             this.btnTerug.TabStop = false;
             this.btnTerug.Text = "Terug";
@@ -383,7 +383,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1106, 400);
+            this.ClientSize = new System.Drawing.Size(1106, 398);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -397,7 +397,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTerug);
             this.Controls.Add(this.picFoto);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlCategorie);
             this.Controls.Add(this.btnProductFoto);
             this.Controls.Add(this.txtProductPrijs);
             this.Controls.Add(this.txtProductNaam);
@@ -412,8 +412,8 @@
             this.Text = "Admin menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdmin_FormClosed);
             this.Load += new System.EventHandler(this.frmAdmin_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlCategorie.ResumeLayout(false);
+            this.pnlCategorie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
@@ -435,7 +435,7 @@
         private System.Windows.Forms.TextBox txtProductNaam;
         private System.Windows.Forms.TextBox txtProductPrijs;
         private System.Windows.Forms.Button btnProductFoto;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlCategorie;
         private System.Windows.Forms.PictureBox picFoto;
         private System.Windows.Forms.Button btnTerug;
         private System.Windows.Forms.Label label1;

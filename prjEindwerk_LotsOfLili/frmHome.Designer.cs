@@ -78,7 +78,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(24, 124);
+            this.label1.Location = new System.Drawing.Point(24, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(690, 1);
             this.label1.TabIndex = 1;
@@ -86,7 +86,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(24, 175);
+            this.label2.Location = new System.Drawing.Point(24, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(690, 1);
             this.label2.TabIndex = 1;
@@ -99,7 +99,7 @@
             this.btnAgendas.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgendas.Location = new System.Drawing.Point(25, 138);
             this.btnAgendas.Name = "btnAgendas";
-            this.btnAgendas.Size = new System.Drawing.Size(100, 25);
+            this.btnAgendas.Size = new System.Drawing.Size(100, 27);
             this.btnAgendas.TabIndex = 2;
             this.btnAgendas.TabStop = false;
             this.btnAgendas.Text = "Agendas";
@@ -112,7 +112,7 @@
             this.btnHorloges.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHorloges.Location = new System.Drawing.Point(221, 138);
             this.btnHorloges.Name = "btnHorloges";
-            this.btnHorloges.Size = new System.Drawing.Size(100, 25);
+            this.btnHorloges.Size = new System.Drawing.Size(100, 27);
             this.btnHorloges.TabIndex = 2;
             this.btnHorloges.TabStop = false;
             this.btnHorloges.Text = "Horloges";
@@ -125,7 +125,7 @@
             this.btnPortemonnee.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPortemonnee.Location = new System.Drawing.Point(417, 138);
             this.btnPortemonnee.Name = "btnPortemonnee";
-            this.btnPortemonnee.Size = new System.Drawing.Size(100, 25);
+            this.btnPortemonnee.Size = new System.Drawing.Size(100, 27);
             this.btnPortemonnee.TabIndex = 2;
             this.btnPortemonnee.TabStop = false;
             this.btnPortemonnee.Text = "Portemonnees";
@@ -138,7 +138,7 @@
             this.btnPins.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPins.Location = new System.Drawing.Point(613, 138);
             this.btnPins.Name = "btnPins";
-            this.btnPins.Size = new System.Drawing.Size(100, 25);
+            this.btnPins.Size = new System.Drawing.Size(100, 27);
             this.btnPins.TabIndex = 2;
             this.btnPins.TabStop = false;
             this.btnPins.Text = "Pins";
@@ -192,10 +192,10 @@
             // 
             this.btnMandje1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
             this.btnMandje1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMandje1.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMandje1.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMandje1.Location = new System.Drawing.Point(129, 133);
             this.btnMandje1.Name = "btnMandje1";
-            this.btnMandje1.Size = new System.Drawing.Size(55, 45);
+            this.btnMandje1.Size = new System.Drawing.Size(55, 51);
             this.btnMandje1.TabIndex = 6;
             this.btnMandje1.TabStop = false;
             this.btnMandje1.Text = "Winkelmandje";
@@ -204,11 +204,11 @@
             // 
             // lblProduct1
             // 
-            this.lblProduct1.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct1.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct1.ForeColor = System.Drawing.Color.Black;
             this.lblProduct1.Location = new System.Drawing.Point(19, 133);
             this.lblProduct1.Name = "lblProduct1";
-            this.lblProduct1.Size = new System.Drawing.Size(111, 45);
+            this.lblProduct1.Size = new System.Drawing.Size(111, 51);
             this.lblProduct1.TabIndex = 7;
             this.lblProduct1.Text = "Naam + prijs";
             this.lblProduct1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -235,38 +235,38 @@
             this.pnlProducten.Controls.Add(this.picProduct4);
             this.pnlProducten.Location = new System.Drawing.Point(12, 237);
             this.pnlProducten.Name = "pnlProducten";
-            this.pnlProducten.Size = new System.Drawing.Size(714, 412);
+            this.pnlProducten.Size = new System.Drawing.Size(714, 418);
             this.pnlProducten.TabIndex = 8;
             // 
             // lblProduct6
             // 
-            this.lblProduct6.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct6.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct6.ForeColor = System.Drawing.Color.Black;
             this.lblProduct6.Location = new System.Drawing.Point(529, 346);
             this.lblProduct6.Name = "lblProduct6";
-            this.lblProduct6.Size = new System.Drawing.Size(111, 45);
+            this.lblProduct6.Size = new System.Drawing.Size(111, 51);
             this.lblProduct6.TabIndex = 7;
             this.lblProduct6.Text = "Naam + prijs";
             this.lblProduct6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProduct3
             // 
-            this.lblProduct3.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct3.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct3.ForeColor = System.Drawing.Color.Black;
             this.lblProduct3.Location = new System.Drawing.Point(529, 133);
             this.lblProduct3.Name = "lblProduct3";
-            this.lblProduct3.Size = new System.Drawing.Size(111, 45);
+            this.lblProduct3.Size = new System.Drawing.Size(111, 51);
             this.lblProduct3.TabIndex = 7;
             this.lblProduct3.Text = "Naam + prijs";
             this.lblProduct3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProduct5
             // 
-            this.lblProduct5.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct5.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct5.ForeColor = System.Drawing.Color.Black;
             this.lblProduct5.Location = new System.Drawing.Point(274, 346);
             this.lblProduct5.Name = "lblProduct5";
-            this.lblProduct5.Size = new System.Drawing.Size(111, 45);
+            this.lblProduct5.Size = new System.Drawing.Size(111, 51);
             this.lblProduct5.TabIndex = 7;
             this.lblProduct5.Text = "Naam + prijs";
             this.lblProduct5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -275,10 +275,10 @@
             // 
             this.btnMandje6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
             this.btnMandje6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMandje6.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMandje6.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMandje6.Location = new System.Drawing.Point(639, 346);
             this.btnMandje6.Name = "btnMandje6";
-            this.btnMandje6.Size = new System.Drawing.Size(55, 45);
+            this.btnMandje6.Size = new System.Drawing.Size(55, 51);
             this.btnMandje6.TabIndex = 6;
             this.btnMandje6.TabStop = false;
             this.btnMandje6.Text = "Winkelmandje";
@@ -287,11 +287,11 @@
             // 
             // lblProduct2
             // 
-            this.lblProduct2.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct2.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct2.ForeColor = System.Drawing.Color.Black;
             this.lblProduct2.Location = new System.Drawing.Point(274, 133);
             this.lblProduct2.Name = "lblProduct2";
-            this.lblProduct2.Size = new System.Drawing.Size(111, 45);
+            this.lblProduct2.Size = new System.Drawing.Size(111, 51);
             this.lblProduct2.TabIndex = 7;
             this.lblProduct2.Text = "Naam + prijs";
             this.lblProduct2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -300,10 +300,10 @@
             // 
             this.btnMandje3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
             this.btnMandje3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMandje3.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMandje3.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMandje3.Location = new System.Drawing.Point(639, 133);
             this.btnMandje3.Name = "btnMandje3";
-            this.btnMandje3.Size = new System.Drawing.Size(55, 45);
+            this.btnMandje3.Size = new System.Drawing.Size(55, 51);
             this.btnMandje3.TabIndex = 6;
             this.btnMandje3.TabStop = false;
             this.btnMandje3.Text = "Winkelmandje";
@@ -314,10 +314,10 @@
             // 
             this.btnMandje5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
             this.btnMandje5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMandje5.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMandje5.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMandje5.Location = new System.Drawing.Point(384, 346);
             this.btnMandje5.Name = "btnMandje5";
-            this.btnMandje5.Size = new System.Drawing.Size(55, 45);
+            this.btnMandje5.Size = new System.Drawing.Size(55, 51);
             this.btnMandje5.TabIndex = 6;
             this.btnMandje5.TabStop = false;
             this.btnMandje5.Text = "Winkelmandje";
@@ -337,11 +337,11 @@
             // 
             // lblProduct4
             // 
-            this.lblProduct4.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct4.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct4.ForeColor = System.Drawing.Color.Black;
             this.lblProduct4.Location = new System.Drawing.Point(19, 346);
             this.lblProduct4.Name = "lblProduct4";
-            this.lblProduct4.Size = new System.Drawing.Size(111, 45);
+            this.lblProduct4.Size = new System.Drawing.Size(111, 51);
             this.lblProduct4.TabIndex = 7;
             this.lblProduct4.Text = "Naam + prijs";
             this.lblProduct4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -350,10 +350,10 @@
             // 
             this.btnMandje2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
             this.btnMandje2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMandje2.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMandje2.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMandje2.Location = new System.Drawing.Point(384, 133);
             this.btnMandje2.Name = "btnMandje2";
-            this.btnMandje2.Size = new System.Drawing.Size(55, 45);
+            this.btnMandje2.Size = new System.Drawing.Size(55, 51);
             this.btnMandje2.TabIndex = 6;
             this.btnMandje2.TabStop = false;
             this.btnMandje2.Text = "Winkelmandje";
@@ -364,10 +364,10 @@
             // 
             this.btnMandje4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(207)))), ((int)(((byte)(195)))));
             this.btnMandje4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMandje4.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMandje4.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMandje4.Location = new System.Drawing.Point(129, 346);
             this.btnMandje4.Name = "btnMandje4";
-            this.btnMandje4.Size = new System.Drawing.Size(55, 45);
+            this.btnMandje4.Size = new System.Drawing.Size(55, 51);
             this.btnMandje4.TabIndex = 6;
             this.btnMandje4.TabStop = false;
             this.btnMandje4.Text = "Winkelmandje";
@@ -444,7 +444,7 @@
             this.btnMandje.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMandje.Location = new System.Drawing.Point(25, 93);
             this.btnMandje.Name = "btnMandje";
-            this.btnMandje.Size = new System.Drawing.Size(100, 25);
+            this.btnMandje.Size = new System.Drawing.Size(100, 27);
             this.btnMandje.TabIndex = 10;
             this.btnMandje.TabStop = false;
             this.btnMandje.Text = "Winkelmandje";
@@ -457,7 +457,7 @@
             this.btnAdmin.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.Location = new System.Drawing.Point(319, 10);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(100, 25);
+            this.btnAdmin.Size = new System.Drawing.Size(100, 27);
             this.btnAdmin.TabIndex = 10;
             this.btnAdmin.TabStop = false;
             this.btnAdmin.Text = "Admin menu";
@@ -481,7 +481,7 @@
             this.btnSettings.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.Location = new System.Drawing.Point(25, 62);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(100, 25);
+            this.btnSettings.Size = new System.Drawing.Size(100, 27);
             this.btnSettings.TabIndex = 11;
             this.btnSettings.TabStop = false;
             this.btnSettings.Text = "Instellingen";
@@ -505,7 +505,7 @@
             this.btnAfmelden.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAfmelden.Location = new System.Drawing.Point(25, 31);
             this.btnAfmelden.Name = "btnAfmelden";
-            this.btnAfmelden.Size = new System.Drawing.Size(100, 25);
+            this.btnAfmelden.Size = new System.Drawing.Size(100, 27);
             this.btnAfmelden.TabIndex = 13;
             this.btnAfmelden.TabStop = false;
             this.btnAfmelden.Text = "Afmelden";

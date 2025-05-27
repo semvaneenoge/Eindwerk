@@ -17,6 +17,7 @@ namespace prjEindwerk_LotsOfLili.DA
             // Verbinding met databank
             MySqlConnection conn = Database.MakeConnection();
 
+            // lijst van Cart objecten omzetten naar JSON string
             string bestellingJSON = JsonConvert.SerializeObject(cart);
             DateTime datum = DateTime.Now.Date;
 
@@ -30,6 +31,7 @@ namespace prjEindwerk_LotsOfLili.DA
             cmd.ExecuteNonQuery();
         }
 
+        // Klantnamen ophalen uit de database
         public List<(int klantID, string klantNaam)> GetCustomerNames()
         {
             // Verbinding met databank
@@ -54,6 +56,7 @@ namespace prjEindwerk_LotsOfLili.DA
             return customerNames;
         }
 
+        // Bestellingen ophalen per klant
         public List<(int bestellingID, DateTime datum)> GetOrdersByCustomer (int klantID)
         {
             // Verbinding met databank
@@ -80,6 +83,7 @@ namespace prjEindwerk_LotsOfLili.DA
             return orders;
         }
 
+        // Details ophalen per bestelling
         public List<Cart> GetOrderDetails (int bestellingID)
         {
             string orderJSON = "";
@@ -101,6 +105,8 @@ namespace prjEindwerk_LotsOfLili.DA
             }
 
             conn.Close();
+
+            // JSON string omzetten naar lijst van Cart objecten
             return JsonConvert.DeserializeObject<List<Cart>>(orderJSON);
         }
     }

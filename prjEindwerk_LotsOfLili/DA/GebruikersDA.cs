@@ -154,7 +154,7 @@ namespace prjEindwerk_LotsOfLili.DA
 
             try
             {
-                // Wachtwoord bijwerken met het nieuwe
+                // Wachtwoord bijwerken met het nieuwe ingegeven wachtwoord
                 string query = "UPDATE Eindwerk.tblGebruikers SET Wachtwoord = @newWW WHERE Email = @Email and tblGebruikers.Wachtwoord = @Wachtwoord";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);

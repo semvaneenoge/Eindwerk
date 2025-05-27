@@ -21,6 +21,7 @@ namespace prjEindwerk_LotsOfLili.DA
             string bestellingJSON = JsonConvert.SerializeObject(cart);
             DateTime datum = DateTime.Now.Date;
 
+            // Bestelling opslaan in database
             string query = "insert into tblBestelling (klantID, bestelling, datum) values (@klantID, @bestelling, @datum)";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -39,6 +40,7 @@ namespace prjEindwerk_LotsOfLili.DA
 
             List<(int klantID, string klantNaam)> customerNames = new List<(int klantID, string klantNaam)>();
 
+            // Klantengegevens ophalen uit database
             string query = "select distinct gebruikerID, Voornaam, Naam from tblGebruikers join tblbestelling on tblbestelling.klantID = gebruikerID order by Naam, Voornaam";
 
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -64,6 +66,7 @@ namespace prjEindwerk_LotsOfLili.DA
 
             List<(int, DateTime)> orders = new List<(int, DateTime)>();
 
+            // 
             string query = "select bestellingID, datum from tblBestelling where klantID = @klantID order by datum desc";
 
             MySqlCommand cmd = new MySqlCommand (query, conn);
